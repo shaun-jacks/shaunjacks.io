@@ -60,3 +60,6 @@ bundle-stats.json
 
 # Google Firebase
 .firebase
+
+.env
+.env.*

@@ -4,6 +4,9 @@ const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
 
 const { createFilePath } = require("gatsby-source-filesystem");
 

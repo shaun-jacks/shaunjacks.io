@@ -5,11 +5,10 @@ const config = {
   siteLogo: "", // Logo used for SEO and manifest.
   siteUrl: "https://shaunjacks.com/", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription:
-    "A GatsbyJS stater with Advanced design in mind and with theme-ui", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Software Engineering and Data Science blog", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
-  googleAnalyticsID: "", // GA tracking ID.
+  googleAnalyticsID: "UA-163971884-1", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
   postDefaultCategoryID: "Tech", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
