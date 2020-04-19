@@ -22,8 +22,8 @@ const TagHeader = props => {
           alignItems: `baseline`
         }}
       >
-        <Styled.h2 sx={{ color: `text`, fontSize: `10`, mr: 3 }}>
-          Post(s) tagged as
+        <Styled.h2 sx={{ fontSize: `10`, mr: 3 }}>
+          Article(s) tagged as
         </Styled.h2>
         <Styled.h3
           sx={{

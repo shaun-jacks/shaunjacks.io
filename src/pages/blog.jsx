@@ -28,10 +28,17 @@ class Blog extends React.Component {
   filterPosts = () => {
     const { posts, searchTerm } = this.state;
 
-    const filteredPosts = posts.filter(post =>
-      post.node.frontmatter.title
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase())
+    const filteredPosts = posts.filter(
+      post =>
+        post.node.frontmatter.title
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
+        post.node.frontmatter.category
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
+        post.node.frontmatter.tags.some(tag =>
+          tag.toLowerCase().includes(searchTerm.toLowerCase())
+        )
     );
 
     this.setState({ filteredPosts });
@@ -53,7 +60,9 @@ class Blog extends React.Component {
           }}
         >
           <Styled.h2 sx={{ textAlign: "center" }}>Articles</Styled.h2>
-          <div sx={{ width: "60%" }}>
+          <div
+            sx={{ width: "100%", display: "flex", alignItems: "center", mb: 3 }}
+          >
             <input
               type="text"
               sx={{
@@ -66,8 +75,9 @@ class Blog extends React.Component {
                 padding: "4px 11px",
                 fontSize: "16px",
                 transition: "all .3s ease",
-                width: "75%",
+                width: ["90%", "75%"],
                 mb: 2,
+                margin: "auto",
                 "&:focus, &:hover": {
                   outline: "none",
                   borderWidth: "1px",
@@ -76,7 +86,7 @@ class Blog extends React.Component {
               }}
               name="searchTerm"
               value={searchTerm}
-              placeholder="Type here to filter articles"
+              placeholder="Type here to filter by title, category or tag"
               onChange={this.handleChange}
             />
           </div>

@@ -32,7 +32,9 @@ class PostListing extends React.Component {
       <div
         sx={{
           display: "flex",
-          flexDirection: "column"
+          flexDirection: "column",
+          width: "100%",
+          margin: "auto"
         }}
       >
         {/* Your post list here. */
@@ -40,6 +42,7 @@ class PostListing extends React.Component {
           <div
             sx={{
               my: 2,
+              minWidth: "100px",
               width: "100%",
               transition: "box-shadow 0.1s ease-in-out",
               "&:hover": {
@@ -63,7 +66,7 @@ class PostListing extends React.Component {
               >
                 {post.cover && (
                   <Img
-                    sx={{ minHeight: "110px" }}
+                    sx={{ minHeight: "110px", minWidth: "100px" }}
                     fixed={post.cover.childImageSharp.fixed}
                   />
                 )}

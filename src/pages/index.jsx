@@ -14,10 +14,11 @@ import { Styled, jsx } from "theme-ui";
 
 class Index extends React.Component {
   render() {
-    const postEdges = this.props.data.allMdx.edges;
     const horizontalMostRecentEdges = this.props.data.horizontalMostRecent
       .edges;
     const horizontalMostPopular = this.props.data.horizontalMostPopular.edges;
+    const verticalMostRecentEdges = this.props.data.verticalMostRecent.edges;
+    const verticalMostPopularEdges = this.props.data.verticalMostPopular.edges;
     const { userLinks } = config;
 
     return (
@@ -38,7 +39,7 @@ class Index extends React.Component {
           <Styled.h1 sx={{ color: "text" }}>I write about</Styled.h1>
           <AllCategories />
         </section>
-        {/* <section
+        <section
           sx={{
             my: `40px`,
             display: "flex",
@@ -46,10 +47,21 @@ class Index extends React.Component {
             alignItems: "center"
           }}
         >
-          <Styled.h1 sx={{ color: "text" }}>Most recent posts</Styled.h1>
-          <SimplePostListing postEdges={postEdges} />
-        </section> */}
+          <Styled.h1 sx={{ mt: 0, color: "text" }}>Most recent</Styled.h1>
+          <SimplePostListing postEdges={verticalMostRecentEdges} />
+        </section>
         <section
+          sx={{
+            my: `40px`,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+          }}
+        >
+          <Styled.h1 sx={{ mt: 0, color: "text" }}>Most popular</Styled.h1>
+          <SimplePostListing postEdges={verticalMostPopularEdges} />
+        </section>
+        {/* <section
           sx={{
             my: `40px`,
             display: "flex",
@@ -72,7 +84,7 @@ class Index extends React.Component {
         >
           <Styled.h1 sx={{ color: "text" }}>Most popular</Styled.h1>
           <PostListing postEdges={horizontalMostPopular} />
-        </section>
+        </section> */}
         <section>
           <Styled
             as={Link}
@@ -104,7 +116,36 @@ export default Index;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    allMdx(
+    verticalMostRecent: allMdx(
+      limit: 4
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { publish: { eq: "yes" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date(formatString: "MMMM Do, YYYY")
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            category
+            title
+            tags
+            cover {
+              childImageSharp {
+                fixed(width: 256, height: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+            date
+          }
+        }
+      }
+    }
+    verticalMostPopular: allMdx(
       limit: 4
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { publish: { eq: "yes" } } }
