@@ -70,7 +70,7 @@ export default class PostTemplate extends React.Component {
 }
 
 /* eslint no-undef: "off" */
-export const pageQuery = graphql`
+export const postQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       rawBody

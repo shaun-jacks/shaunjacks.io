@@ -24,7 +24,7 @@ export default class CategoryTemplate extends React.Component {
 }
 
 /* eslint no-undef: "off" */
-export const pageQuery = graphql`
+export const categoryQuery = graphql`
   query CategoryPage($category: String) {
     allMdx(
       limit: 1000

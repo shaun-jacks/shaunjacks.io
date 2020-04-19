@@ -106,7 +106,9 @@ export const blogQuery = graphql`
     allMdx(
       limit: 2000
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { publish: { eq: "yes" } } }
+      filter: {
+        frontmatter: { publish: { eq: "yes" }, template: { eq: "post" } }
+      }
     ) {
       edges {
         node {

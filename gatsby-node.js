@@ -75,71 +75,56 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  // Destructure the createPage function from the actions object
   const { createPage } = actions;
+
   const postPage = path.resolve("src/templates/post.jsx");
+  const pagePage = path.resolve("src/templates/page.jsx");
   const tagPage = path.resolve("src/templates/tag.jsx");
   const categoryPage = path.resolve("src/templates/category.jsx");
 
-  const markdownQueryResult = await graphql(
-    `
-      {
-        allMdx {
-          edges {
-            node {
-              fields {
-                slug
-                date
-              }
-              frontmatter {
-                title
-                tags
-                category
-                date
-              }
+  const result = await graphql(`
+    query {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              date
+            }
+            frontmatter {
+              tags
+              template
+              category
             }
           }
         }
       }
-    `
-  );
+    }
+  `);
 
-  if (markdownQueryResult.errors) {
-    console.error(markdownQueryResult.errors);
-    throw markdownQueryResult.errors;
+  if (result.errors) {
+    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
 
   const tagSet = new Set();
   const categorySet = new Set();
 
-  const postsEdges = markdownQueryResult.data.allMdx.edges;
+  postsEdges = result.data.allMdx.edges.filter(
+    edge => edge.node.frontmatter.template === "post"
+  );
 
-  postsEdges.sort((postA, postB) => {
-    const dateA = moment(
-      postA.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
-
-    const dateB = moment(
-      postB.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
-
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
-
-    return 0;
-  });
-
-  postsEdges.forEach((edge, index) => {
-    if (edge.node.frontmatter.tags) {
-      edge.node.frontmatter.tags.forEach(tag => {
+  postsEdges.forEach(({ node }, index) => {
+    if (node.frontmatter.tags) {
+      node.frontmatter.tags.forEach(tag => {
         tagSet.add(tag);
       });
     }
 
-    if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category);
+    if (node.frontmatter.category) {
+      categorySet.add(node.frontmatter.category);
     }
 
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
@@ -147,15 +132,39 @@ exports.createPages = async ({ graphql, actions }) => {
     const nextEdge = postsEdges[nextID];
     const prevEdge = postsEdges[prevID];
 
+    console.log(`Creating Post ${node.frontmatter.title} ${node.fields.slug}`);
+
     createPage({
-      path: edge.node.fields.slug,
+      path: node.fields.slug,
       component: postPage,
       context: {
-        slug: edge.node.fields.slug,
+        slug: node.fields.slug,
         nexttitle: nextEdge.node.frontmatter.title,
         nextslug: nextEdge.node.fields.slug,
         prevtitle: prevEdge.node.frontmatter.title,
         prevslug: prevEdge.node.fields.slug
+      }
+    });
+  });
+
+  const pageEdges = result.data.allMdx.edges.filter(
+    ({
+      node: {
+        frontmatter: { template }
+      }
+    }) => template === "page"
+  );
+
+  // Create pages
+  pageEdges.forEach(({ node }) => {
+    console.log("PAGE SEEN AT");
+    console.log(node.fields.slug);
+    createPage({
+      path: node.fields.slug,
+      component: pagePage,
+      context: {
+        id: node.id,
+        slug: node.fields.slug
       }
     });
   });
@@ -169,6 +178,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     });
   });
+
   categorySet.forEach(category => {
     createPage({
       path: `/categories/${_.kebabCase(category)}/`,

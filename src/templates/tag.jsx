@@ -21,7 +21,7 @@ export default class TagTemplate extends React.Component {
 }
 
 /* eslint no-undef: "off" */
-export const pageQuery = graphql`
+export const tagQuery = graphql`
   query TagPage($tag: String) {
     allMdx(
       limit: 1000

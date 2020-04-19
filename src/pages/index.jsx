@@ -119,7 +119,9 @@ export const pageQuery = graphql`
     verticalMostRecent: allMdx(
       limit: 4
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { publish: { eq: "yes" } } }
+      filter: {
+        frontmatter: { publish: { eq: "yes" }, template: { eq: "post" } }
+      }
     ) {
       edges {
         node {
@@ -148,7 +150,9 @@ export const pageQuery = graphql`
     verticalMostPopular: allMdx(
       limit: 4
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { publish: { eq: "yes" } } }
+      filter: {
+        frontmatter: { publish: { eq: "yes" }, template: { eq: "post" } }
+      }
     ) {
       edges {
         node {
@@ -177,7 +181,9 @@ export const pageQuery = graphql`
     horizontalMostRecent: allMdx(
       limit: 4
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { publish: { eq: "yes" } } }
+      filter: {
+        frontmatter: { publish: { eq: "yes" }, template: { eq: "post" } }
+      }
     ) {
       edges {
         node {
@@ -206,7 +212,13 @@ export const pageQuery = graphql`
     horizontalMostPopular: allMdx(
       limit: 4
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { popular: { eq: true } } }
+      filter: {
+        frontmatter: {
+          popular: { eq: true }
+          publish: { eq: "yes" }
+          template: { eq: "post" }
+        }
+      }
     ) {
       edges {
         node {
