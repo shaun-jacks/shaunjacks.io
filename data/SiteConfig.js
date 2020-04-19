@@ -43,10 +43,6 @@ const config = {
   ],
   menuLinks: [
     {
-      name: "Me",
-      url: "/about"
-    },
-    {
       name: "Articles",
       url: "/blog"
     }
