@@ -1,7 +1,7 @@
 const config = {
-  siteTitle: "Shaun Jackson", // Site title.
+  siteTitle: "shaunjacks.io", // Site title.
   siteTitleShort: "shaunjacks.io", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: "Shaunn Jackson Blog", // Alternative site title for SEO.
+  siteTitleAlt: "Shaun Jackson Blog", // Alternative site title for SEO.
   siteLogo: "", // Logo used for SEO and manifest.
   siteUrl: "https://shaunjacks.com/", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
@@ -20,11 +20,10 @@ const config = {
   userLocation: "Newport Beach, CA", // User location to display in the author segment.
   userAvatar: "", // User avatar to display in the author segment.
   userDescription:
-    "Just a software engineer trying to mesh art and engineering", // User description to display in the author segment.
+    "Just a software engineer trying to mesh art and engineering.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   avatar: {
-    description:
-      "As a curious soul, I value continual learning. I am passionate about software engineering and data science, where technology meets creativity and design to solve real world problems through collaboration.",
+    description: "Just a software engineer trying to mesh art and engineering.",
     photo:
       "https://shaunjacks.com/static/426d80516a46be4949bdfd16faafdcb3/b9d37/shaun-coffee-zoom.png"
   },

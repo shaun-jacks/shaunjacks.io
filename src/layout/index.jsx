@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import NavMenu from "../components/NavMenu";
+import Footer from "../components/Footer";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -16,7 +17,7 @@ export default class MainLayout extends React.Component {
           fontFamily: `body`,
           m: `auto`,
           maxWidth: `container`,
-          width: ["90%", "100%", "100%"]
+          width: ["90%", "90%", "100%"]
         }}
       >
         <Helmet>
@@ -27,6 +28,7 @@ export default class MainLayout extends React.Component {
         <div style={{ marginTop: `120px`, marginBottom: `50px` }}>
           {children}
         </div>
+        <Footer />
       </Styled>
     );
   }

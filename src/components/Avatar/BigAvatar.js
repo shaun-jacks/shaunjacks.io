@@ -36,7 +36,7 @@ const BigAvatar = props => {
         </Styled.h1>
       </div>
       <AvatarLinks />
-      <Styled.p>{avatar.description}</Styled.p>
+      <Styled.p sx={{ textAlign: "center" }}>{avatar.description}</Styled.p>
     </>
   );
 };

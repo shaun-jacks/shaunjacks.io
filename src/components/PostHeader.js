@@ -10,10 +10,12 @@ const PostHeader = props => {
   const { post } = props;
 
   return (
-    <div sx={{ mb: `-1px` }}>
-      <div sx={{ display: `flex`, flexDirection: `column` }}>
-        <small sx={{ mt: 2 }}>{post.date}</small>
-        <small sx={{ my: 2 }}>{post.timeToRead} minute(s)</small>
+    <div sx={{ mb: `-1px`, mx: 2 }}>
+      <div sx={{ display: `flex`, flexDirection: `column`, color: "text" }}>
+        <div>
+          <small sx={{ mr: 2 }}>{post.date}</small>
+          <small>{post.timeToRead} minute(s)</small>
+        </div>
         <div
           sx={{
             display: `flex`,

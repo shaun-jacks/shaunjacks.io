@@ -4,6 +4,8 @@ import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import PostHeader from "./PostHeader";
 import PostCard from "./PostCard";
+import Img from "gatsby-image";
+import { Divider } from "theme-ui";
 
 class PostListing extends React.Component {
   getPostList() {
@@ -27,23 +29,58 @@ class PostListing extends React.Component {
     const postList = this.getPostList();
 
     return (
-      <div>
+      <div
+        sx={{
+          display: "flex",
+          flexDirection: "column"
+        }}
+      >
         {/* Your post list here. */
         postList.map(post => (
-          <div key={post.title}>
-            <Styled sx={{ mb: "40px" }}>
-              <img sx={{ width: "256px", height: "200px" }} src={post.cover} />
-              <Styled.h1 sx={{ mb: `1rem` }}>
-                <Styled.a
-                  as={Link}
-                  to={post.path}
-                  sx={{ textDecoration: `none`, mb: "1rem" }}
-                >
-                  {post.title}
-                </Styled.a>
-              </Styled.h1>
-              <PostHeader post={post} />
-              <Styled.p sx={{ mt: -1 }}>{post.excerpt}</Styled.p>
+          <div
+            sx={{
+              my: 2,
+              width: "100%",
+              transition: "box-shadow 0.1s ease-in-out",
+              "&:hover": {
+                cursor: "pointer",
+                boxShadow: "0 5px 15px rgba(0,0,0,0.3)"
+              }
+            }}
+            key={post.title}
+          >
+            <Styled sx={{ display: "flex", alignItems: "flex-start" }}>
+              <Styled.a
+                as={Link}
+                to={post.path}
+                sx={{
+                  textDecoration: `none`,
+                  mr: 1,
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "flex-start"
+                }}
+              >
+                {post.cover && (
+                  <Img
+                    sx={{ minHeight: "110px" }}
+                    fixed={post.cover.childImageSharp.fixed}
+                  />
+                )}
+
+                <div sx={{ mt: 0, ml: 2 }}>
+                  <Styled.h2 sx={{ my: 1, ml: 2 }}>
+                    <Styled.a
+                      as={Link}
+                      to={post.path}
+                      sx={{ textDecoration: `none` }}
+                    >
+                      {post.title}
+                    </Styled.a>
+                  </Styled.h2>
+                  <PostHeader post={post} />
+                </div>
+              </Styled.a>
             </Styled>
           </div>
         ))}
