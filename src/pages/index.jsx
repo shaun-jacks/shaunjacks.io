@@ -151,7 +151,11 @@ export const pageQuery = graphql`
       limit: 4
       sort: { fields: [fields___date], order: DESC }
       filter: {
-        frontmatter: { publish: { eq: "yes" }, template: { eq: "post" } }
+        frontmatter: {
+          publish: { eq: "yes" }
+          template: { eq: "post" }
+          popular: { eq: true }
+        }
       }
     ) {
       edges {
