@@ -2,6 +2,7 @@ import React from "react";
 import { useColorMode, css } from "theme-ui";
 import sun from "../images/sun.svg";
 import moon from "../images/moon.svg";
+import night from "../images/brightness_2-white-18dp.svg";
 
 /** @jsx jsx */
 import { jsx } from "theme-ui";
@@ -9,20 +10,20 @@ import { jsx } from "theme-ui";
 const ToogleMode = () => {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === `dark`;
-  const toggleColorMode = e => {
+  const toggleColorMode = (e) => {
     setColorMode(isDark ? `light` : `dark`);
   };
 
   const nigthMode = (
     <img
       alt="moon indicating dark mode"
-      src={moon}
+      src={night}
       width="20"
       height="20"
       role="presentation"
       style={{
         pointerEvents: `none`,
-        margin: 4
+        margin: 4,
       }}
     />
   );
@@ -36,7 +37,7 @@ const ToogleMode = () => {
       role="presentation"
       style={{
         pointerEvents: `none`,
-        margin: 4
+        margin: 4,
       }}
     />
   );
@@ -55,7 +56,7 @@ const ToogleMode = () => {
         bg: color,
         cursor: `pointer`,
         border: `none`,
-        outline: `none`
+        outline: `none`,
       }}
       title="Toggle Dark Mode"
     >
