@@ -1,5 +1,5 @@
 ---
-title: "Hello Git! Part 1"
+title: "Introducing Git"
 cover: ./branches.jpg
 template: "post"
 category: "GIT"
@@ -19,7 +19,7 @@ Why?
 2. **GIT enables collaboration** among your coding peers.
 3. **GIT brings peace** to your life, if done right!
 
-I'd like to introduce you to some of the most important GIT commands, as well as make it super easy to harness it's power.
+I'd like to introduce you to some of the most important GIT commands, assuming little to no prior experience, as well as make it super easy to harness it's power.
 
 I remember my first encounter thinking...
 
@@ -49,9 +49,15 @@ Git saves specific snapshots of your code in a few different ways. The first is 
 
 ### git commit
 
-A **commit** is simply put the state of your files when you **commit** it. It saves all the text in your file at that time point.
+A **commit** is simply put the state of your committed files when you **commit** it. So every time you commit over time, the state of your files are saved at that time point.
 
-To commit, you must first choose, which files would I like to commit? This is done with `git add`.
+![png](./git-commit-1.png)
+
+When you commit files, Git will commit all files that are **_staged_** for a commit.
+
+How do you stage files so they can be committed? How do you choose, while files would I like to save in my Git history?
+
+This is done with `git add`.
 
 ### git add
 
@@ -75,6 +81,10 @@ git add .
 
 Now that you have added these files, they are now **staged** for a **commit**. So you can always pick and choose, which files would I like to stage for this commit with `git add`.
 
+##### Side Note
+
+Under the hood, git will keep track of every file in the directory which you have initialized it, and it will sense whether you made changes to a file or not. You can see this with `git status`. If you would like to have git unaware of certain files in your directory (e.g. `.env` files), add that file to a `.gitignore` file in your directory.
+
 ### Commit the files
 
 ```
@@ -83,17 +93,17 @@ git commit -m 'A COMMIT MESSAGE DESCRIBING WHAT CHANGES YOU MADE'
 
 This will now save all the staged files in a `commit` that you can always look back upon in the future. How awesome is that! It **WILL** save you someday.
 
-The message you write after `-m` is up to you, some companies follow a message template to easily understand what a commit is referring to.
+The message you write after `-m` is up to you, some companies follow a message template to easily understand what a commit is referring to. For example, [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 The below displays the workflow for adding and commiting.
 
 ![png](./git-commit.png)
 
-### Round 1 Complete
-
-These two actions are both very powerful and the most important in my opinion.
+How is this powerful?
 
 The power is in that every time you make changes to your files within the git workspace locally, you can add those files and commit them so that you can always go back and see the state of those files whenever you want.
+
+You can even see detailed visuals of which lines of code changed over time.
 
 Personally, I'd say the more commits, the more you get out of GIT.
 
@@ -127,6 +137,8 @@ The `-b` is simply used to create a new branch. If you already created the branc
 
 This is another powerful feature of Git because you can essentially organize your commits into different branches. Where each branch can represent new features, bug fixes, production ready code, etc.
 
+In this example, imagine you made 3 more commits in branch develop - B1, B2, and B3.
+
 When you are done with a branch of work, you can merge it back in to your original branch like so...
 
 ### Merging branches together
@@ -145,6 +157,10 @@ git merge develop
 
 ![png](./github-branch-3.png)
 
+In this example, after merging develop to master, the master branch will now have all the commits of the develop branch - B1, B2, and B3 Like this:
+
+![png](./github-branch-4.png)
+
 ### Popular Branching Strategies
 
 Software development workflows are built off of these Git features.
@@ -157,8 +173,6 @@ Bonus points, if you have extra time, you can also **_checkout_** [trunk based d
 
 Say your laptop for whatever reason get's thrown into a volcanoe and you lose everything that's on it. That would **suck**. What's worse? All that hard work and code is now gone!
 
-![png](./volcanoe-laptop.png)
-
 Not so fast... in GIT there is a concept of a **remote repository**.
 
 ### What is a Remote Repo?
@@ -166,8 +180,6 @@ Not so fast... in GIT there is a concept of a **remote repository**.
 A remote repo in Git is like a repository or another database that holds your code somewhere else in the world.
 
 It's like having a cloud backup of files on your computer, except in this case, it's specifically organized to hold all of your Git history in a nice, visual, and organized way.
-
-![png](./remote-local.png)
 
 #### Adding a Remote Repo
 
@@ -177,16 +189,17 @@ Once you have a repo set up, and assuming you already have your credentials setu
 git remote add origin <URL OF REMOTE REPO>
 ```
 
-You can find the url when you create a remote repo on Github.
+You can find the url when you create a remote repo on Github. Some popular remote repos are **Github** and **Gitlab**.
 
-Next, you can see how many commits are ready to be pushed with
-`git status`.
+![png](./remote-local.png)
 
 How can you save all your Git commits to a remote repo? That my friend is done with...
 
 ### git push
 
-Once we have a commit that is saved locally on our laptop, we can now **push** that commit (or commits) off to a remote repo. Some popular remote repos are **Github** and **Gitlab**.
+Once we have a commit that is saved locally on our laptop, we can now **push** that commit (or commits) off to a remote repo.
+You can see how many commits are ready to be pushed with
+`git status`.
 
 ![png](./git-push-to-cloud.png)
 
@@ -198,7 +211,9 @@ Finally, do
 git push origin <NAME OF CURRENT BRANCH>
 ```
 
-You can get the name of your branch with `git branch`. Also notice the word **origin**. This is the alias for the url we added before with `git remote add origin <URL OF REMOTE REPO>`. So we are pushing to that url.
+You can get the name of your branch with `git branch`. Also notice the word **origin**. This is the alias for the url we added before with `git remote add origin <URL OF REMOTE REPO>`. You can also triple check where the remote is with `git remote -v`.
+
+So we are pushing to that url the commits **from the branch you specified** to the remote repo, and within it, **the same branch name you specified**.
 
 Congratulations, you now have your commits both locally and remotely.
 
@@ -214,6 +229,24 @@ Say someone else working on the same project has also made a `git push` to the b
 git pull origin develop
 ```
 
-## Round 3 Complete!
+## Summary
 
-Let's rest our brain muscles for a second. We now know how to commit files, and how to push and pull to remote repos!
+We just scratched the surface of some of the most common features in Git. This includes -
+
+1. `git add`
+2. `git commit`
+3. `git status`
+4. `git branch`
+5. `git checkout`
+6. `git merge`
+7. `git remote add`
+8. `git push`
+9. `git pull`
+
+# Now what?
+
+So you've (hopefully!) gained a good intuition on how to harness the power of git... now what?
+
+Unleash Git on any existing projects you have or a branch new project! Create a Github or Gitlab or any other version control account to get started :).
+
+It will be confusing at first, but the more you use these commands, the more it will feel like second nature.
