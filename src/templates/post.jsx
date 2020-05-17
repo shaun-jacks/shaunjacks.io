@@ -35,13 +35,13 @@ export default class PostTemplate extends React.Component {
     postNodeWip.push(postNode);
 
     const postWip = [];
-    postNodeWip.forEach(post => {
+    postNodeWip.forEach((post) => {
       postWip.push({
         category: post.frontmatter.category,
         cover: post.frontmatter.cover,
         timeToRead: post.timeToRead,
         tags: post.frontmatter.tags,
-        date: post.fields.date
+        date: post.fields.date,
       });
     });
 
@@ -51,7 +51,16 @@ export default class PostTemplate extends React.Component {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div sx={{ maxWidth: "700px", m: "auto" }}>
+        <div
+          sx={{
+            maxWidth: "700px",
+            m: "auto",
+            ".gatsby-resp-image-figcaption": {
+              textAlign: "center",
+              color: "text",
+            },
+          }}
+        >
           {post.cover && <Img fluid={post.cover.childImageSharp.fluid} />}
           <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
           <PostHeader post={postWip[0]} />

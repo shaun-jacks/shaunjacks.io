@@ -1,5 +1,5 @@
 ---
-title: "Introducing Git"
+title: "Hello Git"
 cover: ./branches.jpg
 template: "post"
 category: "GIT"
@@ -51,7 +51,7 @@ Git saves specific snapshots of your code in a few different ways. The first is 
 
 A **commit** is simply put the state of your committed files when you **commit** it. So every time you commit over time, the state of your files are saved at that time point.
 
-![png](./git-commit-1.png)
+![png](./git-commit-1.png "A chronological progression of git commits...")
 
 When you commit files, Git will commit all files that are **_staged_** for a commit.
 
@@ -97,7 +97,7 @@ The message you write after `-m` is up to you, some companies follow a message t
 
 The below displays the workflow for adding and commiting.
 
-![png](./git-commit.png)
+![png](./git-commit.png "Adding/Staging files and committing them")
 
 How is this powerful?
 
@@ -111,7 +111,7 @@ Personally, I'd say the more commits, the more you get out of GIT.
 
 When you make a series of commits in git, these commits are made within a **branch**. You can think of a branch as a line that holds a chronological set of commits like this:
 
-![png](./github-branch-1.png)
+![png](./github-branch-1.png "A branch with three commits")
 
 Where A1, A2, and A3 each represent one commit after the other in the same branch.
 
@@ -129,7 +129,7 @@ What is great about branches is you can **branch off** from this branch, and nam
 git checkout -b develop
 ```
 
-![png](./github-branch-2.png)
+![png](./github-branch-2.png "Branching off of master to a develop branch")
 
 In this example, the branch we started from is called **master**, and we just created another branch called **develop** and then moved to that branch.
 
@@ -155,11 +155,11 @@ git checkout master
 git merge develop
 ```
 
-![png](./github-branch-3.png)
+![png](./github-branch-3.png "Merging develop to master branches")
 
 In this example, after merging develop to master, the master branch will now have all the commits of the develop branch - B1, B2, and B3 Like this:
 
-![png](./github-branch-4.png)
+![png](./github-branch-4.png "Master branch after merging")
 
 ### Popular Branching Strategies
 
@@ -191,7 +191,7 @@ git remote add origin <URL OF REMOTE REPO>
 
 You can find the url when you create a remote repo on Github. Some popular remote repos are **Github** and **Gitlab**.
 
-![png](./remote-local.png)
+![png](./remote-local.png "Local repository vs remote repositories")
 
 How can you save all your Git commits to a remote repo? That my friend is done with...
 
@@ -201,7 +201,7 @@ Once we have a commit that is saved locally on our laptop, we can now **push** t
 You can see how many commits are ready to be pushed with
 `git status`.
 
-![png](./git-push-to-cloud.png)
+![png](./git-push-to-cloud.png "Pushing from a local to remote repo")
 
 This is where you can create a remote repository by going on, for this example, Github.
 
@@ -228,6 +228,12 @@ Say someone else working on the same project has also made a `git push` to the b
 ```
 git pull origin develop
 ```
+
+In the image below, you can see the local branch is pulling commits the remote branch has that local does not.
+
+![png](./git-pull-origin-develop.png "Pulling from a remote repo to our local repo")
+
+This is the use case for `git pull`.
 
 ## Summary
 
