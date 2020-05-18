@@ -9,6 +9,7 @@ const config = {
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "UA-163971884-1", // GA tracking ID.
+  googleAnalyticsStreamTag: "G-VME9LPZ6QK", // GA Measurement ID
   disqusShortname: "", // Disqus shortname.
   postDefaultCategoryID: "Tech", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
@@ -24,35 +25,35 @@ const config = {
   avatar: {
     description: "Just a software engineer trying to mesh art and engineering.",
     photo:
-      "https://shaunjacks.com/static/426d80516a46be4949bdfd16faafdcb3/b9d37/shaun-coffee-zoom.png"
+      "https://shaunjacks.com/static/426d80516a46be4949bdfd16faafdcb3/b9d37/shaun-coffee-zoom.png",
   },
   userLinks: [
     {
       label: "github",
-      url: "https://github.com/shaun-jacks"
+      url: "https://github.com/shaun-jacks",
     },
     {
       label: "linkedin",
-      url: "https://www.linkedin.com/in/shaun-jackson/"
+      url: "https://www.linkedin.com/in/shaun-jackson/",
     },
     {
       label: "email",
-      url: "mailto:shaun@shaunjacks.com"
-    }
+      url: "mailto:shaun@shaunjacks.com",
+    },
   ],
   menuLinks: [
     {
       name: "Me",
-      url: "/about-me"
+      url: "/about-me",
     },
     {
       name: "Articles",
-      url: "/blog"
-    }
+      url: "/blog",
+    },
   ],
   copyright: "Copyright © 2020. Shaun Jackson", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 };
 
 // Validate

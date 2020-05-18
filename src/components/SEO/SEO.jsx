@@ -39,8 +39,8 @@ class SEO extends Component {
         "@type": "WebSite",
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
-      }
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+      },
     ];
     if (postSEO) {
       schemaOrgJSONLD.push(
@@ -54,10 +54,10 @@ class SEO extends Component {
               item: {
                 "@id": postURL,
                 name: title,
-                image
-              }
-            }
-          ]
+                image,
+              },
+            },
+          ],
         },
         {
           "@context": "http://schema.org",
@@ -68,9 +68,9 @@ class SEO extends Component {
           headline: title,
           image: {
             "@type": "ImageObject",
-            url: image
+            url: image,
           },
-          description
+          description,
         }
       );
     }
@@ -105,6 +105,22 @@ class SEO extends Component {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+        {/*Global site tag (gtag.js) - Google Analytics*/}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${
+            config.googleAnalyticsStreamTag
+          }`}
+        />
+        <script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', '${config.googleAnalyticsStreamTag}');
+        `}
+        </script>
       </Helmet>
     );
   }
