@@ -8,7 +8,7 @@ import { Styled, jsx } from "theme-ui";
 
 class NavMenu extends React.Component {
   state = {
-    scrolled: false
+    scrolled: false,
   };
 
   componentDidMount() {
@@ -46,10 +46,10 @@ class NavMenu extends React.Component {
             top: 0,
             left: 0,
             height: `60px`,
-            backgroundColor: `background`,
+            backgroundColor: `panelBackground`,
             boxShadow: shadow,
             m: `auto`,
-            zIndex: 100
+            zIndex: 100,
           }}
         >
           <div
@@ -58,16 +58,15 @@ class NavMenu extends React.Component {
               justifyContent: `space-between`,
               alignItems: `center`,
               maxWidth: `container`,
+              height: "100%",
               m: "auto",
-              mt: `18px`,
-              px: 3
             }}
           >
-            <Link to="/" sx={{ textDecoration: `none`, color: `primary` }}>
-              <div>{siteTitle}</div>
+            <Link to="/" sx={{ textDecoration: `none`, color: `panelText` }}>
+              <div sx={{ pl: "1rem" }}>{siteTitle}</div>
             </Link>
             <div style={{ display: `flex`, alignItems: `center` }}>
-              {menuLinks.map(link => {
+              {menuLinks.map((link) => {
                 return (
                   <Styled.h3
                     key={link.url}
@@ -76,7 +75,7 @@ class NavMenu extends React.Component {
                     sx={{
                       mr: 3,
                       textDecoration: `none`,
-                      color: `primary`
+                      color: "panelText",
                     }}
                   >
                     {link.name}

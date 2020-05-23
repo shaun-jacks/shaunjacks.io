@@ -23,7 +23,8 @@ const config = {
     "Just a software engineer trying to mesh art and engineering.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   avatar: {
-    description: "Just a software engineer trying to mesh art and engineering.",
+    description:
+      "Uncovering the keys for navigating the landscape of Software Engineering. One Blog at a time.",
     photo:
       "https://shaunjacks.com/static/426d80516a46be4949bdfd16faafdcb3/b9d37/shaun-coffee-zoom.png",
   },
@@ -38,13 +39,13 @@ const config = {
     },
     {
       label: "email",
-      url: "mailto:shaun@shaunjacks.com",
+      url: "mailto:shaunbjackson@gmail.com",
     },
   ],
   menuLinks: [
     {
       name: "Me",
-      url: "/about-me",
+      url: "/about",
     },
     {
       name: "Articles",

@@ -6,7 +6,7 @@ import PostTags from "./PostTags";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-const PostHeader = (props) => {
+const PostHeaderLong = (props) => {
   const { post } = props;
 
   return (
@@ -23,7 +23,7 @@ const PostHeader = (props) => {
             alignItems: `baseline`,
           }}
         >
-          {/* <Styled.p
+          <Styled.p
             as={Link}
             sx={{
               color: `primary`,
@@ -35,17 +35,16 @@ const PostHeader = (props) => {
               borderRadius: `5px`,
               p: 1,
               mb: `10px`,
-              mr: 2
+              mr: 2,
             }}
             to={`/categories/${_.kebabCase(post.category)}/`}
           >
             {post.category}
           </Styled.p>
-          <PostTags tags={post.tags} /> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default PostHeader;
+export default PostHeaderLong;

@@ -2,15 +2,16 @@
 import { Styled, jsx, Card } from "theme-ui";
 import React, { Fragment } from "react";
 import { Link } from "gatsby";
-import PostHeader from "./PostHeader";
+import PostHeaderLong from "./PostHeaderLong";
 import PostCard from "./PostCard";
 import Img from "gatsby-image";
 import { Divider } from "theme-ui";
+import { darken, lighten } from "@theme-ui/color";
 
 class PostListing extends React.Component {
   getPostList() {
     const postList = [];
-    this.props.postEdges.forEach(postEdge => {
+    this.props.postEdges.forEach((postEdge) => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -19,7 +20,7 @@ class PostListing extends React.Component {
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
-        category: postEdge.node.frontmatter.category
+        category: postEdge.node.frontmatter.category,
       });
     });
     return postList;
@@ -34,21 +35,21 @@ class PostListing extends React.Component {
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          margin: "auto"
+          margin: "auto",
         }}
       >
         {/* Your post list here. */
-        postList.map(post => (
+        postList.map((post) => (
           <div
             sx={{
               my: 2,
               minWidth: "100px",
               width: "100%",
-              transition: "box-shadow 0.1s ease-in-out",
+              transition: "all .3s ease",
               "&:hover": {
                 cursor: "pointer",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.3)"
-              }
+                bg: lighten("background", 0.1),
+              },
             }}
             key={post.title}
           >
@@ -61,7 +62,7 @@ class PostListing extends React.Component {
                   mr: 1,
                   width: "100%",
                   display: "flex",
-                  alignItems: "flex-start"
+                  alignItems: "flex-start",
                 }}
               >
                 {post.cover && (
@@ -81,7 +82,7 @@ class PostListing extends React.Component {
                       {post.title}
                     </Styled.a>
                   </Styled.h2>
-                  <PostHeader post={post} />
+                  <PostHeaderLong post={post} />
                 </div>
               </Styled.a>
             </Styled>

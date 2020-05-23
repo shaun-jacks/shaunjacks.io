@@ -11,6 +11,7 @@ import AllCategories from "../components/AllCategories";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import { darken, lighten } from "@theme-ui/color";
 
 class Index extends React.Component {
   render() {
@@ -26,66 +27,73 @@ class Index extends React.Component {
         <Helmet title={config.siteTitle} />
         <SEO />
         <section>
-          <BigAvatar />
+          <div
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              p: "2em",
+            }}
+          >
+            <Styled.h1 sx={{ m: ".5em" }}>Hi! I'm Shaun</Styled.h1>
+            <Styled.p sx={{ textAlign: "center" }}>
+              I'm a Software Engineer passionate about modern Javascript,
+              Backend technologies, Data, and Cloud tooling.
+            </Styled.p>
+            <a
+              href="https://shaunjacks.substack.com"
+              sx={{
+                padding: "1em",
+                borderRadius: ".5rem",
+                textDecoration: "none",
+                color: "background",
+                cursor: "pointer",
+                outline: "none",
+                backgroundColor: "primary",
+                border: "3px solid text",
+                borderColor: "primary",
+                borderRadius: "5px",
+                borderWidth: "1px",
+                padding: "4px 11px",
+                fontSize: "16px",
+                boxShadow: "0 2px 0 rgba(0,0,0,.045)",
+                transition: "all .3s ease",
+                "&:focus, &:hover": {
+                  outline: "none",
+                  borderColor: lighten("primary", 0.2),
+                  backgroundColor: lighten("primary", 0.2),
+                },
+              }}
+            >
+              <Styled.h3 sx={{ m: 0, p: ".5em 1.5em", color: "background" }}>
+                Subscribe
+              </Styled.h3>
+            </a>
+          </div>
         </section>
         <section
           sx={{
             my: `40px`,
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
-          }}
-        >
-          <Styled.h1 sx={{ color: "text" }}>I write about</Styled.h1>
-          <AllCategories />
-        </section>
-        <section
-          sx={{
-            my: `40px`,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
-          }}
-        >
-          <Styled.h1 sx={{ mt: 0, color: "text" }}>Most recent</Styled.h1>
-          <SimplePostListing postEdges={verticalMostRecentEdges} />
-        </section>
-        <section
-          sx={{
-            my: `40px`,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <Styled.h1 sx={{ mt: 0, color: "text" }}>Most popular</Styled.h1>
           <SimplePostListing postEdges={verticalMostPopularEdges} />
         </section>
-        {/* <section
-          sx={{
-            my: `40px`,
-            display: "flex",
-            p: 2,
-            flexDirection: "column"
-            // "@media screen and (min-width: 40em)": {
-            //   width: "50%"
-            // }
-          }}
-        >
-          <Styled.h1 sx={{ color: "text" }}>Most recent</Styled.h1>
-          <PostListing postEdges={horizontalMostRecentEdges} />
-        </section>
         <section
           sx={{
             my: `40px`,
             display: "flex",
-            flexDirection: "column"
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Styled.h1 sx={{ color: "text" }}>Most popular</Styled.h1>
-          <PostListing postEdges={horizontalMostPopular} />
-        </section> */}
-        <section>
+          <Styled.h1 sx={{ mt: 0, color: "text" }}>Most recent</Styled.h1>
+          <SimplePostListing postEdges={verticalMostRecentEdges} />
+        </section>
+        <section sx={{ display: "flex", justifyContent: "center" }}>
           <Styled
             as={Link}
             to={"/blog"}
@@ -93,14 +101,16 @@ class Index extends React.Component {
               margin: `auto`,
               textAlign: `center`,
               color: `primary`,
-              borderBottom: `solid 3px`,
+              border: `1px solid`,
+              borderRadius: 3,
+              borderColor: `panelBackground`,
               textDecoration: `none`,
-              fontSize: 26,
+              transition: "all .3s ease",
+              fontSize: 20,
+              p: ".5em 1.5em",
               ":hover": {
-                bg: `muted`,
-                p: 1,
-                borderRadius: `5px`
-              }
+                bg: lighten("background", 0.1),
+              },
             }}
           >
             More posts...
@@ -137,7 +147,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 256, height: 200) {
+                fixed(width: 256, height: 150) {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -172,7 +182,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 256, height: 200) {
+                fixed(width: 256, height: 150) {
                   ...GatsbyImageSharpFixed
                 }
               }
