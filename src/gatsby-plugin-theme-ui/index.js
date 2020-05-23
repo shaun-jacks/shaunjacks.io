@@ -22,44 +22,44 @@ export default {
   //theme
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
-    container: 800
+    container: 800,
   },
   fonts: {
     body: "system-ui, sans-serif",
     heading: "system-ui, sans-serif",
-    monospace: '"Roboto Mono", Menlo, monospace'
+    monospace: '"Roboto Mono", Menlo, monospace',
   },
   lineHeights: {
     body: 1.625,
-    heading: 1.25
+    heading: 1.25,
   },
   fontWeights: {
     body: 400,
     heading: 800,
-    bold: 700
+    bold: 700,
   },
   fontSizes: [14, 16, 18, 20, 24, 32, 48, 64, 72, 96],
   letterSpacing: {
     body: "normal",
-    caps: "0.2em"
+    caps: "0.2em",
   },
   cards: {
     primary: {
       padding: 2,
       borderRadius: 4,
-      boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)"
+      boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
     },
     compact: {
       padding: 1,
       borderRadius: 2,
       border: "1px solid",
-      borderColor: "muted"
-    }
+      borderColor: "muted",
+    },
   },
   //styles
   styles: {
     root: {
-      fontFamily: `body`
+      fontFamily: `body`,
     },
     pre: {
       variant: `prism`,
@@ -72,16 +72,16 @@ export default {
       overflow: `auto`,
       borderRadius: 5,
       p: 3,
-      boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`
+      boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`,
     },
     code: {
       fontFamily: `monospace`,
-      ...vsDark
+      ...vsDark,
     },
     inlineCode: {
       borderRadius: `0.3em`,
       bg: `muted`,
-      p: `0.3em`
+      p: `0.3em`,
     },
     // from typography overrideThemeStyles
     h1: {
@@ -90,21 +90,21 @@ export default {
       fontWeight: "heading",
       color: "primary",
       mt: 4,
-      mb: 4
+      mb: 4,
     },
     a: {
-      color: `primary`
+      color: `primary`,
     },
     p: {
       fontWeight: `body`,
       lineHeight: `body`,
-      letterSpacing: `body`
+      letterSpacing: `body`,
     },
     li: {
       fontSize: `body`,
       fontWeight: `body`,
       lineHeight: `body`,
-      letterSpacing: `body`
+      letterSpacing: `body`,
     },
     blockquote: {
       color: `inherit`,
@@ -112,31 +112,35 @@ export default {
       paddingLeft: `10px`,
       borderColor: `primary`,
       opacity: 0.8,
-      fontStyle: `italic`
-    }
+      fontStyle: `italic`,
+    },
   },
   //Colors
   colors: {
     text: blueGray,
     background: lightGray,
-    primary: "#096dd9",
+    panelBackground: "#212832",
+    panelText: lightGray,
+    primary: "#212832",
     secondary: pink,
     muted: gray,
     highlight: opaqueLightYellow,
     heading: grey90,
     prism: {
-      background: `#011627`
+      background: `#011627`,
     },
     modes: {
       dark: {
         text: lightWhite,
         background: "#141414",
+        panelBackground: "#1e1e1e",
+        panelText: lightWhite,
         primary: "#91d5ff",
         secondary: pink,
         muted: opaqueLightWhite,
         highlight: lightblue,
-        heading: white
-      }
-    }
-  }
+        heading: white,
+      },
+    },
+  },
 };
