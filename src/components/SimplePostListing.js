@@ -3,14 +3,22 @@ import { Styled, jsx } from "theme-ui";
 import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import PostHeader from "./PostHeader";
+import GitIcon from "../../content/assets/git.svg";
 import PostCard from "./PostCard";
 import Img from "gatsby-image";
+import { darken, lighten } from "@theme-ui/color";
+
+const CategoryMap = {
+  GIT: {
+    icon: <GitIcon width="128px" height="128px" />,
+  },
+};
 
 class PostListing extends React.Component {
   getPostList() {
     const postList = [];
     this.props.postEdges &&
-      this.props.postEdges.forEach(postEdge => {
+      this.props.postEdges.forEach((postEdge) => {
         postList.push({
           path: postEdge.node.fields.slug,
           tags: postEdge.node.frontmatter.tags,
@@ -19,7 +27,7 @@ class PostListing extends React.Component {
           date: postEdge.node.fields.date,
           excerpt: postEdge.node.excerpt,
           timeToRead: postEdge.node.timeToRead,
-          category: postEdge.node.frontmatter.category
+          category: postEdge.node.frontmatter.category,
         });
       });
     return postList;
@@ -27,7 +35,6 @@ class PostListing extends React.Component {
 
   render() {
     const postList = this.getPostList();
-    console.log(postList);
 
     return (
       <div
@@ -36,33 +43,48 @@ class PostListing extends React.Component {
           flexWrap: "wrap",
           justifyContent: "center",
           alignItems: "flex-start",
-          margin: "auto"
+          margin: "auto",
         }}
       >
         {/* Your post list here. */
-        postList.map(post => (
+        postList.map((post) => (
           <div
             sx={{
               margin: "1em",
               width: "256px",
               transition: "box-shadow 0.1s ease-in-out",
+              border: "2px solid",
+              borderColor: "panelBackground",
+              transition: "all .3s ease",
               "&:hover": {
                 cursor: "pointer",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.3)"
-              }
+                bg: lighten("background", 0.1),
+              },
             }}
             key={post.title}
           >
-            <Styled>
+            <Styled
+              sx={{
+                mt: "1em",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "space-around",
+              }}
+            >
               <Styled.a
                 as={Link}
                 to={post.path}
-                sx={{ textDecoration: `none` }}
+                sx={{
+                  textDecoration: `none`,
+                }}
               >
-                {post.cover && <Img fixed={post.cover.childImageSharp.fixed} />}
+                {CategoryMap.hasOwnProperty(post.category)
+                  ? CategoryMap[post.category].icon
+                  : ""}
               </Styled.a>
 
-              <div sx={{ padding: "1rem" }}>
+              <div sx={{ textAlign: "center", mb: "1em", mx: "1em" }}>
                 <Styled.h2 sx={{ mb: `.5rem` }}>
                   <Styled.a
                     as={Link}
