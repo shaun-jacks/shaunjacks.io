@@ -13,15 +13,20 @@ function Footer(props) {
   return (
     <footer
       sx={{
-        fontSize: 1,
-        variant: "styles.footer"
+        width: "100%",
+        variant: "styles.footer",
+        backgroundColor: "panelBackground",
+        color: "panelText",
       }}
     >
       <div
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          p: 3
+          alignItems: `center`,
+          maxWidth: `container`,
+          m: "auto",
+          p: 3,
         }}
       >
         <div>
