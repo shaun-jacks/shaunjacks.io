@@ -22,20 +22,44 @@ function Footer(props) {
       <div
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: `center`,
+          flexDirection: "column",
           maxWidth: `container`,
           m: "auto",
-          p: 3,
         }}
       >
-        <div>
-          Made with 🤟, ☕, and 🎶 using{" "}
-          <a sx={{ color: "secondary" }} href="https://www.gatsbyjs.org/">
-            Gatsby.js
-          </a>
+        <div
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: `center`,
+            maxWidth: `container`,
+            px: 3,
+            py: 4,
+          }}
+        >
+          <div
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <a
+              sx={{ color: "secondary", pr: 4 }}
+              href="https://patreon.com/shaunjacks"
+            >
+              Patreon
+            </a>
+            <a
+              sx={{
+                color: "secondary",
+              }}
+              href="https://ko-fi.com/shaunjacks"
+            >
+              Ko-Fi
+            </a>
+          </div>
+          <div sx={{ mx: 1 }}> {siteConfig.copyright} </div>
         </div>
-        <div sx={{ mx: 1 }}> {siteConfig.copyright} </div>
       </div>
     </footer>
   );
