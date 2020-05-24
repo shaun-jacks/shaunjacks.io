@@ -3,6 +3,7 @@ import ToogleMode from "./ToogleMode";
 import { Link } from "gatsby";
 import siteConfig from "../../../data/SiteConfig";
 import WideNavMenu from "./WideNavMenu";
+import MobileNavMenu from "./MobileNavMenu";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -63,6 +64,16 @@ class NavMenu extends React.Component {
             }}
           >
             <WideNavMenu menuLinks={menuLinks} siteTitle={siteTitle} />
+          </div>
+          <div
+            sx={{
+              height: "100%",
+              "@media screen and (min-width: 601px)": {
+                display: "none",
+              },
+            }}
+          >
+            <MobileNavMenu menuLinks={menuLinks} siteTitle={siteTitle} />
           </div>
         </Styled>
       </nav>
