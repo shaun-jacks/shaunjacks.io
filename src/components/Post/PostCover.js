@@ -1,11 +1,10 @@
 import React from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
-import PostTitle from "./PostTitle";
+import Img from "gatsby-image";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
 
 function PostCover(props) {
   const { post } = props;

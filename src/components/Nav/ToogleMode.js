@@ -1,8 +1,8 @@
 import React from "react";
 import { useColorMode, css } from "theme-ui";
-import sun from "../images/sun.svg";
-import moon from "../images/moon.svg";
-import night from "../images/brightness_2-white-18dp.svg";
+import sun from "../../images/sun.svg";
+import moon from "../../images/moon.svg";
+import night from "../../images/brightness_2-white-18dp.svg";
 
 /** @jsx jsx */
 import { jsx } from "theme-ui";

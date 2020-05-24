@@ -2,7 +2,7 @@
 import { Styled, jsx } from "theme-ui";
 import React, { Fragment } from "react";
 import { Link } from "gatsby";
-import GitIcon from "../../content/assets/git.svg";
+import GitIcon from "../../../content/assets/git.svg";
 import PostCard from "./PostCard";
 import Img from "gatsby-image";
 import { darken, lighten } from "@theme-ui/color";

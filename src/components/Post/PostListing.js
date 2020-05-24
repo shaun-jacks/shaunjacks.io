@@ -4,7 +4,6 @@ import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import PostHeaderLong from "./PostHeaderLong";
 import PostCard from "./PostCard";
-import Img from "gatsby-image";
 import { Divider } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 

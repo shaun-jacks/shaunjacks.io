@@ -3,6 +3,7 @@ import _ from "lodash";
 import { Link } from "gatsby";
 import PostTitle from "./PostTitle";
 import PostCover from "./PostCover";
+import PostHeaderLong from "./PostHeaderLong";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
