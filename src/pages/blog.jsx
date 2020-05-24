@@ -126,7 +126,7 @@ export const blogQuery = graphql`
             slug
             date(formatString: "MMMM Do, YYYY")
           }
-          excerpt
+          excerpt(pruneLength: 90)
           timeToRead
           frontmatter {
             category

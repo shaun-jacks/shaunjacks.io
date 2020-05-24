@@ -2,7 +2,6 @@
 import { Styled, jsx } from "theme-ui";
 import React, { Fragment } from "react";
 import { Link } from "gatsby";
-import PostHeader from "./PostHeader";
 import GitIcon from "../../content/assets/git.svg";
 import PostCard from "./PostCard";
 import Img from "gatsby-image";
@@ -94,7 +93,6 @@ class PostListing extends React.Component {
                     {post.title}
                   </Styled.a>
                 </Styled.h2>
-                <PostHeader post={post} />
               </div>
             </Styled>
           </div>
