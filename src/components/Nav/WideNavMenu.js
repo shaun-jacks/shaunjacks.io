@@ -1,5 +1,5 @@
 import React from "react";
-import ToogleMode from "./ToogleMode";
+import ToggleMode from "./ToggleMode";
 import { Link } from "gatsby";
 import NavItem from "./NavItem";
 
@@ -39,7 +39,7 @@ class WideNavMenu extends React.Component {
           {menuLinks.map((link) => {
             return <NavItem link={link} />;
           })}
-          <ToogleMode />
+          <ToggleMode />
         </div>
       </nav>
     );

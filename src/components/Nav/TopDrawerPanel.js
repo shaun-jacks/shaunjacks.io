@@ -5,7 +5,7 @@ import NavItem from "./NavItem";
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 import { Link } from "gatsby";
-import ToogleMode from "./ToogleMode";
+import ToggleMode from "./ToggleMode";
 
 function TopDrawerPanel({ isOpen, siteTitle, menuLinks }) {
   return (
@@ -46,7 +46,7 @@ function TopDrawerPanel({ isOpen, siteTitle, menuLinks }) {
             return <NavItem link={link} />;
           })}
           <div sx={{ m: 3 }}>
-            <ToogleMode />
+            <ToggleMode />
           </div>
         </nav>
         <div sx={{ flex: "1" }} />

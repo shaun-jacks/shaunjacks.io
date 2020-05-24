@@ -1,5 +1,5 @@
 import React from "react";
-import ToogleMode from "./ToogleMode";
+import ToggleMode from "./ToggleMode";
 import { Link } from "gatsby";
 import siteConfig from "../../../data/SiteConfig";
 import WideNavMenu from "./WideNavMenu";

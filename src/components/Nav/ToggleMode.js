@@ -7,7 +7,7 @@ import night from "../../images/brightness_2-white-18dp.svg";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-function ToogleMode() {
+function ToggleMode() {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === `dark`;
   const toggleColorMode = (e) => {
@@ -61,4 +61,4 @@ function ToogleMode() {
   );
 }
 
-export default ToogleMode;
+export default ToggleMode;
