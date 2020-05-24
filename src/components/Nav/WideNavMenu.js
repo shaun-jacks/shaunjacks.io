@@ -1,6 +1,7 @@
 import React from "react";
 import ToogleMode from "./ToogleMode";
 import { Link } from "gatsby";
+import NavItem from "./NavItem";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -11,7 +12,7 @@ class WideNavMenu extends React.Component {
     const { menuLinks, siteTitle } = this.props;
 
     return (
-      <div
+      <nav
         sx={{
           display: `flex`,
           justifyContent: `space-between`,
@@ -36,28 +37,11 @@ class WideNavMenu extends React.Component {
         </Link>
         <div style={{ display: `flex`, alignItems: `center` }}>
           {menuLinks.map((link) => {
-            return (
-              <Styled.h3
-                key={link.url}
-                as={Link}
-                to={link.url}
-                sx={{
-                  mr: 3,
-                  textDecoration: `none`,
-                  color: "panelText",
-                  transition: "all .3s ease",
-                  "&:hover": {
-                    color: lighten("primary", 0.3),
-                  },
-                }}
-              >
-                {link.name}
-              </Styled.h3>
-            );
+            return <NavItem link={link} />;
           })}
           <ToogleMode />
         </div>
-      </div>
+      </nav>
     );
   }
 }
