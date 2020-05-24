@@ -5,50 +5,49 @@ import { Link } from "gatsby";
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-class HamburgerIcon extends React.Component {
-  render() {
-    return (
-      <div
-        sx={{
-          width: "40px",
-          height: "100%",
-          m: 0,
-          p: 0,
-          position: "absolute",
-          transition: "all .3s ease",
+function HamburgerIcon({ toggleOpen }) {
+  return (
+    <div
+      onClick={toggleOpen}
+      sx={{
+        width: "40px",
+        height: "100%",
+        m: 0,
+        p: 0,
+        position: "absolute",
+        transition: "all .3s ease",
+        span: {
+          position: "relative",
+          display: "block",
+          height: "2px",
+          backgroundColor: "text",
+          width: "50%",
+          top: "50%",
+          left: "50%",
+          transition: "0.25s",
+          zIndex: "9999",
+        },
+        "&:hover": {
+          cursor: "pointer",
           span: {
-            position: "relative",
-            display: "block",
-            height: "2px",
-            backgroundColor: "text",
-            width: "50%",
-            top: "50%",
-            left: "50%",
-            transition: "0.25s",
-            zIndex: "9999",
+            backgroundColor: lighten("primary", 0.3),
           },
-          "&:hover": {
-            cursor: "pointer",
-            span: {
-              backgroundColor: lighten("primary", 0.3),
-            },
-          },
-          "span:nth-child(1)": {
-            top: "42%",
-            height: "2px",
-          },
-          "span:nth-child(3)": {
-            top: "60%",
-            height: "2px",
-          },
-        }}
-      >
-        <span />
-        <span />
-        <span />
-      </div>
-    );
-  }
+        },
+        "span:nth-child(1)": {
+          top: "42%",
+          height: "2px",
+        },
+        "span:nth-child(3)": {
+          top: "60%",
+          height: "2px",
+        },
+      }}
+    >
+      <span />
+      <span />
+      <span />
+    </div>
+  );
 }
 
 export default HamburgerIcon;

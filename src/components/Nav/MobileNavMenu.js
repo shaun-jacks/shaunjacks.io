@@ -26,8 +26,8 @@ function MobileNavMenu({ siteTitle }) {
       }}
     >
       <TopDrawer isOpen={isOpen} toggleOpen={toggleOpen} navHeight="45px" />
-      <div onClick={toggleOpen} sx={{ flex: "1", height: "100%" }}>
-        <HamburgerIcon />
+      <div sx={{ flex: "1", height: "100%" }}>
+        <HamburgerIcon toggleOpen={toggleOpen} />
       </div>
       <Link
         to="/"
