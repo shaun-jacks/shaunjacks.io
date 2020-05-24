@@ -5,6 +5,7 @@ import siteConfig from "../../../data/SiteConfig";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import { darken, lighten } from "@theme-ui/color";
 
 class NavMenu extends React.Component {
   state = {
@@ -62,7 +63,17 @@ class NavMenu extends React.Component {
               m: "auto",
             }}
           >
-            <Link to="/" sx={{ textDecoration: `none`, color: `panelText` }}>
+            <Link
+              to="/"
+              sx={{
+                textDecoration: `none`,
+                color: `panelText`,
+                transition: "all .3s ease",
+                "&:hover": {
+                  color: lighten("primary", 0.3),
+                },
+              }}
+            >
               <div sx={{ pl: "1rem" }}>{siteTitle}</div>
             </Link>
             <div style={{ display: `flex`, alignItems: `center` }}>
@@ -76,6 +87,10 @@ class NavMenu extends React.Component {
                       mr: 3,
                       textDecoration: `none`,
                       color: "panelText",
+                      transition: "all .3s ease",
+                      "&:hover": {
+                        color: lighten("primary", 0.3),
+                      },
                     }}
                   >
                     {link.name}
