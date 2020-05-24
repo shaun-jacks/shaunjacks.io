@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import siteConfig from "../../data/SiteConfig";
+import siteConfig from "../../../data/SiteConfig";
 import { Link } from "gatsby";
 
 /** @jsx jsx */

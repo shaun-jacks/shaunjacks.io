@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
-import CardTag from "./CardTag";
+import CardTag from "./PostTag";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";

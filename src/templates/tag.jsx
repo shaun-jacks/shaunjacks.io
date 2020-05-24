@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import SimplePostListing from "../components/SimplePostListing";
-import TagHeader from "../components/TagHeader";
+import SimplePostListing from "../components/Post/SimplePostListing";
+import TagHeader from "../components/Tag/TagHeader";
 import config from "../../data/SiteConfig";
 
 export default class TagTemplate extends React.Component {

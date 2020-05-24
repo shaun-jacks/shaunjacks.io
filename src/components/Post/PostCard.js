@@ -1,8 +1,8 @@
 import React from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
-import PostTitle from "./Post/PostTitle";
-import PostCover from "./Post/PostCover";
+import PostTitle from "./PostTitle";
+import PostCover from "./PostCover";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";

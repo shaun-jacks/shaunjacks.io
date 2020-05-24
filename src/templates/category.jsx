@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import SimplePostListing from "../components/SimplePostListing";
-import CatHeader from "../components/CatHeader";
+import SimplePostListing from "../components/Post/SimplePostListing";
+import CatHeader from "../components/Category/CatHeader";
 import config from "../../data/SiteConfig";
 
 export default class CategoryTemplate extends React.Component {

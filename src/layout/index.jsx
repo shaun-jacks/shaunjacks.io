@@ -1,8 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
-import NavMenu from "../components/NavMenu";
-import Footer from "../components/Footer";
+import NavMenu from "../components/Nav/NavMenu";
+import Footer from "../components/Footer/Footer";
 import "./index.css";
 
 /** @jsx jsx */

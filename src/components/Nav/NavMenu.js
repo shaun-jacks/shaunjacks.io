@@ -1,7 +1,7 @@
 import React from "react";
 import ToogleMode from "./ToogleMode";
 import { Link } from "gatsby";
-import siteConfig from "../../data/SiteConfig";
+import siteConfig from "../../../data/SiteConfig";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
