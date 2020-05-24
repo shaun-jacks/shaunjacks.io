@@ -7,7 +7,7 @@ import "katex/dist/katex.min.css";
 import { Styled, jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
-import PostHeader from "../components/PostHeader";
+import PostHeader from "../components/Post/PostHeader";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";

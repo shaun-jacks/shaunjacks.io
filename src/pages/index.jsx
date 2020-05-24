@@ -2,12 +2,12 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../layout";
-import SimplePostListing from "../components/SimplePostListing";
-import PostListing from "../components/PostListing";
+import SimplePostListing from "../components/Post/SimplePostListing";
+import PostListing from "../components/Post/PostListing";
 import SEO from "../components/SEO/SEO";
 import BigAvatar from "../components/Avatar/BigAvatar";
 import config from "../../data/SiteConfig";
-import AllCategories from "../components/AllCategories";
+import AllCategories from "../components/Category/AllCategories";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -80,7 +80,7 @@ class Index extends React.Component {
           }}
         >
           <Styled.h1 sx={{ mt: 0, color: "text" }}>Most popular</Styled.h1>
-          <SimplePostListing postEdges={verticalMostPopularEdges} />
+          <PostListing postEdges={verticalMostPopularEdges} />
         </section>
         <section
           sx={{
@@ -91,7 +91,7 @@ class Index extends React.Component {
           }}
         >
           <Styled.h1 sx={{ mt: 0, color: "text" }}>Most recent</Styled.h1>
-          <SimplePostListing postEdges={verticalMostRecentEdges} />
+          <PostListing postEdges={verticalMostRecentEdges} />
         </section>
         <section sx={{ display: "flex", justifyContent: "center" }}>
           <Styled
@@ -101,15 +101,12 @@ class Index extends React.Component {
               margin: `auto`,
               textAlign: `center`,
               color: `primary`,
-              border: `1px solid`,
-              borderRadius: 3,
-              borderColor: `panelBackground`,
               textDecoration: `none`,
               transition: "all .3s ease",
               fontSize: 20,
               p: ".5em 1.5em",
               ":hover": {
-                bg: lighten("background", 0.1),
+                color: lighten("primary", 0.2),
               },
             }}
           >
@@ -147,7 +144,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 256, height: 150) {
+                fixed(width: 100, height: 100) {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -182,7 +179,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 256, height: 150) {
+                fixed(width: 100, height: 100) {
                   ...GatsbyImageSharpFixed
                 }
               }
