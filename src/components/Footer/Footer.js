@@ -1,6 +1,5 @@
 import React from "react";
 import _ from "lodash";
-import PostTages from "./PostTags";
 import siteConfig from "../../data/SiteConfig";
 import { Link } from "gatsby";
 
@@ -33,6 +32,7 @@ function Footer(props) {
             justifyContent: "space-between",
             alignItems: `center`,
             maxWidth: `container`,
+            flexWrap: "wrap",
             px: 3,
             py: 4,
           }}
@@ -44,7 +44,7 @@ function Footer(props) {
             }}
           >
             <a
-              sx={{ color: "secondary", pr: 4 }}
+              sx={{ color: "secondary", pr: 4, pb: 2 }}
               href="https://patreon.com/shaunjacks"
             >
               Patreon
@@ -58,7 +58,7 @@ function Footer(props) {
               Ko-Fi
             </a>
           </div>
-          <div sx={{ mx: 1 }}> {siteConfig.copyright} </div>
+          <div sx={{ mx: 1, fontSize: "12px" }}> {siteConfig.copyright} </div>
         </div>
       </div>
     </footer>
