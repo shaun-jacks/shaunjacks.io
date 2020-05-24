@@ -1,6 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import siteConfig from "../../../data/SiteConfig";
+import FooterLink from "./FooterLink";
 import { Link } from "gatsby";
 
 /** @jsx jsx */
@@ -43,20 +44,8 @@ function Footer(props) {
               justifyContent: "space-between",
             }}
           >
-            <a
-              sx={{ color: "secondary", pr: 4, pb: 2 }}
-              href="https://patreon.com/shaunjacks"
-            >
-              Patreon
-            </a>
-            <a
-              sx={{
-                color: "secondary",
-              }}
-              href="https://ko-fi.com/shaunjacks"
-            >
-              Ko-Fi
-            </a>
+            <FooterLink url="https://patreon.com/shaunjacks" label="Patreon" />
+            <FooterLink url="https://ko-fi.com/shaunjacks" label="Ko-Fi" />
           </div>
           <div sx={{ mx: 1, fontSize: "12px" }}> {siteConfig.copyright} </div>
         </div>
