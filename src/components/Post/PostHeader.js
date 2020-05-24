@@ -1,7 +1,6 @@
 import React from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
-import PostTags from "./PostTags";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";

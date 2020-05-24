@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import SimplePostListing from "../components/SimplePostListing";
-import CatHeader from "../components/CatHeader";
+import PostListing from "../components/Post/PostListing";
+import CatHeader from "../components/Category/CatHeader";
 import config from "../../data/SiteConfig";
 
 export default class CategoryTemplate extends React.Component {
@@ -17,7 +17,7 @@ export default class CategoryTemplate extends React.Component {
           title={`Articles in category "${category}" | ${config.siteTitle}`}
         />
         <CatHeader category={category} />
-        <SimplePostListing postEdges={postEdges} />
+        <PostListing postEdges={postEdges} />
       </Layout>
     );
   }
@@ -46,7 +46,7 @@ export const categoryQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 256, height: 200) {
+                fixed(width: 100, height: 100) {
                   ...GatsbyImageSharpFixed
                 }
               }

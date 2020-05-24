@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import SimplePostListing from "../components/SimplePostListing";
-import TagHeader from "../components/TagHeader";
+import PostListing from "../components/Post/PostListing";
+import TagHeader from "../components/Tag/TagHeader";
 import config from "../../data/SiteConfig";
 
 export default class TagTemplate extends React.Component {
@@ -14,7 +14,7 @@ export default class TagTemplate extends React.Component {
       <Layout>
         <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
         <TagHeader tag={tag} />
-        <SimplePostListing postEdges={postEdges} />
+        <PostListing postEdges={postEdges} />
       </Layout>
     );
   }
@@ -43,7 +43,7 @@ export const tagQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 256, height: 200) {
+                fixed(width: 100, height: 100) {
                   ...GatsbyImageSharpFixed
                 }
               }

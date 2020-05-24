@@ -9,24 +9,23 @@ import { Styled, jsx } from "theme-ui";
 const icons = [
   { label: "linkedin", icon: linkedin },
   { label: "github", icon: github },
-  { label: "email", icon: mail }
 ];
 
-const AvatarLinks = props => {
+const AvatarLinks = (props) => {
   const { userLinks } = siteConfig;
   const { size } = props;
 
   const newUserLinks = [];
-  icons.forEach(element => {
+  icons.forEach((element) => {
     const { icon } = element;
-    userLinks.forEach(link => {
+    userLinks.forEach((link) => {
       const { label } = link;
       const { url } = link;
       if (label === element.label) {
         newUserLinks.push({
           label: label,
           url: url,
-          icon: icon
+          icon: icon,
         });
       }
     });
@@ -39,7 +38,7 @@ const AvatarLinks = props => {
 
   const iconsAndLinks = (
     <div sx={{ display: `flex` }}>
-      {newUserLinks.map(element => {
+      {newUserLinks.map((element) => {
         return (
           <div key={element.url} sx={{ mx: 2 }}>
             <a href={element.url} target="_blank">
@@ -50,7 +49,7 @@ const AvatarLinks = props => {
                   bg: `muted`,
                   borderRadius: "10px",
                   p: 1,
-                  ":hover": { bg: `secondary` }
+                  ":hover": { bg: `secondary` },
                 }}
               />
             </a>

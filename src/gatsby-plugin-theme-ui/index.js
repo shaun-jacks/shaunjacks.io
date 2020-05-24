@@ -119,9 +119,9 @@ export default {
   colors: {
     text: blueGray,
     background: lightGray,
-    panelBackground: "#212832",
-    panelText: lightGray,
-    primary: "#212832",
+    panelBackground: "#fff",
+    panelText: "text",
+    primary: "#096dd9",
     secondary: pink,
     muted: gray,
     highlight: opaqueLightYellow,
