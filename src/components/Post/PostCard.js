@@ -38,7 +38,7 @@ function PostCard(props) {
           </div>
           <div
             sx={{
-              "@media screen and (max-width: 490px)": {
+              "@media screen and (max-width: 600px)": {
                 display: "none",
               },
             }}

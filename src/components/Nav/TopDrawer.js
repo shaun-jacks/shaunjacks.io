@@ -11,7 +11,7 @@ import { darken, lighten } from "@theme-ui/color";
 
 class TopDrawer extends React.Component {
   render() {
-    const { siteTitle, navHeight, isOpen } = this.props;
+    const { siteTitle, navHeight, isOpen, toggleOpen } = this.props;
 
     return (
       <div
@@ -24,7 +24,7 @@ class TopDrawer extends React.Component {
         }}
       >
         <TopDrawerPanel isOpen={isOpen} />
-        <TopDrawerOverlay isOpen={isOpen} />
+        <TopDrawerOverlay toggleOpen={toggleOpen} isOpen={isOpen} />
       </div>
     );
   }

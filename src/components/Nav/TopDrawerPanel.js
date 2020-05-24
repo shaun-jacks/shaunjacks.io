@@ -17,7 +17,6 @@ class TopDrawerPanel extends React.Component {
           backgroundColor: "panelBackground",
           color: "background",
           zIndex: 11,
-          transition: "all .2s ease",
           transformOrigin: "top",
           transform: isOpen ? "scaleY(1)" : "scaleY(0)",
         }}

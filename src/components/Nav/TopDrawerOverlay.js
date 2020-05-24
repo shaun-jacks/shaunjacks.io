@@ -6,11 +6,12 @@ import { darken, lighten } from "@theme-ui/color";
 
 class TopDrawerOverlay extends React.Component {
   render() {
-    const { siteTitle, isOpen } = this.props;
+    const { isOpen, toggleOpen } = this.props;
 
     return (
       isOpen && (
         <div
+          onClick={toggleOpen}
           sx={{
             width: "100%",
             height: "100%",

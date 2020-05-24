@@ -56,7 +56,6 @@ class NavMenu extends React.Component {
             m: `auto`,
           }}
         >
-          <TopDrawer isOpen={true} navHeight={navHeight} />
           <div
             sx={{
               height: "100%",

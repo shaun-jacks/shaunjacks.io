@@ -2,48 +2,51 @@ import React from "react";
 import { Link } from "gatsby";
 import HamburgerIcon from "./HamburgerIcon";
 import ToogleMode from "./ToogleMode";
+import TopDrawer from "./TopDrawer";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-class MobileNavMenu extends React.Component {
-  render() {
-    const { siteTitle } = this.props;
+function MobileNavMenu({ siteTitle }) {
+  const [isOpen, setOpen] = React.useState(false);
+  const toggleOpen = () => {
+    setOpen(!isOpen);
+  };
 
-    return (
-      <div
+  return (
+    <div
+      sx={{
+        display: `flex`,
+        justifyContent: `space-between`,
+        alignItems: `center`,
+        maxWidth: `container`,
+        height: "100%",
+        m: "auto",
+      }}
+    >
+      <TopDrawer isOpen={isOpen} toggleOpen={toggleOpen} navHeight="45px" />
+      <div onClick={toggleOpen} sx={{ flex: "1", height: "100%" }}>
+        <HamburgerIcon />
+      </div>
+      <Link
+        to="/"
         sx={{
-          display: `flex`,
-          justifyContent: `space-between`,
-          alignItems: `center`,
-          maxWidth: `container`,
-          height: "100%",
-          m: "auto",
+          textDecoration: `none`,
+          color: `panelText`,
+          transition: "all .3s ease",
+          "&:hover": {
+            color: lighten("primary", 0.3),
+          },
         }}
       >
-        <div sx={{ flex: "1", height: "100%" }}>
-          <HamburgerIcon />
-        </div>
-        <Link
-          to="/"
-          sx={{
-            textDecoration: `none`,
-            color: `panelText`,
-            transition: "all .3s ease",
-            "&:hover": {
-              color: lighten("primary", 0.3),
-            },
-          }}
-        >
-          <div sx={{ flex: "1" }}>{siteTitle}</div>
-        </Link>
-        <div sx={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
-          <ToogleMode />
-        </div>
+        <div sx={{ flex: "1" }}>{siteTitle}</div>
+      </Link>
+      <div sx={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
+        <ToogleMode />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default MobileNavMenu;
