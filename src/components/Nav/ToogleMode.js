@@ -51,6 +51,7 @@ const ToogleMode = () => {
         border: `none`,
         outline: `none`,
         pr: "1rem",
+        py: 0,
       }}
       title="Toggle Dark Mode"
     >

@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import siteConfig from "../../../data/SiteConfig";
 import WideNavMenu from "./WideNavMenu";
 import MobileNavMenu from "./MobileNavMenu";
+import TopDrawer from "./TopDrawer";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -34,6 +35,7 @@ class NavMenu extends React.Component {
     const { scrolled } = this.state;
     const { menuLinks } = this.props;
     const { siteTitle } = siteConfig;
+    const navHeight = "45px";
 
     let shadow = `none`;
     if (scrolled === true) {
@@ -48,13 +50,13 @@ class NavMenu extends React.Component {
             width: "100%",
             top: 0,
             left: 0,
-            height: `45px`,
+            height: navHeight,
             backgroundColor: `panelBackground`,
             boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
             m: `auto`,
-            zIndex: 100,
           }}
         >
+          <TopDrawer isOpen={true} navHeight={navHeight} />
           <div
             sx={{
               height: "100%",
