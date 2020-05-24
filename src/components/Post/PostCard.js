@@ -36,7 +36,15 @@ function PostCard(props) {
             <PostTitle post={post} />
             <PostHeaderLong post={post} />
           </div>
-          {post.cover && <PostCover post={post} />}
+          <div
+            sx={{
+              "@media screen and (max-width: 490px)": {
+                display: "none",
+              },
+            }}
+          >
+            {post.cover && <PostCover post={post} />}
+          </div>
         </Styled.div>
       </Styled>
     </div>

@@ -46,7 +46,7 @@ class NavMenu extends React.Component {
             width: "100%",
             top: 0,
             left: 0,
-            height: `60px`,
+            height: `45px`,
             backgroundColor: `panelBackground`,
             boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
             m: `auto`,
