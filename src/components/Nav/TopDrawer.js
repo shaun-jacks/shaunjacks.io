@@ -9,11 +9,9 @@ import TopDrawerPanel from "./TopDrawerPanel";
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-class TopDrawer extends React.Component {
-  render() {
-    const { siteTitle, navHeight, isOpen, toggleOpen } = this.props;
-
-    return (
+function TopDrawer({ siteTitle, navHeight, isOpen, toggleOpen, menuLinks }) {
+  return (
+    isOpen && (
       <div
         sx={{
           position: "absolute",
@@ -23,11 +21,15 @@ class TopDrawer extends React.Component {
           width: "100vw",
         }}
       >
-        <TopDrawerPanel isOpen={isOpen} />
+        <TopDrawerPanel
+          menuLinks={menuLinks}
+          siteTitle={siteTitle}
+          isOpen={isOpen}
+        />
         <TopDrawerOverlay toggleOpen={toggleOpen} isOpen={isOpen} />
       </div>
-    );
-  }
+    )
+  );
 }
 
 export default TopDrawer;

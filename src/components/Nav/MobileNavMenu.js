@@ -8,7 +8,7 @@ import TopDrawer from "./TopDrawer";
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-function MobileNavMenu({ siteTitle }) {
+function MobileNavMenu({ siteTitle, menuLinks }) {
   const [isOpen, setOpen] = React.useState(false);
   const toggleOpen = () => {
     setOpen(!isOpen);
@@ -25,7 +25,12 @@ function MobileNavMenu({ siteTitle }) {
         m: "auto",
       }}
     >
-      <TopDrawer isOpen={isOpen} toggleOpen={toggleOpen} navHeight="45px" />
+      <TopDrawer
+        menuLinks={menuLinks}
+        isOpen={isOpen}
+        toggleOpen={toggleOpen}
+        navHeight="45px"
+      />
       <div sx={{ flex: "1", height: "100%" }}>
         <HamburgerIcon toggleOpen={toggleOpen} />
       </div>
@@ -42,9 +47,7 @@ function MobileNavMenu({ siteTitle }) {
       >
         <div sx={{ flex: "1" }}>{siteTitle}</div>
       </Link>
-      <div sx={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
-        <ToogleMode />
-      </div>
+      <div sx={{ flex: "1", display: "flex", justifyContent: "flex-end" }} />
     </div>
   );
 }
