@@ -34,7 +34,7 @@ class NavMenu extends React.Component {
 
     let shadow = `none`;
     if (scrolled === true) {
-      shadow = `1px 2px 10px rgba(0, 0, 0, 0.4)`;
+      shadow = `1px 2px 8px rgba(0, 0, 0, 0.2)`;
     }
 
     return (
@@ -47,7 +47,7 @@ class NavMenu extends React.Component {
             left: 0,
             height: `60px`,
             backgroundColor: `panelBackground`,
-            boxShadow: shadow,
+            boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
             m: `auto`,
             zIndex: 100,
           }}
