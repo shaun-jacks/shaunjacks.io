@@ -2,9 +2,13 @@ import React from "react";
 import ToogleMode from "./ToogleMode";
 import { Link } from "gatsby";
 import siteConfig from "../../../data/SiteConfig";
+import WideNavMenu from "./WideNavMenu";
+import MobileNavMenu from "./MobileNavMenu";
+import TopDrawer from "./TopDrawer";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import { darken, lighten } from "@theme-ui/color";
 
 class NavMenu extends React.Component {
   state = {
@@ -31,6 +35,7 @@ class NavMenu extends React.Component {
     const { scrolled } = this.state;
     const { menuLinks } = this.props;
     const { siteTitle } = siteConfig;
+    const navHeight = "45px";
 
     let shadow = `none`;
     if (scrolled === true) {
@@ -45,45 +50,32 @@ class NavMenu extends React.Component {
             width: "100%",
             top: 0,
             left: 0,
-            height: `60px`,
+            zIndex: 1000,
+            height: navHeight,
             backgroundColor: `panelBackground`,
             boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
             m: `auto`,
-            zIndex: 100,
           }}
         >
           <div
             sx={{
-              display: `flex`,
-              justifyContent: `space-between`,
-              alignItems: `center`,
-              maxWidth: `container`,
               height: "100%",
-              m: "auto",
+              "@media screen and (max-width: 600px)": {
+                display: "none",
+              },
             }}
           >
-            <Link to="/" sx={{ textDecoration: `none`, color: `panelText` }}>
-              <div sx={{ pl: "1rem" }}>{siteTitle}</div>
-            </Link>
-            <div style={{ display: `flex`, alignItems: `center` }}>
-              {menuLinks.map((link) => {
-                return (
-                  <Styled.h3
-                    key={link.url}
-                    as={Link}
-                    to={link.url}
-                    sx={{
-                      mr: 3,
-                      textDecoration: `none`,
-                      color: "panelText",
-                    }}
-                  >
-                    {link.name}
-                  </Styled.h3>
-                );
-              })}
-              <ToogleMode />
-            </div>
+            <WideNavMenu menuLinks={menuLinks} siteTitle={siteTitle} />
+          </div>
+          <div
+            sx={{
+              height: "100%",
+              "@media screen and (min-width: 601px)": {
+                display: "none",
+              },
+            }}
+          >
+            <MobileNavMenu menuLinks={menuLinks} siteTitle={siteTitle} />
           </div>
         </Styled>
       </nav>

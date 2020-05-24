@@ -20,9 +20,6 @@ const PostHeaderLong = (props) => {
           sx={{
             fontSize: "12px",
             mt: 2,
-            "@media screen and (max-width: 490px)": {
-              display: "none",
-            },
           }}
         >
           {post.excerpt}

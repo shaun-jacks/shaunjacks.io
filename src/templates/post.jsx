@@ -7,7 +7,7 @@ import "katex/dist/katex.min.css";
 import { Styled, jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
-import PostHeader from "../components/Post/PostHeader";
+import PostHeaderLong from "../components/Post/PostHeaderLong";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
@@ -61,9 +61,11 @@ export default class PostTemplate extends React.Component {
             },
           }}
         >
-          {post.cover && <Img fluid={post.cover.childImageSharp.fluid} />}
           <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
-          <PostHeader post={postWip[0]} />
+          <PostHeaderLong post={postWip[0]} />
+          {post.cover && (
+            <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
+          )}
           <MDXRenderer>{postNode.body}</MDXRenderer>
           <div sx={{ mt: "40px" }}>
             <SmallAvatar />

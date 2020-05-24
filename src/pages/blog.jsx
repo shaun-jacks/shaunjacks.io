@@ -60,15 +60,6 @@ class Blog extends React.Component {
             alignItems: "center",
           }}
         >
-          <section
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <AllCategories />
-          </section>
           <Styled.h2 sx={{ textAlign: "center" }}>Articles</Styled.h2>
           <div
             sx={{ width: "100%", display: "flex", alignItems: "center", mb: 3 }}
