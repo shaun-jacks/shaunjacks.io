@@ -4,7 +4,7 @@ import React from "react";
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-function TopDrawerOverlay({ isOpen, toggleOpen }) {
+export default function TopDrawerOverlay({ isOpen, toggleOpen }) {
   return (
     isOpen && (
       <div
@@ -20,5 +20,3 @@ function TopDrawerOverlay({ isOpen, toggleOpen }) {
     )
   );
 }
-
-export default TopDrawerOverlay;

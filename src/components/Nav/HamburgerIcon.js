@@ -3,9 +3,9 @@ import { Link } from "gatsby";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { lighten } from "@theme-ui/color";
 
-function HamburgerIcon({ toggleOpen }) {
+export default function HamburgerIcon({ toggleOpen }) {
   return (
     <div
       onClick={toggleOpen}
@@ -49,5 +49,3 @@ function HamburgerIcon({ toggleOpen }) {
     </div>
   );
 }
-
-export default HamburgerIcon;

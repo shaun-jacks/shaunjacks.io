@@ -3,11 +3,9 @@ import NavItem from "./NavItem";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
-import { Link } from "gatsby";
 import ToggleMode from "./ToggleMode";
 
-function TopDrawerPanel({ isOpen, siteTitle, menuLinks }) {
+export default function TopDrawerPanel({ isOpen, siteTitle, menuLinks }) {
   return (
     <div
       sx={{
@@ -54,5 +52,3 @@ function TopDrawerPanel({ isOpen, siteTitle, menuLinks }) {
     </div>
   );
 }
-
-export default TopDrawerPanel;

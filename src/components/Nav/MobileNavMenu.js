@@ -6,9 +6,9 @@ import TopDrawer from "./TopDrawer";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { lighten } from "@theme-ui/color";
 
-function MobileNavMenu({ siteTitle, menuLinks }) {
+export default function MobileNavMenu({ siteTitle, menuLinks }) {
   const [isOpen, setOpen] = React.useState(false);
   const toggleOpen = () => {
     setOpen(!isOpen);
@@ -51,5 +51,3 @@ function MobileNavMenu({ siteTitle, menuLinks }) {
     </div>
   );
 }
-
-export default MobileNavMenu;

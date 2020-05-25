@@ -9,7 +9,13 @@ import TopDrawerPanel from "./TopDrawerPanel";
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-function TopDrawer({ siteTitle, navHeight, isOpen, toggleOpen, menuLinks }) {
+export default function TopDrawer({
+  siteTitle,
+  navHeight,
+  isOpen,
+  toggleOpen,
+  menuLinks,
+}) {
   return (
     isOpen && (
       <div
@@ -31,5 +37,3 @@ function TopDrawer({ siteTitle, navHeight, isOpen, toggleOpen, menuLinks }) {
     )
   );
 }
-
-export default TopDrawer;
