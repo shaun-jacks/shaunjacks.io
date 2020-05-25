@@ -37,6 +37,7 @@ export default class PostTemplate extends React.Component {
     const postWip = [];
     postNodeWip.forEach((post) => {
       postWip.push({
+        path: slug,
         category: post.frontmatter.category,
         cover: post.frontmatter.cover,
         timeToRead: post.timeToRead,
