@@ -2,7 +2,6 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../layout";
-import SimplePostListing from "../components/Post/SimplePostListing";
 import PostListing from "../components/Post/PostListing";
 import SEO from "../components/SEO/SEO";
 import BigAvatar from "../components/Avatar/BigAvatar";

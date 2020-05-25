@@ -2,7 +2,7 @@
 import { Styled, jsx, Card } from "theme-ui";
 import React, { Fragment } from "react";
 import { Link } from "gatsby";
-import PostHeaderLong from "./PostHeaderLong";
+import PostHeader from "./PostHeader";
 import PostCard from "./PostCard";
 import { Divider } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
@@ -37,8 +37,7 @@ class PostListing extends React.Component {
           margin: "auto",
         }}
       >
-        {/* Your post list here. */
-        postList.map((post, i) => (
+        {postList.map((post, i) => (
           <PostCard post={post} />
         ))}
       </div>

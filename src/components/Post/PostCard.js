@@ -3,7 +3,7 @@ import _ from "lodash";
 import { Link } from "gatsby";
 import PostTitle from "./PostTitle";
 import PostCover from "./PostCover";
-import PostHeaderLong from "./PostHeaderLong";
+import PostHeader from "./PostHeader";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
@@ -34,7 +34,7 @@ function PostCard(props) {
         >
           <div sx={{ mt: 0, ml: 2 }}>
             <PostTitle post={post} />
-            <PostHeaderLong post={post} />
+            <PostHeader post={post} />
           </div>
           <div
             sx={{
