@@ -17,7 +17,6 @@ export default function Blog({ data: { allMdx } }) {
 
   function handleChange(event) {
     const newSearchVal = event.target.value;
-    console.log(newSearchVal);
     const updatedPosts = allMdx.edges.filter(
       (post) =>
         post.node.frontmatter.title
