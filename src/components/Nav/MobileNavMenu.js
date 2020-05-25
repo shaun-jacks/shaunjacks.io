@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import HamburgerIcon from "./HamburgerIcon";
-import ToogleMode from "./ToogleMode";
+import ToggleMode from "./ToggleMode";
 import TopDrawer from "./TopDrawer";
 
 /** @jsx jsx */

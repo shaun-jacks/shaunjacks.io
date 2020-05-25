@@ -71,9 +71,8 @@ export default class PostTemplate extends React.Component {
             <SmallAvatar />
           </div>
           {/* <SocialLinks postPath={slug} postNode={postNode} /> */}
-          {/* this is for Disqus implemetation (that I am not using...but fell free to use) */}
           {/* <UserInfo config={config} /> */}
-          {/* <Disqus postNode={postNode} /> */}
+          <Disqus postNode={postNode} />
         </div>
       </Layout>
     );

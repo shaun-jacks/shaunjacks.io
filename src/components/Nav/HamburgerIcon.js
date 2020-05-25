@@ -34,7 +34,7 @@ function HamburgerIcon({ toggleOpen }) {
           },
         },
         "span:nth-child(1)": {
-          top: "42%",
+          top: "40%",
           height: "2px",
         },
         "span:nth-child(3)": {
