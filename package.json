@@ -42,7 +42,6 @@
     "moment": "^2.24.0",
     "prismjs": "^1.20.0",
     "react": "^16.11.0",
-    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "react-share": "^3.0.1",
@@ -75,7 +74,7 @@
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths",
     "dev": "npm run develop",
     "serve": "gatsby serve",
     "build": "gatsby build",
