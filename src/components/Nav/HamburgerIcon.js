@@ -33,11 +33,11 @@ export default function HamburgerIcon({ toggleOpen }) {
             backgroundColor: lighten("primary", 0.3),
           },
         },
-        "span:nth-child(1)": {
+        "span:nth-of-type(1)": {
           top: "40%",
           height: "2px",
         },
-        "span:nth-child(3)": {
+        "span:nth-of-type(3)": {
           top: "60%",
           height: "2px",
         },

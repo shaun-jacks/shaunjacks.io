@@ -33,8 +33,8 @@ export default function WideNavMenu({ menuLinks, siteTitle }) {
         <div sx={{ pl: "1rem" }}>{siteTitle}</div>
       </Link>
       <div style={{ display: `flex`, alignItems: `center` }}>
-        {menuLinks.map((link) => {
-          return <NavItem link={link} />;
+        {menuLinks.map((link, i) => {
+          return <NavItem key={i} link={link} />;
         })}
         <ToggleMode />
       </div>

@@ -27,7 +27,7 @@ export default function PostListing({ postEdges }) {
       }}
     >
       {getPostList().map((post, i) => (
-        <PostCard post={post} />
+        <PostCard key={i} post={post} />
       ))}
     </div>
   );

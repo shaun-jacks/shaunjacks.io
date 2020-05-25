@@ -45,6 +45,7 @@ function PostHeader({ post }) {
                 sx={{ marginLeft: 2 }}
                 tag={tag}
                 index={i}
+                key={i}
                 length={post.tags.length}
               />
             );

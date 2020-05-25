@@ -41,7 +41,7 @@ export default function TopDrawerPanel({ isOpen, siteTitle, menuLinks }) {
         >
           <NavItem link={{ name: "Home", url: "/" }} />
           {menuLinks.map((link) => {
-            return <NavItem link={link} />;
+            return <NavItem key={link.url} link={link} />;
           })}
           <div sx={{ m: 3 }}>
             <ToggleMode />
