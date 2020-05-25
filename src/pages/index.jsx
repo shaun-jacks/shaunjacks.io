@@ -6,7 +6,6 @@ import PostListing from "../components/Post/PostListing";
 import SEO from "../components/SEO/SEO";
 import BigAvatar from "../components/Avatar/BigAvatar";
 import config from "../../data/SiteConfig";
-import AllCategories from "../components/Category/AllCategories";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
