@@ -6,18 +6,20 @@ import PostListing from "../components/Post/PostListing";
 import TagHeader from "../components/Tag/TagHeader";
 import config from "../../data/SiteConfig";
 
-export default class TagTemplate extends React.Component {
-  render() {
-    const { tag } = this.props.pageContext;
-    const postEdges = this.props.data.allMdx.edges;
-    return (
-      <Layout>
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
-        <TagHeader tag={tag} />
-        <PostListing postEdges={postEdges} />
-      </Layout>
-    );
-  }
+export default function TagTemplate({
+  pageContext,
+  data: {
+    allMdx: { edges: postEdges },
+  },
+}) {
+  const { tag } = pageContext;
+  return (
+    <Layout>
+      <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+      <TagHeader tag={tag} />
+      <PostListing postEdges={postEdges} />
+    </Layout>
+  );
 }
 
 /* eslint no-undef: "off" */

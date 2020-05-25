@@ -8,18 +8,14 @@ import config from "../../data/SiteConfig";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-class About extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <Helmet title={config.siteTitle} />
-        <SEO />
-        <section>
-          <BigAvatar />
-        </section>
-      </Layout>
-    );
-  }
+export default function About() {
+  return (
+    <Layout>
+      <Helmet title={config.siteTitle} />
+      <SEO />
+      <section>
+        <BigAvatar />
+      </section>
+    </Layout>
+  );
 }
-
-export default About;
