@@ -1,7 +1,8 @@
 import React from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
-import CardTag from "./PostTag";
+import PostTag from "./PostTag";
+import { CommentCount } from "disqus-react";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -9,6 +10,14 @@ import { darken, lighten } from "@theme-ui/color";
 
 const PostHeaderLong = (props) => {
   const { post } = props;
+
+  const disqusConfig = {
+    shortname: process.env.disqusShortName,
+    config: {
+      identifier: post.path,
+      title: post.title,
+    },
+  };
 
   return (
     <div sx={{ mb: `-1px`, ml: 2, mr: 3 }}>
@@ -34,7 +43,7 @@ const PostHeaderLong = (props) => {
         >
           {post.tags.map((tag, i) => {
             return (
-              <CardTag
+              <PostTag
                 sx={{ marginLeft: 2 }}
                 tag={tag}
                 index={i}
@@ -42,6 +51,38 @@ const PostHeaderLong = (props) => {
               />
             );
           })}
+          {"•"}
+          <Link
+            sx={{
+              color: `text`,
+              textDecoration: `none`,
+              boxSizing: `content-box`,
+              display: `inline-block`,
+              mt: 1,
+              ml: 1,
+              pr: 1,
+              fontSize: "10px",
+              transition: "all .3s ease",
+              "&:hover": {
+                cursor: "pointer",
+                color: lighten("primary", 0.2),
+              },
+            }}
+            to={post.path + `#disqus_thread`}
+          >
+            <CommentCount {...disqusConfig} />
+          </Link>
+          {"•"}
+          <small
+            sx={{
+              fontSize: "10px",
+              ml: 1,
+              mt: 2,
+            }}
+          >
+            {post.timeToRead}
+            {" min"}
+          </small>
         </div>
       </div>
     </div>

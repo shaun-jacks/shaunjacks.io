@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { Styled, jsx } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-class CardTag extends Component {
+class PostTag extends Component {
   render() {
     const { tag, index, length } = this.props;
     return (
@@ -34,4 +34,4 @@ class CardTag extends Component {
   }
 }
 
-export default CardTag;
+export default PostTag;
