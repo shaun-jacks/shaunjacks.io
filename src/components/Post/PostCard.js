@@ -7,7 +7,6 @@ import PostHeader from "./PostHeader";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
 
 function PostCard(props) {
   const { post } = props;

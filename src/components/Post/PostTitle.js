@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { lighten } from "@theme-ui/color";
 
 function PostTitle(props) {
   const { post } = props;

@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 /** @jsx jsx */
-import { Styled, jsx, Card } from "theme-ui";
+import { Styled, jsx } from "theme-ui";
 
 function PostCover(props) {
   const { post } = props;

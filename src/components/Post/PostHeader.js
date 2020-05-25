@@ -6,11 +6,9 @@ import { CommentCount } from "disqus-react";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { lighten } from "@theme-ui/color";
 
-const PostHeader = (props) => {
-  const { post } = props;
-
+function PostHeader({ post }) {
   const disqusConfig = {
     shortname: process.env.disqusShortName,
     config: {
@@ -87,6 +85,6 @@ const PostHeader = (props) => {
       </div>
     </div>
   );
-};
+}
 
 export default PostHeader;

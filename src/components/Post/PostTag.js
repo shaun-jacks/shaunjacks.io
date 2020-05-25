@@ -3,7 +3,7 @@ import _ from "lodash";
 import { Link } from "gatsby";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { lighten } from "@theme-ui/color";
 
 function PostTag({ tag, index, length }) {
   return (
