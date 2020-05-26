@@ -2,8 +2,7 @@ import React from "react";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-const TagHeader = props => {
-  const { tag } = props;
+export default function TagHeader({ tag }) {
   return (
     <Styled
       sx={{
@@ -11,7 +10,7 @@ const TagHeader = props => {
         textAlign: `center`,
         alignItems: `baseline`,
         color: `primary`,
-        mx: `auto`
+        mx: `auto`,
       }}
     >
       <div
@@ -19,7 +18,7 @@ const TagHeader = props => {
           mx: `auto`,
           display: `flex`,
           textAlign: `center`,
-          alignItems: `baseline`
+          alignItems: `baseline`,
         }}
       >
         <Styled.h2 sx={{ fontSize: `10`, mr: 3 }}>
@@ -32,7 +31,7 @@ const TagHeader = props => {
             boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.5)`,
             p: `5px`,
             borderRadius: `4px`,
-            boxSizing: `content-box`
+            boxSizing: `content-box`,
           }}
         >
           {tag}
@@ -40,6 +39,4 @@ const TagHeader = props => {
       </div>
     </Styled>
   );
-};
-
-export default TagHeader;
+}

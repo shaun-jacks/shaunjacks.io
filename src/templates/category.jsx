@@ -6,21 +6,22 @@ import PostListing from "../components/Post/PostListing";
 import CatHeader from "../components/Category/CatHeader";
 import config from "../../data/SiteConfig";
 
-export default class CategoryTemplate extends React.Component {
-  render() {
-    const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMdx.edges;
-    console.log(category);
-    return (
-      <Layout>
-        <Helmet
-          title={`Articles in category "${category}" | ${config.siteTitle}`}
-        />
-        <CatHeader category={category} />
-        <PostListing postEdges={postEdges} />
-      </Layout>
-    );
-  }
+export default function CategoryTemplate({
+  pageContext,
+  data: {
+    allMdx: { edges: postEdges },
+  },
+}) {
+  const { category } = pageContext;
+  return (
+    <Layout>
+      <Helmet
+        title={`Articles in category "${category}" | ${config.siteTitle}`}
+      />
+      <CatHeader category={category} />
+      <PostListing postEdges={postEdges} />
+    </Layout>
+  );
 }
 
 /* eslint no-undef: "off" */

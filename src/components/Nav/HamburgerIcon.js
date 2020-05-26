@@ -3,9 +3,9 @@ import { Link } from "gatsby";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { lighten } from "@theme-ui/color";
 
-function HamburgerIcon({ toggleOpen }) {
+export default function HamburgerIcon({ toggleOpen }) {
   return (
     <div
       onClick={toggleOpen}
@@ -33,11 +33,11 @@ function HamburgerIcon({ toggleOpen }) {
             backgroundColor: lighten("primary", 0.3),
           },
         },
-        "span:nth-child(1)": {
+        "span:nth-of-type(1)": {
           top: "40%",
           height: "2px",
         },
-        "span:nth-child(3)": {
+        "span:nth-of-type(3)": {
           top: "60%",
           height: "2px",
         },
@@ -49,5 +49,3 @@ function HamburgerIcon({ toggleOpen }) {
     </div>
   );
 }
-
-export default HamburgerIcon;

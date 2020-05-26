@@ -44,7 +44,7 @@ const config = {
   ],
   menuLinks: [
     {
-      name: "Me",
+      name: "About",
       url: "/about",
     },
     {

@@ -1,13 +1,12 @@
 import React from "react";
 import { useColorMode, css } from "theme-ui";
 import sun from "../../images/sun.svg";
-import moon from "../../images/moon.svg";
 import night from "../../images/brightness_2-white-18dp.svg";
 
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-function ToggleMode() {
+export default function ToggleMode() {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === `dark`;
   const toggleColorMode = (e) => {
@@ -60,5 +59,3 @@ function ToggleMode() {
     </button>
   );
 }
-
-export default ToggleMode;

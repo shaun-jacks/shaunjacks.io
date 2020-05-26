@@ -2,14 +2,11 @@ import React from "react";
 import _ from "lodash";
 import siteConfig from "../../../data/SiteConfig";
 import FooterLink from "./FooterLink";
-import { Link } from "gatsby";
 
 /** @jsx jsx */
-import { Styled, jsx, Card } from "theme-ui";
+import { Styled, jsx } from "theme-ui";
 
-function Footer(props) {
-  // const { post } = props;
-
+export default function Footer() {
   return (
     <footer
       sx={{
@@ -53,5 +50,3 @@ function Footer(props) {
     </footer>
   );
 }
-
-export default Footer;

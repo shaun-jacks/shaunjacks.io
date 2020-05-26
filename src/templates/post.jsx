@@ -7,7 +7,7 @@ import "katex/dist/katex.min.css";
 import { Styled, jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
-import PostHeaderLong from "../components/Post/PostHeaderLong";
+import PostHeader from "../components/Post/PostHeader";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
@@ -37,6 +37,7 @@ export default class PostTemplate extends React.Component {
     const postWip = [];
     postNodeWip.forEach((post) => {
       postWip.push({
+        path: slug,
         category: post.frontmatter.category,
         cover: post.frontmatter.cover,
         timeToRead: post.timeToRead,
@@ -62,7 +63,7 @@ export default class PostTemplate extends React.Component {
           }}
         >
           <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
-          <PostHeaderLong post={postWip[0]} />
+          <PostHeader post={postWip[0]} />
           {post.cover && (
             <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
           )}

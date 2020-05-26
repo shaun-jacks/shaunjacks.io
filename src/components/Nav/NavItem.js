@@ -2,10 +2,10 @@ import React from "react";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { lighten } from "@theme-ui/color";
 import { Link } from "gatsby";
 
-function NavItem({ link }) {
+export default function NavItem({ link }) {
   return (
     <Styled.h3
       key={link.url}
@@ -26,5 +26,3 @@ function NavItem({ link }) {
     </Styled.h3>
   );
 }
-
-export default NavItem;
