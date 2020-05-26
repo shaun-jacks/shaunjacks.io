@@ -5,7 +5,7 @@ import AvatarLinks from "./AvatarLinks";
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 
-const SmallAvatar = props => {
+const SmallAvatar = (props) => {
   const { avatar } = siteConfig;
   const { siteTitle } = siteConfig;
 
@@ -18,7 +18,7 @@ const SmallAvatar = props => {
           mb: 0,
           borderTop: `1px solid`,
           pt: "15px",
-          textAlign: `center`
+          textAlign: `center`,
         }}
       >
         {siteTitle}
@@ -27,7 +27,7 @@ const SmallAvatar = props => {
       <div sx={{ display: `flex`, alignItems: `center`, mb: 2, mt: 2 }}>
         <img
           src={avatar.photo}
-          sx={{ width: 70, height: 70, borderRadius: 999, mr: `15px` }}
+          sx={{ width: 70, height: 70, borderRadius: "50%", mr: `15px` }}
         />
         <Styled.p>{avatar.description}</Styled.p>
       </div>
