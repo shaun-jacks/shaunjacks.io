@@ -1,67 +1,44 @@
 import React from "react";
-import github from "../../images/github.svg";
-import linkedin from "../../images/linkedin.svg";
-import mail from "../../images/mail.svg";
-import siteConfig from "../../../data/SiteConfig";
+
+import { IconContext } from "react-icons";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-
-const icons = [
-  { label: "linkedin", icon: linkedin },
-  { label: "github", icon: github },
-];
+import { lighten } from "@theme-ui/color";
 
 const AvatarLinks = (props) => {
-  const { userLinks } = siteConfig;
-  const { size } = props;
-
-  const newUserLinks = [];
-  icons.forEach((element) => {
-    const { icon } = element;
-    userLinks.forEach((link) => {
-      const { label } = link;
-      const { url } = link;
-      if (label === element.label) {
-        newUserLinks.push({
-          label: label,
-          url: url,
-          icon: icon,
-        });
-      }
-    });
-  });
-
-  let iconSize = "30px";
-  if (size === "small") {
-    iconSize = "20px";
-  }
-
-  const iconsAndLinks = (
-    <div sx={{ display: `flex` }}>
-      {newUserLinks.map((element) => {
-        return (
-          <div key={element.url} sx={{ mx: 2 }}>
-            <a href={element.url} target="_blank">
-              <img
-                src={element.icon}
-                sx={{
-                  width: iconSize,
-                  bg: `muted`,
-                  borderRadius: "10px",
-                  p: 1,
-                  ":hover": { bg: `secondary` },
-                }}
-              />
-            </a>
-          </div>
-        );
-      })}
-    </div>
-  );
+  const icons = [
+    {
+      url: "https://www.linkedin.com/in/shaun-jackson/",
+      icon: <FaLinkedinIn />,
+    },
+    {
+      url: "https://github.com/shaun-jacks",
+      icon: <FaGithub />,
+    },
+  ];
 
   return (
-    <div sx={{ margin: `auto`, textAlign: `center`, display: `table` }}>
-      {iconsAndLinks}
+    <div sx={{ display: "flex", justifyContent: "center" }}>
+      {icons.map((icon) => (
+        <Styled.a
+          href={icon.url}
+          sx={{
+            mr: 2,
+            p: 1,
+            textDecoration: "none",
+            color: "inherit",
+            borderRadius: "2px",
+            transition: "all .3s ease",
+            ":hover": { bg: lighten("primary", 0.1), cursor: "pointer" },
+          }}
+        >
+          <IconContext.Provider value={{ size: "1.25em" }}>
+            {icon.icon}
+          </IconContext.Provider>
+        </Styled.a>
+      ))}
     </div>
   );
 };

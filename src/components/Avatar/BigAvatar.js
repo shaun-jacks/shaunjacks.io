@@ -6,7 +6,7 @@ import siteConfig from "../../../data/SiteConfig";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-const BigAvatar = props => {
+const BigAvatar = (props) => {
   const { avatar } = siteConfig;
 
   return (
@@ -27,8 +27,8 @@ const BigAvatar = props => {
               ":hover": {
                 bg: `muted`,
                 p: 1,
-                borderRadius: `5px`
-              }
+                borderRadius: `5px`,
+              },
             }}
           >
             Shaun
