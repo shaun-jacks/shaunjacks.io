@@ -2,8 +2,11 @@ import React from "react";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-const CatHeader = props => {
-  const { category } = props;
+interface CatHeaderProps {
+  category: string;
+}
+
+export default function CatHeader({ category }: CatHeaderProps) {
   return (
     <Styled
       sx={{
@@ -11,7 +14,7 @@ const CatHeader = props => {
         textAlign: `center`,
         alignItems: `baseline`,
         color: `primary`,
-        mx: `auto`
+        mx: `auto`,
       }}
     >
       <div
@@ -19,7 +22,7 @@ const CatHeader = props => {
           mx: `auto`,
           display: `flex`,
           textAlign: `center`,
-          alignItems: `baseline`
+          alignItems: `baseline`,
         }}
       >
         <Styled.h2 sx={{ color: `primary`, fontSize: `10`, mr: 2 }}>
@@ -35,7 +38,7 @@ const CatHeader = props => {
             px: `4px`,
             borderRadius: `5px`,
             p: 1,
-            mr: 2
+            mr: 2,
           }}
         >
           {category}
@@ -43,6 +46,4 @@ const CatHeader = props => {
       </div>
     </Styled>
   );
-};
-
-export default CatHeader;
+}
