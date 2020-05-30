@@ -23,6 +23,7 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-typescript",
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -92,12 +93,6 @@ module.exports = {
         rule: {
           include: /assets/,
         },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: config.googleAnalyticsID,
       },
     },
     {
