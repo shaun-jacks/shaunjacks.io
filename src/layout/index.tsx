@@ -1,5 +1,5 @@
-import React from "react";
-import Helmet from "react-helmet";
+import React, { FunctionComponent } from "react";
+import { Helmet } from "react-helmet";
 import config from "../../data/SiteConfig";
 import NavMenu from "../components/Nav/NavMenu";
 import Footer from "../components/Footer/Footer";
@@ -8,7 +8,11 @@ import "./index.css";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-export default function MainLayout({ children }) {
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div
       sx={{
