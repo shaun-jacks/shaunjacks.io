@@ -4,13 +4,12 @@ import { Link } from "gatsby";
 import PostTitle from "./PostTitle";
 import PostCover from "./PostCover";
 import PostHeader from "./PostHeader";
+import { PostProps } from "./Post.model";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
 
-function PostCard(props) {
-  const { post } = props;
-
+function PostCard({ post }: PostProps) {
   return (
     <div
       sx={{

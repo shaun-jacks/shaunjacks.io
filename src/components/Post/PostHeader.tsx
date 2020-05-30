@@ -7,11 +7,13 @@ import { CommentCount } from "disqus-react";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
+import { PostProps } from "./Post.model";
 
-function PostHeader({ post }) {
+function PostHeader({ post }: PostProps) {
   const disqusConfig = {
-    shortname: process.env.disqusShortName,
+    shortname: process.env.disqusShortName as string,
     config: {
+      url: "",
       identifier: post.path,
       title: post.title,
     },

@@ -4,10 +4,11 @@ import { Link } from "gatsby";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
+import { PostTagProps } from "./Post.model";
 
-function PostTag({ tag, index, length }) {
+export default function PostTag({ tag, index, length }: PostTagProps) {
   return (
-    <Styled.p
+    <Link
       sx={{
         color: `primary`,
         textDecoration: `none`,
@@ -22,13 +23,12 @@ function PostTag({ tag, index, length }) {
           color: lighten("primary", 0.2),
         },
       }}
-      as={Link}
       to={`/tags/${_.kebabCase(tag)}/`}
     >
-      {tag}
-      {index === length - 1 ? "" : ", "}
-    </Styled.p>
+      <Styled.p>
+        {tag}
+        {index === length - 1 ? "" : ", "}
+      </Styled.p>
+    </Link>
   );
 }
-
-export default PostTag;

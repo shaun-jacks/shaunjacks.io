@@ -5,16 +5,15 @@ import { Link } from "gatsby";
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
 import { lighten } from "@theme-ui/color";
+import { PostProps } from "./Post.model";
 
-function PostTitle(props) {
-  const { post } = props;
-
+export default function PostTitle({ post }: PostProps) {
   return (
     <Styled.h2 sx={{ my: 1, ml: 2 }}>
-      <Styled.a
-        as={Link}
+      <Link
         to={post.path}
         sx={{
+          color: "primary",
           textDecoration: `none`,
           transition: "all .3s ease",
           "&:hover": {
@@ -24,9 +23,7 @@ function PostTitle(props) {
         }}
       >
         {post.title}
-      </Styled.a>
+      </Link>
     </Styled.h2>
   );
 }
-
-export default PostTitle;

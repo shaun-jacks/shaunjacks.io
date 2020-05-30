@@ -2,8 +2,10 @@
 import { Styled, jsx } from "theme-ui";
 import React, { Fragment } from "react";
 import PostCard from "./PostCard";
+import { PostEdge } from "./Post.model";
+import { PostListingProps } from "./Post.model";
 
-export default function PostListing({ postEdges }) {
+export default function PostListing({ postEdges }: PostListingProps) {
   function getPostList() {
     return postEdges.map((postEdge) => ({
       path: postEdge.node.fields.slug,
