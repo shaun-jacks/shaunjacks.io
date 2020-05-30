@@ -65,3 +65,5 @@ bundle-stats.json
 .env.*
 
 .DS_Store
+
+launch.json

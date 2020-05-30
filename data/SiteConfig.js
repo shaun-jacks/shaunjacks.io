@@ -3,7 +3,7 @@ const config = {
   siteTitleShort: "shaunjacks.io", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Shaun Jackson Blog", // Alternative site title for SEO.
   siteLogo: "", // Logo used for SEO and manifest.
-  siteUrl: "https://shaunjacks.com/", // Domain of your website without pathPrefix.
+  siteUrl: "https://shaunjacks.io/", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Software Engineering and Data Science blog", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
@@ -15,7 +15,7 @@ const config = {
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "DD/MM/YYYY", // Date format for display.
   userName: "Shaun Jackson", // Username to display in the author segment.
-  userEmail: "shaun@shaunjacks.com", // Email used for RSS feed's author segment
+  userEmail: "shaunbjackson@gmail.com", // Email used for RSS feed's author segment
   userTwitter: "", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Newport Beach, CA", // User location to display in the author segment.
   userAvatar: "", // User avatar to display in the author segment.
@@ -36,10 +36,6 @@ const config = {
     {
       label: "linkedin",
       url: "https://www.linkedin.com/in/shaun-jackson/",
-    },
-    {
-      label: "email",
-      url: "mailto:shaunbjackson@gmail.com",
     },
   ],
   menuLinks: [
