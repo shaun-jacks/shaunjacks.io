@@ -5,7 +5,15 @@ import NavItem from "./NavItem";
 import { Styled, jsx } from "theme-ui";
 import ToggleMode from "./ToggleMode";
 
-export default function TopDrawerPanel({ isOpen, siteTitle, menuLinks }) {
+interface TopDrawerPanelProps {
+  isOpen: boolean;
+  menuLinks: { url: string; name: string }[];
+}
+
+export default function TopDrawerPanel({
+  isOpen,
+  menuLinks,
+}: TopDrawerPanelProps) {
   return (
     <div
       sx={{

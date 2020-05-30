@@ -7,7 +7,15 @@ import NavItem from "./NavItem";
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 
-export default function WideNavMenu({ menuLinks, siteTitle }) {
+interface WideNavMenuProps {
+  siteTitle: string;
+  menuLinks: { url: string; name: string }[];
+}
+
+export default function WideNavMenu({
+  menuLinks,
+  siteTitle,
+}: WideNavMenuProps) {
   return (
     <nav
       sx={{

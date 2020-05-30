@@ -5,7 +5,11 @@ import { Link } from "gatsby";
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 
-export default function HamburgerIcon({ toggleOpen }) {
+interface HamburgerIconProps {
+  toggleOpen: () => void;
+}
+
+export default function HamburgerIcon({ toggleOpen }: HamburgerIconProps) {
   return (
     <div
       onClick={toggleOpen}

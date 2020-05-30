@@ -6,7 +6,11 @@ import MobileNavMenu from "./MobileNavMenu";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-export default function NavMenu({ menuLinks }) {
+interface NavMenuProps {
+  menuLinks: { url: string; name: string }[];
+}
+
+export default function NavMenu({ menuLinks }: NavMenuProps) {
   const { siteTitle } = siteConfig;
   const navHeight = "45px";
   return (

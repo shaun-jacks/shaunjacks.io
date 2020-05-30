@@ -9,7 +9,7 @@ import { jsx } from "theme-ui";
 export default function ToggleMode() {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === `dark`;
-  const toggleColorMode = (e) => {
+  const toggleColorMode = (e: any) => {
     setColorMode(isDark ? `light` : `dark`);
   };
 
