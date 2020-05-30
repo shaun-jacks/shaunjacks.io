@@ -1,9 +1,9 @@
-import oceanic from "@theme-ui/prism/presets/oceanic-next";
-import nightOwl from "@theme-ui/prism/presets/night-owl.json";
-import github from "@theme-ui/prism/presets/github.json";
-import dracula from "@theme-ui/prism/presets/dracula.json";
+// import oceanic from "@theme-ui/prism/presets/oceanic-next";
+// import nightOwl from "@theme-ui/prism/presets/night-owl.json";
+// import github from "@theme-ui/prism/presets/github.json";
+// import dracula from "@theme-ui/prism/presets/dracula.json";
 import vsDark from "@theme-ui/prism/presets/vs-dark.json";
-import prism from "@theme-ui/prism/presets/theme-ui";
+// import prism from "@theme-ui/prism/presets/theme-ui";
 
 const grey90 = `#232129`;
 const black80 = `#1B1F23`;

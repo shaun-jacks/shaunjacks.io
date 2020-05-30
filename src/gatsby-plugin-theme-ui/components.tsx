@@ -18,6 +18,6 @@ import "prismjs/components/prism-java";
 import "prismjs/components/prism-jsx";
 
 export default {
-  pre: props => props.children,
-  code: props => <ThemeUIPrism {...props} Prism={PrismCore} />
+  pre: (props: any) => props.children,
+  code: (props: any) => <ThemeUIPrism {...props} Prism={PrismCore} />,
 };
