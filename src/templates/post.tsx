@@ -12,12 +12,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import SmallAvatar from "../components/Avatar/SmallAvatar";
 import Disqus from "../components/Disqus/Disqus";
-import {
-  PostEdge,
-  PostNode,
-  PostFrontmatter,
-  Post,
-} from "../components/Post/Post.model";
+import { PostNode, PostFrontmatter, Post } from "../components/Post/Post.model";
 
 interface PostTemplateFrontmatter extends PostFrontmatter {
   id?: string;
@@ -42,31 +37,20 @@ export default function PostTemplate({
   pageContext: { slug },
   data: { mdx: postNode },
 }: PostTemplateProps) {
-  const post = postNode.frontmatter;
-  if (!post.id) {
-    post.id = slug;
-  }
-  if (!post.category_id) {
-    post.category_id = config.postDefaultCategoryID;
-  }
-
-  //transforming my data from post into and Array so that I can loop through it
-  const postNodeWip = [];
-  postNodeWip.push(postNode);
-
-  const postWip: Post[] = [];
-  postNodeWip.forEach((post) => {
-    postWip.push({
-      path: slug,
-      category: post.frontmatter.category,
-      cover: post.frontmatter.cover,
-      timeToRead: post.timeToRead,
-      tags: post.frontmatter.tags,
-      date: post.fields.date,
-      title: post.frontmatter.title,
-      excerpt: post.excerpt,
-    });
-  });
+  const post: Post = {
+    id: postNode.frontmatter.id ? postNode.frontmatter.id : slug,
+    categoryId: postNode.frontmatter.category_id
+      ? postNode.frontmatter.category_id
+      : config.postDefaultCategoryID,
+    path: slug,
+    category: postNode.frontmatter.category,
+    cover: postNode.frontmatter.cover,
+    timeToRead: postNode.timeToRead,
+    tags: postNode.frontmatter.tags,
+    date: postNode.fields.date,
+    title: postNode.frontmatter.title,
+    excerpt: postNode.excerpt,
+  };
 
   return (
     <Layout>
@@ -85,7 +69,7 @@ export default function PostTemplate({
         }}
       >
         <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
-        <PostHeader post={postWip[0]} />
+        <PostHeader post={post} />
         {post.cover && (
           <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
         )}

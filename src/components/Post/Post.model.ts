@@ -7,6 +7,8 @@ export interface PostProps {
 }
 
 export interface Post {
+  id?: string;
+  categoryId?: string;
   path: string;
   tags: string[];
   cover: any;
