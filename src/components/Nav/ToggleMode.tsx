@@ -7,10 +7,9 @@ import night from "../../images/brightness_2-white-18dp.svg";
 import { jsx } from "theme-ui";
 
 export default function ToggleMode() {
-  const [colorMode, setColorMode] = useColorMode();
-  const isDark = colorMode === `dark`;
+  const [colorMode, setColorMode] = useColorMode("dark" as string);
   const toggleColorMode = (e: any) => {
-    setColorMode(isDark ? `light` : `dark`);
+    setColorMode(colorMode === "default" ? `light` : `default`);
   };
 
   const nigthMode = (
@@ -55,7 +54,7 @@ export default function ToggleMode() {
       title="Toggle Dark Mode"
     >
       {" "}
-      {isDark ? <div>{nigthMode}</div> : <div>{dayMode}</div>}
+      {colorMode === "default" ? <div>{nigthMode}</div> : <div>{dayMode}</div>}
     </button>
   );
 }
