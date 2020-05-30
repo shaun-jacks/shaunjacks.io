@@ -21,7 +21,6 @@ export default function ToggleMode() {
       role="presentation"
       style={{
         pointerEvents: `none`,
-        margin: 4,
       }}
     />
   );
@@ -35,7 +34,6 @@ export default function ToggleMode() {
       role="presentation"
       style={{
         pointerEvents: `none`,
-        margin: 4,
       }}
     />
   );
@@ -48,8 +46,8 @@ export default function ToggleMode() {
         cursor: `pointer`,
         border: `none`,
         outline: `none`,
-        pr: "1rem",
-        py: 0,
+        p: 0,
+        mx: 3,
       }}
       title="Toggle Dark Mode"
     >
