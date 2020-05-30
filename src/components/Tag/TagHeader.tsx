@@ -2,7 +2,11 @@ import React from "react";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-export default function TagHeader({ tag }) {
+interface TagHeaderProps {
+  tag: string;
+}
+
+export default function TagHeader({ tag }: TagHeaderProps) {
   return (
     <Styled
       sx={{
