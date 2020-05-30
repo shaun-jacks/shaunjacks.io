@@ -1,17 +1,30 @@
 import React from "react";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../layout";
 import PostListing from "../components/Post/PostListing";
 import SEO from "../components/SEO/SEO";
-import BigAvatar from "../components/Avatar/BigAvatar";
 import config from "../../data/SiteConfig";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
+import { PostEdge } from "../components/Post/Post.model";
 
-export default function Index({ data: { mostRecent, mostPopular } }) {
+interface IndexProps {
+  data: {
+    mostRecent: {
+      edges: PostEdge[];
+    };
+    mostPopular: {
+      edges: PostEdge[];
+    };
+  };
+}
+
+export default function Index({
+  data: { mostRecent, mostPopular },
+}: IndexProps) {
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
@@ -33,8 +46,7 @@ export default function Index({ data: { mostRecent, mostPopular } }) {
           <a
             href="https://shaunjacks.substack.com"
             sx={{
-              padding: "1em",
-              borderRadius: ".5rem",
+              borderRadius: "5px",
               textDecoration: "none",
               color: "background",
               cursor: "pointer",
@@ -42,10 +54,9 @@ export default function Index({ data: { mostRecent, mostPopular } }) {
               backgroundColor: "primary",
               border: "3px solid text",
               borderColor: "primary",
-              borderRadius: "5px",
               borderWidth: "1px",
-              padding: "4px 11px",
               fontSize: "16px",
+              padding: "4px 11px",
               boxShadow: "0 2px 0 rgba(0,0,0,.045)",
               transition: "all .3s ease",
               "&:focus, &:hover": {
@@ -84,8 +95,7 @@ export default function Index({ data: { mostRecent, mostPopular } }) {
         <PostListing postEdges={mostRecent.edges} />
       </section>
       <section sx={{ display: "flex", justifyContent: "center" }}>
-        <Styled
-          as={Link}
+        <Link
           to={"/blog"}
           sx={{
             margin: `auto`,
@@ -101,7 +111,7 @@ export default function Index({ data: { mostRecent, mostPopular } }) {
           }}
         >
           More posts...
-        </Styled>
+        </Link>
       </section>
     </Layout>
   );
