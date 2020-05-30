@@ -5,7 +5,7 @@ const _ = require("lodash");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 });
 
 const { createFilePath } = require("gatsby-source-filesystem");
@@ -27,7 +27,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         // Generated value based on filepath with "blog" prefix. you
         // don't need a separating "/" before the value because
         // createFilePath returns a path with the leading "/".
-        value: `/${_.kebabCase(node.frontmatter.title)}`
+        value: `/${_.kebabCase(node.frontmatter.title)}`,
       });
     } else {
       createNodeField({
@@ -38,7 +38,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         // Generated value based on filepath with "blog" prefix. you
         // don't need a separating "/" before the value because
         // createFilePath returns a path with the leading "/".
-        value: `/blog${value}`
+        value: `/blog${value}`,
       });
     }
   }
@@ -70,7 +70,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         createNodeField({
           node,
           name: "date",
-          value: date.toISOString()
+          value: date.toISOString(),
         });
       }
     }
@@ -82,10 +82,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions;
 
-  const postPage = path.resolve("src/templates/post.jsx");
-  const pagePage = path.resolve("src/templates/page.jsx");
-  const tagPage = path.resolve("src/templates/tag.jsx");
-  const categoryPage = path.resolve("src/templates/category.jsx");
+  const postPage = path.resolve("src/templates/post.tsx");
+  const pagePage = path.resolve("src/templates/page.tsx");
+  const tagPage = path.resolve("src/templates/tag.tsx");
+  const categoryPage = path.resolve("src/templates/category.tsx");
 
   const result = await graphql(`
     query {
@@ -116,12 +116,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const categorySet = new Set();
 
   postsEdges = result.data.allMdx.edges.filter(
-    edge => edge.node.frontmatter.template === "post"
+    (edge) => edge.node.frontmatter.template === "post"
   );
 
   postsEdges.forEach(({ node }, index) => {
     if (node.frontmatter.tags) {
-      node.frontmatter.tags.forEach(tag => {
+      node.frontmatter.tags.forEach((tag) => {
         tagSet.add(tag);
       });
     }
@@ -145,16 +145,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nexttitle: nextEdge.node.frontmatter.title,
         nextslug: nextEdge.node.fields.slug,
         prevtitle: prevEdge.node.frontmatter.title,
-        prevslug: prevEdge.node.fields.slug
-      }
+        prevslug: prevEdge.node.fields.slug,
+      },
     });
   });
 
   const pageEdges = result.data.allMdx.edges.filter(
     ({
       node: {
-        frontmatter: { template }
-      }
+        frontmatter: { template },
+      },
     }) => template === "page"
   );
 
@@ -167,28 +167,28 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: pagePage,
       context: {
         id: node.id,
-        slug: node.fields.slug
-      }
+        slug: node.fields.slug,
+      },
     });
   });
 
-  tagSet.forEach(tag => {
+  tagSet.forEach((tag) => {
     createPage({
       path: `/tags/${_.kebabCase(tag)}/`,
       component: tagPage,
       context: {
-        tag
-      }
+        tag,
+      },
     });
   });
 
-  categorySet.forEach(category => {
+  categorySet.forEach((category) => {
     createPage({
       path: `/categories/${_.kebabCase(category)}/`,
       component: categoryPage,
       context: {
-        category
-      }
+        category,
+      },
     });
   });
 };
