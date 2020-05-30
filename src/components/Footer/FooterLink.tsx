@@ -5,9 +5,12 @@ import _ from "lodash";
 import { Styled, jsx, Card } from "theme-ui";
 import { darken, lighten } from "@theme-ui/color";
 
-export default function FooterLink(props) {
-  const { url, label } = props;
+interface FooterLinkProps {
+  url: string;
+  label: string;
+}
 
+export default function FooterLink({ url, label }: FooterLinkProps) {
   return (
     <a
       sx={{
