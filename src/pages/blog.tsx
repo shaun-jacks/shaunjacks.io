@@ -6,7 +6,7 @@ import PostListing from "../components/Post/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
-import { BlogProps } from "./pages.model";
+import { BlogProps } from "./index";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";

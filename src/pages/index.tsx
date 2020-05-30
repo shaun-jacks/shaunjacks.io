@@ -11,6 +11,16 @@ import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 import { PostEdge } from "../components/Post/Post.model";
 
+export interface BlogProps {
+  data: {
+    allMdx: IndexEdges;
+  };
+}
+
+export interface IndexEdges {
+  edges: PostEdge[];
+}
+
 interface IndexProps {
   data: {
     mostRecent: {
