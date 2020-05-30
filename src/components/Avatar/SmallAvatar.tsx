@@ -5,12 +5,12 @@ import AvatarLinks from "./AvatarLinks";
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 
-const SmallAvatar = (props) => {
+export default function SmallAvatar() {
   const { avatar } = siteConfig;
   const { siteTitle } = siteConfig;
 
   return (
-    <>
+    <div>
       <Styled.h2
         sx={{
           mt: 5,
@@ -32,10 +32,8 @@ const SmallAvatar = (props) => {
         <Styled.p>{avatar.description}</Styled.p>
       </div>
       <div sx={{ textAlign: `left` }}>
-        <AvatarLinks size={"small"} />
+        <AvatarLinks />
       </div>
-    </>
+    </div>
   );
-};
-
-export default SmallAvatar;
+}

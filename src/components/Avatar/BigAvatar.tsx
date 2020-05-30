@@ -6,7 +6,7 @@ import siteConfig from "../../../data/SiteConfig";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-const BigAvatar = (props) => {
+export default function BigAvatar() {
   const { avatar } = siteConfig;
 
   return (
@@ -15,8 +15,7 @@ const BigAvatar = (props) => {
         <img src={avatar.photo} sx={{ width: 300, borderRadius: 999 }} />
         <Styled.h1 sx={{ color: `text` }}>
           Hello! I'm{" "}
-          <Styled
-            as={Link}
+          <Link
             to={"/about"}
             sx={{
               display: `inline`,
@@ -32,13 +31,11 @@ const BigAvatar = (props) => {
             }}
           >
             Shaun
-          </Styled>
+          </Link>
         </Styled.h1>
       </div>
       <AvatarLinks />
       <Styled.p sx={{ textAlign: "center" }}>{avatar.description}</Styled.p>
     </>
   );
-};
-
-export default BigAvatar;
+}

@@ -7,7 +7,7 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 
-const AvatarLinks = (props) => {
+export default function AvatarLinks() {
   const icons = [
     {
       url: "https://www.linkedin.com/in/shaun-jackson/",
@@ -41,5 +41,4 @@ const AvatarLinks = (props) => {
       ))}
     </div>
   );
-};
-export default AvatarLinks;
+}
