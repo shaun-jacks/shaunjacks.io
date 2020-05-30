@@ -37,9 +37,7 @@ export default function MainLayout({
           <html lang="en" />
         </Helmet>
         <NavMenu menuLinks={config.menuLinks} />
-        <div style={{ marginTop: `0`, marginBottom: `50px`, mx: "auto" }}>
-          {children}
-        </div>
+        <div style={{ margin: `0 auto 50px auto` }}>{children}</div>
       </Styled>
       <Footer />
     </div>
