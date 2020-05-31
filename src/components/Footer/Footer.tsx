@@ -55,7 +55,17 @@ export default function Footer() {
           <div className="row-container">
             <FooterLogos />
           </div>
-          <div sx={{ mx: 1 }}> {siteConfig.copyright} </div>
+          <div
+            sx={{
+              mx: 1,
+              display: "flex",
+              fontSize: "10px",
+              justifyContent: "flex-end",
+            }}
+          >
+            {" "}
+            {siteConfig.copyright}{" "}
+          </div>
         </div>
       </div>
     </footer>
