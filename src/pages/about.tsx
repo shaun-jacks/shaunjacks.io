@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../layout";
 import SEO from "../components/SEO/SEO";
-import { Link } from "gatsby";
 import config from "../../data/SiteConfig";
 import siteConfig from "../../data/SiteConfig";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
