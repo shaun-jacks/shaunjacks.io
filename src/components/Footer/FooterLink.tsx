@@ -2,8 +2,8 @@ import React from "react";
 import _ from "lodash";
 
 /** @jsx jsx */
-import { Styled, jsx, Card } from "theme-ui";
-import { darken, lighten } from "@theme-ui/color";
+import { Styled, jsx } from "theme-ui";
+import { lighten } from "@theme-ui/color";
 
 interface FooterLinkProps {
   url: string;
@@ -19,6 +19,7 @@ export default function FooterLink({ url, label }: FooterLinkProps) {
         pb: 2,
         textDecoration: "none",
         transition: "all .3s ease",
+        fontSize: "12px",
         "&:hover": { cursor: "pointer", color: lighten("secondary", 0.2) },
       }}
       href={url}

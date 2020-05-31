@@ -34,8 +34,8 @@ export default function TopDrawer({
             width: "100vw",
           }}
         >
-          <TopDrawerPanel menuLinks={menuLinks} isOpen={isOpen} />
-          <TopDrawerOverlay toggleOpen={toggleOpen} isOpen={isOpen} />
+          <TopDrawerPanel menuLinks={menuLinks} />
+          <TopDrawerOverlay toggleOpen={toggleOpen} />
         </div>
       )}
     </div>
