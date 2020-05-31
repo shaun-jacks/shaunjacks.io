@@ -2,6 +2,9 @@ import React from "react";
 import ToggleMode from "./ToggleMode";
 import { Link } from "gatsby";
 import NavItem from "./NavItem";
+import { IconContext } from "react-icons";
+import { MdSearch } from "react-icons/md";
+import Search from "../Search/Search";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -38,13 +41,28 @@ export default function WideNavMenu({
           },
         }}
       >
-        <div sx={{ pl: "1rem" }}>{siteTitle}</div>
+        <div sx={{ ml: 3, pl: 3 }}>{siteTitle}</div>
       </Link>
-      <div style={{ display: `flex`, alignItems: `center` }}>
+      <div style={{ display: `flex`, alignItems: `center`, maxHeight: "100%" }}>
         {menuLinks.map((link, i) => {
           return <NavItem key={i} link={link} />;
         })}
         <ToggleMode />
+        <div
+          sx={{
+            width: "100%",
+            my: "auto",
+            mr: 3,
+            ml: "1rem",
+            pt: ".1rem",
+            pr: 3,
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+        >
+          <Search />
+        </div>
       </div>
     </nav>
   );
