@@ -14,7 +14,7 @@ export default function FooterLink({ url, label }: FooterLinkProps) {
   return (
     <a
       sx={{
-        color: "secondary",
+        color: "primary",
         pr: 4,
         pb: 2,
         textDecoration: "none",
