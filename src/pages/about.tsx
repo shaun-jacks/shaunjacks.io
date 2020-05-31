@@ -38,7 +38,7 @@ export default function About() {
             - Software Engineering and Data Science.
           </Styled.p>
           <Styled.p>
-            You can find me in Southern California, either running in a
+            You can find me in Southern California, either running up a
             mountain, playing the guitar, or just reading/working with some
             coffee at home!
           </Styled.p>
