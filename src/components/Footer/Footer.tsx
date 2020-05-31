@@ -5,6 +5,8 @@ import FooterLink from "./FooterLink";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import AvatarLinks from "../Avatar/AvatarLinks";
+import FooterLogos from "./FooterLogos";
 
 export default function Footer() {
   return (
@@ -22,29 +24,38 @@ export default function Footer() {
           flexDirection: "column",
           maxWidth: `container`,
           m: "auto",
-        }}
-      >
-        <div
-          sx={{
+          pt: 3,
+          pb: 2,
+          fontSize: "12px",
+          ".row": {
             display: "flex",
             justifyContent: "space-between",
             alignItems: `center`,
             maxWidth: `container`,
             flexWrap: "wrap",
             px: 3,
-            py: 4,
-          }}
-        >
-          <div
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
+            pt: 1,
+          },
+          ".row-container": {
+            display: "flex",
+            justifyContent: "space-between",
+          },
+        }}
+      >
+        <div className="row">
+          <div className="row-container">
             <FooterLink url="https://patreon.com/shaunjacks" label="Patreon" />
             <FooterLink url="https://ko-fi.com/shaunjacks" label="Ko-Fi" />
           </div>
-          <div sx={{ mx: 1, fontSize: "12px" }}> {siteConfig.copyright} </div>
+          <div sx={{ mx: 1 }}>
+            <AvatarLinks />
+          </div>
+        </div>
+        <div className="row">
+          <div className="row-container">
+            <FooterLogos />
+          </div>
+          <div sx={{ mx: 1 }}> {siteConfig.copyright} </div>
         </div>
       </div>
     </footer>
