@@ -17,7 +17,11 @@ export default connectSearchBox(
   ({ refine, focus, setFocus }: InputSearchProps) => (
     <Styled sx={InputStyles(focus)}>
       {focus ? (
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <input
             type="text"
             placeholder="Search"
