@@ -15,6 +15,7 @@ import Disqus from "../components/Disqus/Disqus";
 import { PostNode, PostFrontmatter, Post } from "../components/Post/Post.model";
 import SubscribeButton from "../components/Buttons/Subscribe";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
+import Cookies from "js-cookie";
 
 interface PostTemplateFrontmatter extends PostFrontmatter {
   id?: string;
@@ -53,6 +54,7 @@ export default function PostTemplate({
     title: postNode.frontmatter.title,
     excerpt: postNode.excerpt,
   };
+  const CookiesEnabled = Cookies.get("CookieConsent");
 
   return (
     <Layout>
@@ -92,7 +94,10 @@ export default function PostTemplate({
           </div>
         </div>
 
-        <Disqus postNode={postNode} />
+        {CookiesEnabled && <Disqus postNode={postNode} />}
+        {!CookiesEnabled && (
+          <Styled.p>Enable Cookies to comment and refresh page...</Styled.p>
+        )}
       </div>
     </Layout>
   );
