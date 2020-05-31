@@ -13,6 +13,8 @@ import config from "../../data/SiteConfig";
 import SmallAvatar from "../components/Avatar/SmallAvatar";
 import Disqus from "../components/Disqus/Disqus";
 import { PostNode, PostFrontmatter, Post } from "../components/Post/Post.model";
+import SubscribeButton from "../components/Buttons/Subscribe";
+import AvatarLinks from "../components/Avatar/AvatarLinks";
 
 interface PostTemplateFrontmatter extends PostFrontmatter {
   id?: string;
@@ -74,9 +76,22 @@ export default function PostTemplate({
           <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
         )}
         <MDXRenderer>{postNode.body}</MDXRenderer>
-        <div sx={{ mt: "40px" }}>
+        <div
+          sx={{
+            mt: "40px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            p: "2em",
+          }}
+        >
           <SmallAvatar />
+          <SubscribeButton />
+          <div sx={{ mt: 4 }}>
+            <AvatarLinks />
+          </div>
         </div>
+
         <Disqus postNode={postNode} />
       </div>
     </Layout>
