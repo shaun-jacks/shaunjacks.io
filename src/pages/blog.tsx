@@ -30,7 +30,6 @@ export default function Blog({ data: { allMdx } }: BlogProps) {
           sx={{ width: "100%", display: "flex", alignItems: "center", mb: 3 }}
         ></div>
         <PostListing postEdges={allMdx.edges} />
-        <AvatarLinks />
       </Styled>
     </Layout>
   );
