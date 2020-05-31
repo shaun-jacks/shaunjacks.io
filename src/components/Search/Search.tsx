@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from "react";
-import { InstantSearch, Index, Hits } from "react-instantsearch-dom";
+import { InstantSearch, Index, Hits, PoweredBy } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import {
   HitsWrapper,
@@ -70,6 +70,21 @@ export default function Search({
                   <Styled.h2>Posts</Styled.h2>
                   <CustomStateResults />
                 </div>
+                <span
+                  sx={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    fontSize: "0.6em",
+                    mr: 4,
+                    a: {
+                      ml: 1,
+                      color: "primary",
+                    },
+                  }}
+                >
+                  Search by{` `}
+                  <a href="https://algolia.com">Algolia</a>
+                </span>
                 <Hits hitComponent={PostHit} />
               </div>
             </div>
