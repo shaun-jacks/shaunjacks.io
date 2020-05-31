@@ -14,7 +14,7 @@ export default function FooterLogos() {
         display: "flex",
         fontSize: "12px",
         alignItems: "center",
-        img: { mx: 2 },
+        img: { mx: 1 },
         a: {
           "&:hover": {
             cursor: "pointer",
@@ -27,8 +27,8 @@ export default function FooterLogos() {
         <img
           alt="Gatsby Logo"
           src={gatsbyLogo}
-          width="24"
-          height="24"
+          width="22"
+          height="22"
           role="presentation"
           style={{
             pointerEvents: `none`,
@@ -40,8 +40,8 @@ export default function FooterLogos() {
         <img
           alt="Typescript Logo"
           src={typescriptLogo}
-          width="24"
-          height="24"
+          width="22"
+          height="22"
           role="presentation"
           style={{
             backgroundColor: "#faf9f8",

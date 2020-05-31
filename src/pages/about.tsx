@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../layout";
 import SEO from "../components/SEO/SEO";
-import { Link } from "gatsby";
 import config from "../../data/SiteConfig";
 import siteConfig from "../../data/SiteConfig";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
@@ -38,7 +37,7 @@ export default function About() {
             - Software Engineering and Data Science.
           </Styled.p>
           <Styled.p>
-            You can find me in Southern California, either running in a
+            You can find me in Southern California, either running up a
             mountain, playing the guitar, or just reading/working with some
             coffee at home!
           </Styled.p>

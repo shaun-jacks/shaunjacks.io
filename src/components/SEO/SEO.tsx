@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import urljoin from "url-join";
 import config from "../../../data/SiteConfig";
+import Cookies from "js-cookie";
 
 class SEO extends Component<any, {}> {
   render() {
+    const CookiesEnabled = Cookies.get("CookieConsent");
     const { postNode, postPath, postSEO } = this.props;
     let title;
     let description;
@@ -106,19 +108,23 @@ class SEO extends Component<any, {}> {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
         {/*Global site tag (gtag.js) - Google Analytics*/}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsStreamTag}`}
-        />
-        <script>
-          {`
+        {CookiesEnabled && (
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsStreamTag}`}
+          />
+        )}
+        {CookiesEnabled && (
+          <script>
+            {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
         
           gtag('config', '${config.googleAnalyticsStreamTag}');
         `}
-        </script>
+          </script>
+        )}
       </Helmet>
     );
   }
