@@ -3,6 +3,7 @@ import _ from "lodash";
 import { Link } from "gatsby";
 import PostTag from "./PostTag";
 import { CommentCount } from "disqus-react";
+import Cookies from "js-cookie";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -18,6 +19,7 @@ function PostHeader({ post }: PostProps) {
       title: post.title,
     },
   };
+  const CookiesEnabled = Cookies.get("CookieConsent");
 
   return (
     <div sx={{ mb: `-1px`, ml: 2, mr: 3 }}>
@@ -53,27 +55,31 @@ function PostHeader({ post }: PostProps) {
             );
           })}
           {"•"}
-          <Link
-            sx={{
-              color: `text`,
-              textDecoration: `none`,
-              boxSizing: `content-box`,
-              display: `inline-block`,
-              mt: 1,
-              ml: 1,
-              pr: 1,
-              fontSize: "10px",
-              transition: "all .3s ease",
-              "&:hover": {
-                cursor: "pointer",
-                color: lighten("primary", 0.2),
-              },
-            }}
-            to={post.path + `#disqus_thread`}
-          >
-            <CommentCount {...disqusConfig} />
-          </Link>
-          {"•"}
+          {CookiesEnabled && (
+            <div>
+              <Link
+                sx={{
+                  color: `text`,
+                  textDecoration: `none`,
+                  boxSizing: `content-box`,
+                  display: `inline-block`,
+                  mt: 1,
+                  ml: 1,
+                  pr: 1,
+                  fontSize: "10px",
+                  transition: "all .3s ease",
+                  "&:hover": {
+                    cursor: "pointer",
+                    color: lighten("primary", 0.2),
+                  },
+                }}
+                to={post.path + `#disqus_thread`}
+              >
+                <CommentCount {...disqusConfig} />
+              </Link>
+              •
+            </div>
+          )}
           <small
             sx={{
               fontSize: "10px",
