@@ -6,14 +6,10 @@ import { Styled, jsx } from "theme-ui";
 import ToggleMode from "./ToggleMode";
 
 interface TopDrawerPanelProps {
-  isOpen: boolean;
   menuLinks: { url: string; name: string }[];
 }
 
-export default function TopDrawerPanel({
-  isOpen,
-  menuLinks,
-}: TopDrawerPanelProps) {
+export default function TopDrawerPanel({ menuLinks }: TopDrawerPanelProps) {
   return (
     <div
       sx={{
@@ -23,8 +19,6 @@ export default function TopDrawerPanel({
         backgroundColor: "panelBackground",
         color: "background",
         zIndex: 1000,
-        transformOrigin: "top",
-        transform: isOpen ? "scaleY(1)" : "scaleY(0)",
       }}
     >
       <div

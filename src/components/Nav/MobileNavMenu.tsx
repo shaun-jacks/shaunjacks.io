@@ -3,6 +3,9 @@ import { Link } from "gatsby";
 import HamburgerIcon from "./HamburgerIcon";
 import ToggleMode from "./ToggleMode";
 import TopDrawer from "./TopDrawer";
+import { IconContext } from "react-icons";
+import { MdSearch } from "react-icons/md";
+import Search from "../Search/Search";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -30,7 +33,8 @@ export default function MobileNavMenu({
         alignItems: `center`,
         maxWidth: `container`,
         height: "100%",
-        m: "auto",
+        my: "auto",
+        mr: 3,
       }}
     >
       <TopDrawer
@@ -55,7 +59,18 @@ export default function MobileNavMenu({
       >
         <div sx={{ flex: "1" }}>{siteTitle}</div>
       </Link>
-      <div sx={{ flex: "1", display: "flex", justifyContent: "flex-end" }} />
+      <div
+        sx={{
+          flex: "1",
+          display: "flex",
+          justifyContent: "flex-end",
+          "&:hover": {
+            cursor: "pointer",
+          },
+        }}
+      >
+        <Search />
+      </div>
     </div>
   );
 }

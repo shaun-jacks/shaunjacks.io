@@ -123,7 +123,7 @@ export default {
     panelText: lightWhite,
     primary: "#91d5ff",
     secondary: pink,
-    muted: opaqueLightWhite,
+    muted: "#2e2e2e",
     highlight: lightblue,
     heading: white,
     prism: {
@@ -137,7 +137,7 @@ export default {
         panelText: "text",
         primary: "#096dd9",
         secondary: pink,
-        muted: gray,
+        muted: "#eaeaea",
         highlight: opaqueLightYellow,
         heading: grey90,
       },
