@@ -24,15 +24,20 @@ export default function SmallAvatar() {
         {siteTitle}
       </Styled.h2>
 
-      <div sx={{ display: `flex`, alignItems: `center`, mb: 2, mt: 2 }}>
+      <div
+        sx={{
+          display: `flex`,
+          flexDirection: "column",
+          alignItems: `center`,
+          mb: 2,
+          mt: 3,
+        }}
+      >
         <img
           src={avatar.photo}
           sx={{ width: 70, height: 70, borderRadius: "50%", mr: `15px` }}
         />
         <Styled.p>{avatar.description}</Styled.p>
-      </div>
-      <div sx={{ textAlign: `left` }}>
-        <AvatarLinks />
       </div>
     </div>
   );
