@@ -1,12 +1,15 @@
 import React, { FunctionComponent } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "gatsby";
 import config from "../../data/SiteConfig";
 import NavMenu from "../components/Nav/NavMenu";
 import Footer from "../components/Footer/Footer";
+import CookieConsent from "react-cookie-consent";
 import "./index.css";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import PolicyBanner from "../components/PolicyBanner";
 
 export default function MainLayout({
   children,
@@ -37,7 +40,10 @@ export default function MainLayout({
           <html lang="en" />
         </Helmet>
         <NavMenu menuLinks={config.menuLinks} />
-        <div style={{ margin: `0 auto 50px auto` }}>{children}</div>
+        <div style={{ margin: `0 auto 50px auto` }}>
+          <PolicyBanner />
+          {children}
+        </div>
       </Styled>
       <Footer />
     </div>
