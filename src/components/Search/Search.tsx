@@ -1,10 +1,5 @@
-import React, { useState, useEffect, createRef, useMemo } from "react";
-import {
-  InstantSearch,
-  Index,
-  Hits,
-  connectStateResults,
-} from "react-instantsearch-dom";
+import React, { useState, useMemo, useRef } from "react";
+import { InstantSearch, Index, Hits } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import {
   HitsWrapper,
@@ -18,9 +13,17 @@ import CustomStateResults from "./CustomStateResults";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 
-export default function Search() {
+interface SearchProps {
+  setMobileNavOpen?: (val: boolean) => void;
+}
+
+export default function Search({
+  setMobileNavOpen = (val) => {},
+}: SearchProps) {
+  const ref = useRef<HTMLDivElement>();
   const [query, setQuery] = useState(``);
   const [focus, setFocus] = useState(false);
+
   const searchClient = useMemo(
     () =>
       algoliasearch(
@@ -30,7 +33,7 @@ export default function Search() {
     []
   );
   return (
-    <Styled>
+    <div onClick={() => setMobileNavOpen(false)}>
       <InstantSearch
         searchClient={searchClient}
         indexName={"Posts"}
@@ -77,6 +80,6 @@ export default function Search() {
           </div>
         )}
       </InstantSearch>
-    </Styled>
+    </div>
   );
 }

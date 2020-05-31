@@ -69,7 +69,7 @@ export default function MobileNavMenu({
           },
         }}
       >
-        <Search />
+        <Search setMobileNavOpen={setOpen} />
       </div>
     </div>
   );
