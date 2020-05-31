@@ -5,6 +5,7 @@ import ToggleMode from "./ToggleMode";
 import TopDrawer from "./TopDrawer";
 import { IconContext } from "react-icons";
 import { MdSearch } from "react-icons/md";
+import Search from "../Search/Search";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -68,10 +69,7 @@ export default function MobileNavMenu({
           },
         }}
       >
-        {" "}
-        <IconContext.Provider value={{ size: "1.25em" }}>
-          <MdSearch />
-        </IconContext.Provider>
+        <Search />
       </div>
     </div>
   );

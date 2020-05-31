@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import NavItem from "./NavItem";
 import { IconContext } from "react-icons";
 import { MdSearch } from "react-icons/md";
+import Search from "../Search/Search";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -40,7 +41,7 @@ export default function WideNavMenu({
           },
         }}
       >
-        <div sx={{ pl: "1rem" }}>{siteTitle}</div>
+        <div sx={{ ml: 3, pl: 3 }}>{siteTitle}</div>
       </Link>
       <div style={{ display: `flex`, alignItems: `center`, maxHeight: "100%" }}>
         {menuLinks.map((link, i) => {
@@ -49,20 +50,18 @@ export default function WideNavMenu({
         <ToggleMode />
         <div
           sx={{
-            height: "100%",
             width: "100%",
-            my: "auto ",
+            my: "auto",
             mr: 3,
             ml: "1rem",
             pt: ".1rem",
+            pr: 3,
             "&:hover": {
               cursor: "pointer",
             },
           }}
         >
-          <IconContext.Provider value={{ size: "1.25em" }}>
-            <MdSearch />
-          </IconContext.Provider>
+          <Search />
         </div>
       </div>
     </nav>
