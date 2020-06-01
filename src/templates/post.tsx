@@ -7,7 +7,6 @@ import "katex/dist/katex.min.css";
 import { Styled, jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
-import PostHeader from "../components/Post/PostHeader";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import SmallAvatar from "../components/Avatar/SmallAvatar";
@@ -16,6 +15,7 @@ import { PostNode, PostFrontmatter, Post } from "../components/Post/Post.model";
 import SubscribeButton from "../components/Buttons/Subscribe";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
 import Cookies from "js-cookie";
+import PostTemplateHeader from "../components/Post/PostTemplateHeader";
 
 interface PostTemplateFrontmatter extends PostFrontmatter {
   id?: string;
@@ -73,7 +73,7 @@ export default function PostTemplate({
         }}
       >
         <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
-        <PostHeader post={post} />
+        <PostTemplateHeader post={post} />
         {post.cover && (
           <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
         )}
