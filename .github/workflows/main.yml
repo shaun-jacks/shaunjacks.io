@@ -1,11 +1,10 @@
-
 name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,15 +15,21 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Build
-      run: |
-        yarn
-        yarn build
+      - name: Build
+        run: |
+          yarn
+          yarn build
+        env:
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
+          GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
+          disqusShortName: ${{ secrets.disqusShortName }}
+          GATSBY_GOOGLE_ANALYTICS_ID: ${{ secrets.GATSBY_GOOGLE_ANALYTICS_ID }}
 
-    - name: Firebase Deploy
-      run: |
-        sudo yarn install -g firebase-tools
-        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+      - name: Firebase Deploy
+        run: |
+          sudo yarn install -g firebase-tools
+          firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
