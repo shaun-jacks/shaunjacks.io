@@ -82,7 +82,7 @@ export default function Search({
                     },
                   }}
                 >
-                  Search by{` `}
+                  Search Powered by{` `}
                   <a href="https://algolia.com">Algolia</a>
                 </span>
                 <Hits hitComponent={PostHit} />
