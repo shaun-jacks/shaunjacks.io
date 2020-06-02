@@ -8,6 +8,7 @@ import { Styled, jsx } from "theme-ui";
 import AvatarLinks from "../Avatar/AvatarLinks";
 import FooterLogos from "./FooterLogos";
 import { Link } from "gatsby";
+import { lighten } from "@theme-ui/color";
 
 export default function Footer() {
   return (
@@ -75,19 +76,40 @@ export default function Footer() {
         <div className="row">
           <div className="row-container">
             <Link
-              sx={{ textDecoration: "none", color: "primary" }}
+              sx={{
+                textDecoration: "none",
+                color: "primary",
+                "&:hover": {
+                  cursor: "pointer",
+                  color: lighten("primary", 0.2),
+                },
+              }}
               to="/cookie-policy"
             >
               Cookie Policy
             </Link>{" "}
             <Link
-              sx={{ textDecoration: "none", color: "primary" }}
+              sx={{
+                textDecoration: "none",
+                color: "primary",
+                "&:hover": {
+                  cursor: "pointer",
+                  color: lighten("primary", 0.2),
+                },
+              }}
               to="/privacy-policy"
             >
               Privacy Policy
             </Link>
             <Link
-              sx={{ textDecoration: "none", color: "primary" }}
+              sx={{
+                textDecoration: "none",
+                color: "primary",
+                "&:hover": {
+                  cursor: "pointer",
+                  color: lighten("primary", 0.2),
+                },
+              }}
               to="/terms-and-conditions"
             >
               Terms and Conditions
