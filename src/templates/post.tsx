@@ -10,7 +10,6 @@ import Layout from "../layout";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import SmallAvatar from "../components/Avatar/SmallAvatar";
-import Disqus from "../components/Disqus/Disqus";
 import { PostNode, PostFrontmatter, Post } from "../components/Post/Post.model";
 import SubscribeButton from "../components/Buttons/Subscribe";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
@@ -93,11 +92,6 @@ export default function PostTemplate({
             <AvatarLinks />
           </div>
         </div>
-
-        {CookiesEnabled && <Disqus postNode={postNode} />}
-        {!CookiesEnabled && (
-          <Styled.p>Enable Cookies to comment and refresh page...</Styled.p>
-        )}
       </div>
     </Layout>
   );
