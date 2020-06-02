@@ -12,6 +12,9 @@ import CustomStateResults from "./CustomStateResults";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 interface SearchProps {
   setMobileNavOpen?: (val: boolean) => void;
