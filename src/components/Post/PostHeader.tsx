@@ -9,6 +9,9 @@ import Cookies from "js-cookie";
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 import { PostProps } from "./Post.model";
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 function PostHeader({ post }: PostProps) {
   const disqusConfig = {

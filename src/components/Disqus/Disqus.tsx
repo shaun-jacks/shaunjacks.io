@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { DiscussionEmbed } from "disqus-react";
 import { PostNode } from "../Post/Post.model";
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 export default function Disqus({ postNode }: { postNode: PostNode }) {
   const disqusConfig = {
