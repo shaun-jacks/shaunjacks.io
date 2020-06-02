@@ -12,7 +12,7 @@ import { PostProps } from "./Post.model";
 
 function PostHeader({ post }: PostProps) {
   const disqusConfig = {
-    shortname: process.env.disqusShortName as string,
+    shortname: process.env.DISQUS_SHORTNAME as string,
     config: {
       url: "",
       identifier: post.path,

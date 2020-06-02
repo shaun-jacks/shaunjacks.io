@@ -10,7 +10,6 @@ const config = {
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "UA-163971884-1", // GA tracking ID.
   googleAnalyticsStreamTag: "G-VME9LPZ6QK", // GA Measurement ID
-  disqusShortname: "", // Disqus shortname.
   postDefaultCategoryID: "Tech", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "DD/MM/YYYY", // Date format for display.
