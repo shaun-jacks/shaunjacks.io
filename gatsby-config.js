@@ -118,6 +118,12 @@ module.exports = {
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: process.env.DISQUS_SHORTNAME,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,

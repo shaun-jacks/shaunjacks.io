@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { DiscussionEmbed } from "disqus-react";
 import { PostNode } from "../Post/Post.model";
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+import siteConfig from "../../../data/SiteConfig";
+import urljoin from "url-join";
 
 export default function Disqus({ postNode }: { postNode: PostNode }) {
   const disqusConfig = {
-    shortname: process.env.DISQUS_SHORTNAME as string,
     config: {
-      url: "",
+      url: urljoin(
+        siteConfig.siteUrl,
+        siteConfig.pathPrefix,
+        postNode.fields.slug
+      ),
       identifier: postNode.fields.slug,
       title: postNode.frontmatter.title,
     },
