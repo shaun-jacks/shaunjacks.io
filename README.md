@@ -2,10 +2,9 @@
 
 Created this Repo to build a new started based on the [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter).
 
-Styled with `theme-ui` inspired on [Dan Abramov's](https://overreacted.io/) blog, but slightly different. 
+Styled with `theme-ui` inspired on [Dan Abramov's](https://overreacted.io/) blog, but slightly different.
 
 [Demo website](https://gatsby-tfs-starter.netlify.com/), in case you would like to check it out first
-
 
 ## Getting Started
 
@@ -32,7 +31,6 @@ npm run develop # or gatsby develop
 
 For anything style related you can change it `/gatsby-plugin-theme-ui/index.js` and consult [theme-ui documentation](https://theme-ui.com/)
 
-
 ## Configuration
 
 Edit the export object in `data/SiteConfig`:
@@ -50,7 +48,6 @@ const config = {
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "1825356251115265", // FB Application ID for using app insights
   googleAnalyticsID: "UA-47311644-5", // GA tracking ID.
-  disqusShortname: "", // Disqus shortname.
   postDefaultCategoryID: "Tech", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "DD/MM/YYYY", // Date format for display.
@@ -64,35 +61,35 @@ const config = {
   avatar: {
     description:
       "I am learning to code ReactJS (from scratch) and I have built this starter to learn how Gatsby works and to build by blog!",
-    photo: "https://avatars1.githubusercontent.com/u/11288873?s=400&v=4"
+    photo: "https://avatars1.githubusercontent.com/u/11288873?s=400&v=4",
   },
   userLinks: [
     {
       label: "github",
-      url: "https://github.com/tiagofsanchez/tfs-starter"
+      url: "https://github.com/tiagofsanchez/tfs-starter",
     },
     {
       label: "linkedin",
-      url: "https://www.linkedin.com/in/tiago-formosinho-sanchez-3764225/"
+      url: "https://www.linkedin.com/in/tiago-formosinho-sanchez-3764225/",
     },
     {
       label: "email",
-      url: "mailto:tiagofsanchez@gmail.com"
-    }
+      url: "mailto:tiagofsanchez@gmail.com",
+    },
   ],
   menuLinks: [
     {
       name: "Me",
-      url: "/about"
+      url: "/about",
     },
     {
       name: "Articles",
-      url: "/blog"
-    }
+      url: "/blog",
+    },
   ],
   copyright: "Copyright © 2019. Advanced User", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 };
 
 // Validate
@@ -114,7 +111,6 @@ if (config.siteRss && config.siteRss[0] !== "/")
   config.siteRss = `/${config.siteRss}`;
 
 module.exports = config;
-
 ```
 
 You can also optionally set `pathPrefix`:
@@ -122,7 +118,7 @@ You can also optionally set `pathPrefix`:
 ```js
 module.exports = {
   // Note: it must *not* have a trailing slash.
-  pathPrefix: "/gatsby-advanced-starter" // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  pathPrefix: "/gatsby-advanced-starter", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 };
 ```
 
@@ -183,4 +179,3 @@ WARNING: Make sure to edit `static/robots.txt` to include your domain for the si
   - write-good for linting English prose
   - gh-pages for deploying to GitHub pages
   - CodeClimate configuration file and badge
-  

@@ -4,7 +4,7 @@ import { PostNode } from "../Post/Post.model";
 
 export default function Disqus({ postNode }: { postNode: PostNode }) {
   const disqusConfig = {
-    shortname: process.env.disqusShortName as string,
+    shortname: process.env.DISQUS_SHORTNAME as string,
     config: {
       url: "",
       identifier: postNode.fields.slug,
