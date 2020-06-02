@@ -9,15 +9,13 @@ import Cookies from "js-cookie";
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 import { PostProps } from "./Post.model";
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+import siteConfig from "../../../data/SiteConfig";
+import urljoin from "url-join";
 
 function PostHeader({ post }: PostProps) {
   const disqusConfig = {
-    shortname: process.env.DISQUS_SHORTNAME as string,
     config: {
-      url: "",
+      url: urljoin(siteConfig.siteUrl, siteConfig.pathPrefix, post.path),
       identifier: post.path,
       title: post.title,
     },
