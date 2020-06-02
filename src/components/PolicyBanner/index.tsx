@@ -9,7 +9,7 @@ export default function PolicyBanner() {
   return (
     <CookieConsent
       location="bottom"
-      buttonText="Accept"
+      buttonText="Got it!"
       declineButtonText="Decline"
       style={{ background: "#1e1e1e" }}
       buttonStyle={{
@@ -31,13 +31,20 @@ export default function PolicyBanner() {
             to="/cookie-policy"
           >
             Cookie Policy
-          </Link>{" "}
-          and{" "}
+          </Link>
+          ,{" "}
           <Link
             sx={{ textDecoration: "none", color: "#91d5ff" }}
             to="/privacy-policy"
           >
             Privacy Policy
+          </Link>
+          , and{" "}
+          <Link
+            sx={{ textDecoration: "none", color: "#91d5ff" }}
+            to="/terms-and-conditions"
+          >
+            Terms and Conditions
           </Link>
           .
         </Styled.p>
