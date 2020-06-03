@@ -14,13 +14,11 @@ export default function FooterLink({ url, label }: FooterLinkProps) {
   return (
     <a
       sx={{
-        color: "primary",
-        pr: 4,
-        pb: 2,
+        color: "secondary",
+        p: 2,
         textDecoration: "none",
         transition: "all .3s ease",
-        fontSize: "12px",
-        "&:hover": { cursor: "pointer", color: lighten("primary", 0.2) },
+        "&:hover": { cursor: "pointer", color: lighten("secondary", 0.2) },
       }}
       href={url}
     >
