@@ -20,109 +20,60 @@ export default function Footer() {
         color: "panelText",
       }}
     >
-      <div
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          maxWidth: `container`,
-          mx: "auto",
-          my: 3,
-          pt: 3,
-          pb: 2,
-          fontSize: "12px",
-          ".row": {
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: `center`,
-            maxWidth: `container`,
-            flexWrap: "wrap",
-            px: 3,
-            pt: 1,
-            a: {
-              mr: 3,
+      <div sx={{ mx: "auto", my: 4, maxWidth: "1000px" }}>
+        <div
+          sx={{
+            m: "auto",
+            maxWidth: "1000px",
+            display: "grid",
+            gridTemplateRows: "repeat(3, 50px)",
+            gridTemplateColumns: "repeat( auto-fit, minmax(33.33%, 1fr) )",
+            gridAutoFlow: "column",
+            alignItems: "center",
+            justifyItems: "center",
+            ".footer-link": {
+              m: 1,
+              p: 2,
+              textDecoration: "none",
+              color: "primary",
+              "&:hover": {
+                cursor: "pointer",
+                color: lighten("primary", 0.2),
+              },
             },
-          },
-          ".row-container": {
-            display: "flex",
-            justifyContent: "space-between",
-          },
-        }}
-      >
-        <div className="row">
-          <div className="row-container">
-            <FooterLogos />
-          </div>
-          <div sx={{ mx: 1 }}>
+          }}
+        >
+          <Link className="footer-link" to="/">
+            Home
+          </Link>{" "}
+          <Link className="footer-link" to="/about">
+            About
+          </Link>{" "}
+          <Link className="footer-link" to="/blog">
+            Articles
+          </Link>{" "}
+          <FooterLink url="https://patreon.com/shaunjacks" label="Patreon" />
+          <FooterLink url="https://ko-fi.com/shaunjacks" label="Ko-Fi" />
+          <div sx={{ display: "flex", justifyContent: "flex-start", pl: 1 }}>
+            {" "}
             <AvatarLinks />
           </div>
+          <Link className="footer-link" to="/terms-and-conditions">
+            Terms and Conditions
+          </Link>{" "}
+          <Link className="footer-link" to="/privacy-policy">
+            Privacy Policy
+          </Link>
+          <Link className="footer-link" to="/cookie-policy">
+            Cookie Policy
+          </Link>{" "}
+          <div></div>
         </div>
-        <div className="row">
-          <div className="row-container">
-            <FooterLink url="https://patreon.com/shaunjacks" label="Patreon" />
-            <FooterLink url="https://ko-fi.com/shaunjacks" label="Ko-Fi" />
-          </div>
-          <div
-            sx={{
-              mx: 1,
-              display: "flex",
-              fontSize: "10px",
-              justifyContent: "flex-end",
-            }}
-          >
-            {" "}
-            {siteConfig.copyright}{" "}
-          </div>
+        <div sx={{ display: "flex", justifyContent: "center" }}>
+          <FooterLogos />
         </div>
-        <div className="row">
-          <div className="row-container">
-            <Link
-              sx={{
-                textDecoration: "none",
-                color: "primary",
-                "&:hover": {
-                  cursor: "pointer",
-                  color: lighten("primary", 0.2),
-                },
-              }}
-              to="/cookie-policy"
-            >
-              Cookie Policy
-            </Link>{" "}
-            <Link
-              sx={{
-                textDecoration: "none",
-                color: "primary",
-                "&:hover": {
-                  cursor: "pointer",
-                  color: lighten("primary", 0.2),
-                },
-              }}
-              to="/privacy-policy"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              sx={{
-                textDecoration: "none",
-                color: "primary",
-                "&:hover": {
-                  cursor: "pointer",
-                  color: lighten("primary", 0.2),
-                },
-              }}
-              to="/terms-and-conditions"
-            >
-              Terms and Conditions
-            </Link>{" "}
-          </div>
-          <div
-            sx={{
-              mx: 1,
-              display: "flex",
-              fontSize: "10px",
-              justifyContent: "flex-end",
-            }}
-          ></div>
+        <div sx={{ display: "flex", justifyContent: "center" }}>
+          <Styled.p sx={{ fontSize: "10px" }}>{siteConfig.copyright}</Styled.p>{" "}
         </div>
       </div>
     </footer>

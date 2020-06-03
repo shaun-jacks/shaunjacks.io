@@ -12,9 +12,10 @@ export default function FooterLogos() {
     <div
       sx={{
         display: "flex",
-        fontSize: "12px",
         alignItems: "center",
-        img: { mx: 1 },
+        img: { mx: 2 },
+        p: 2,
+        fontSize: "12px",
         a: {
           "&:hover": {
             cursor: "pointer",
@@ -22,7 +23,7 @@ export default function FooterLogos() {
         },
       }}
     >
-      <Styled.p sx={{ mr: 1 }}>Composed with </Styled.p>
+      <Styled.p sx={{ mr: 1 }}>Composed with ❤️ using </Styled.p>
       <a href="https://www.gatsbyjs.org/">
         <img
           alt="Gatsby Logo"
@@ -35,7 +36,6 @@ export default function FooterLogos() {
           }}
         />
       </a>
-
       <a href="https://www.typescriptlang.org/">
         <img
           alt="Typescript Logo"
