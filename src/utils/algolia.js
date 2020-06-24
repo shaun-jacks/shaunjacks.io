@@ -1,6 +1,9 @@
 const postQuery = `{
   posts: allMdx(
-    filter: { fileAbsolutePath: { regex: "/posts/" } }
+    filter: { 
+      frontmatter: { publish: { eq: "yes" } }
+      fileAbsolutePath: { regex: "/posts/" } 
+    }
   ) {
     edges {
       node {
