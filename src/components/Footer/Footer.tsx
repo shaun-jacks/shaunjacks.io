@@ -27,10 +27,12 @@ export default function Footer() {
             maxWidth: "1000px",
             display: "grid",
             gridTemplateRows: "repeat(3, 50px)",
-            gridTemplateColumns: "repeat( auto-fit, minmax(33.33%, 1fr) )",
+            gridTemplateColumns: "repeat(auto-fit, minmax(33.33%, 1fr))",
             gridAutoFlow: "column",
             alignItems: "center",
             justifyItems: "center",
+            textAlign: "center",
+            fontSize: "15px",
             ".footer-link": {
               m: 1,
               p: 2,
