@@ -6,6 +6,7 @@ import TopDrawer from "./TopDrawer";
 import { IconContext } from "react-icons";
 import { MdSearch } from "react-icons/md";
 import Search from "../Search/Search";
+import logo from "../../images/shaunjacks-logo-light-192px.svg";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -21,6 +22,7 @@ export default function MobileNavMenu({
   menuLinks,
 }: MobileNavMenuProps) {
   const [isOpen, setOpen] = React.useState(false);
+  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const toggleOpen = () => {
     setOpen(!isOpen);
   };
@@ -29,7 +31,7 @@ export default function MobileNavMenu({
     <div
       sx={{
         display: `flex`,
-        justifyContent: `space-between`,
+        justifyContent: isSearchOpen ? `flex-start` : `space-between`,
         alignItems: `center`,
         maxWidth: `container`,
         height: "100%",
@@ -43,33 +45,33 @@ export default function MobileNavMenu({
         toggleOpen={toggleOpen}
         navHeight="45px"
       />
-      <div sx={{ flex: "1", height: "100%" }}>
+      <div
+        sx={
+          !isSearchOpen
+            ? { flex: 1, mr: 1, height: "100%" }
+            : { width: "45px", mr: 3, height: "100%" }
+        }
+      >
         <HamburgerIcon toggleOpen={toggleOpen} />
       </div>
-      <Link
-        to="/"
-        sx={{
-          textDecoration: `none`,
-          color: `panelText`,
-          transition: "all .3s ease",
-          "&:hover": {
-            color: lighten("primary", 0.3),
-          },
-        }}
-      >
-        <div sx={{ flex: "1" }}>{siteTitle}</div>
-      </Link>
+      {!isSearchOpen && (
+        <Link to="/">
+          <img src={logo} width="35" height="35" />
+        </Link>
+      )}
       <div
         sx={{
           flex: "1",
           display: "flex",
+          width: "100%",
           justifyContent: "flex-end",
-          "&:hover": {
-            cursor: "pointer",
-          },
         }}
       >
-        <Search setMobileNavOpen={setOpen} />
+        <Search
+          focus={isSearchOpen}
+          setFocus={setIsSearchOpen}
+          setMobileNavOpen={setOpen}
+        />
       </div>
     </div>
   );
