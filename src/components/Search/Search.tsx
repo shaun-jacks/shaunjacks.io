@@ -15,14 +15,17 @@ import { Styled, jsx } from "theme-ui";
 
 interface SearchProps {
   setMobileNavOpen?: (val: boolean) => void;
+  setFocus: (val: boolean) => void;
+  focus: boolean;
 }
 
 export default function Search({
   setMobileNavOpen = (val) => {},
+  focus,
+  setFocus,
 }: SearchProps) {
   const ref = useRef<HTMLDivElement>();
   const [query, setQuery] = useState(``);
-  const [focus, setFocus] = useState(false);
 
   const searchClient = useMemo(
     () =>
@@ -33,7 +36,10 @@ export default function Search({
     []
   );
   return (
-    <div onClick={() => setMobileNavOpen(false)}>
+    <div
+      sx={focus ? { width: "100%" } : {}}
+      onClick={() => setMobileNavOpen(false)}
+    >
       <InstantSearch
         searchClient={searchClient}
         indexName={"Posts"}

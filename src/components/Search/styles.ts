@@ -48,21 +48,25 @@ export const PostHitHeader = {
   },
 };
 
-export const InputStyles = (isFocused: boolean) => ({
-  ml: 2,
+export const InputStyles = (isFocused: boolean): {} => ({
   form: {
     display: "flex",
+    flex: "1",
     flexDirection: "flex-end",
     alignItems: "center",
     input: {
       outline: "none",
-      border: "none",
+      borderTop: "none",
+      borderLeft: "none",
+      borderRight: "none",
+      borderBottomWidth: "2px",
+      borderBottomColor: "primary",
       fontSize: "1em",
       padding: 2,
       transition: ".3s",
       borderRadius: ".2em",
       color: "primary",
-      width: isFocused ? "30vw" : "inherit",
+      width: isFocused ? "100%" : "inherit",
       bg: isFocused ? "muted" : "transparent",
     },
   },

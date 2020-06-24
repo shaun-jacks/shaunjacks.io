@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import ToggleMode from "./ToggleMode";
 import { Link } from "gatsby";
 import NavItem from "./NavItem";
 import { IconContext } from "react-icons";
 import { MdSearch } from "react-icons/md";
 import Search from "../Search/Search";
+import logo from "../../images/shaunjacks-logo-light-192px.svg";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
@@ -19,35 +20,36 @@ export default function WideNavMenu({
   menuLinks,
   siteTitle,
 }: WideNavMenuProps) {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   return (
     <nav
       sx={{
         display: `flex`,
-        justifyContent: `space-between`,
+        justifyContent: isSearchOpen ? `flex-start` : `space-between`,
         alignItems: `center`,
         maxWidth: `container`,
         height: "100%",
         m: "auto",
       }}
     >
-      <Link
-        to="/"
-        sx={{
-          textDecoration: `none`,
-          color: `panelText`,
-          transition: "all .3s ease",
-          "&:hover": {
-            color: lighten("primary", 0.3),
-          },
+      <Link to="/">
+        <img src={logo} width="35" height="35" />
+      </Link>
+      {!isSearchOpen && <div sx={{ flex: "1" }} />}
+      <div
+        style={{
+          display: `flex`,
+          flex: "1",
+          alignItems: `center`,
+          maxHeight: "100%",
         }}
       >
-        <div sx={{ ml: 3, pl: 3 }}>{siteTitle}</div>
-      </Link>
-      <div style={{ display: `flex`, alignItems: `center`, maxHeight: "100%" }}>
-        {menuLinks.map((link, i) => {
-          return <NavItem key={i} link={link} />;
-        })}
-        <ToggleMode />
+        {!isSearchOpen &&
+          menuLinks.map((link, i) => {
+            return <NavItem key={i} link={link} />;
+          })}
+        {!isSearchOpen && <ToggleMode />}
         <div
           sx={{
             width: "100%",
@@ -61,7 +63,7 @@ export default function WideNavMenu({
             },
           }}
         >
-          <Search />
+          <Search focus={isSearchOpen} setFocus={setIsSearchOpen} />
         </div>
       </div>
     </nav>
