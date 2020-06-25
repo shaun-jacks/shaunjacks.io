@@ -25,9 +25,7 @@ export default function TagHeader({ tag }: TagHeaderProps) {
           alignItems: `baseline`,
         }}
       >
-        <Styled.h2 sx={{ fontSize: `10`, mr: 3 }}>
-          Article(s) tagged as
-        </Styled.h2>
+        <Styled.h2 sx={{ fontSize: `10`, mr: 3 }}>Blog(s) tagged as</Styled.h2>
         <Styled.h3
           sx={{
             color: `text`,
