@@ -127,14 +127,20 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
+        icon: `src/images/shaunjacks-logo-dark-48px.png`,
         icons: [
           {
-            src: "/logos/logo-192x192.png",
+            src: "/logos/shaunjacks-logo-dark-48px.png",
+            sizes: "48x48",
+            type: "image/png",
+          },
+          {
+            src: "/logos/shaunjacks-logo-dark-192px.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "/logos/logo-512x512.png",
+            src: "/logos/shaunjacks-logo-dark-512px.png",
             sizes: "512x512",
             type: "image/png",
           },

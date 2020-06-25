@@ -16,19 +16,23 @@ export default function PostTag({ tag, index, length }: PostTagProps) {
         display: `inline-block`,
         mt: 1,
         pr: 1,
-        fontSize: "12px",
+        fontSize: "14px",
+        border: "1px solid",
+        borderColor: "primary",
+        borderRadius: "20px",
+        mr: "12px",
+        px: "12px",
+        py: ".4rem",
         transition: "all .3s ease",
         "&:hover": {
           cursor: "pointer",
           color: lighten("primary", 0.2),
+          borderColor: lighten("primary", 0.2),
         },
       }}
       to={`/tags/${_.kebabCase(tag)}/`}
     >
-      <Styled.p>
-        {tag}
-        {index === length - 1 ? "" : ", "}
-      </Styled.p>
+      {tag}
     </Link>
   );
 }

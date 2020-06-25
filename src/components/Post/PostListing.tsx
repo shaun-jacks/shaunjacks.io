@@ -4,6 +4,7 @@ import React, { Fragment } from "react";
 import PostCard from "./PostCard";
 import { PostEdge } from "./Post.model";
 import { PostListingProps } from "./Post.model";
+import PostCardRect from "./PostCardRect";
 
 export default function PostListing({ postEdges }: PostListingProps) {
   function getPostList() {
@@ -23,13 +24,15 @@ export default function PostListing({ postEdges }: PostListingProps) {
     <div
       sx={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
         width: "100%",
         margin: "auto",
       }}
     >
       {getPostList().map((post, i) => (
-        <PostCard key={i} post={post} />
+        <PostCardRect key={i} post={post} />
       ))}
     </div>
   );

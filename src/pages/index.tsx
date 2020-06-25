@@ -85,17 +85,23 @@ export default function Index({
           sx={{
             margin: `auto`,
             textAlign: `center`,
-            color: `primary`,
+            color: `secondary`,
             textDecoration: `none`,
             transition: "all .3s ease",
             fontSize: 20,
             p: ".5em 1.5em",
+            border: "1px solid",
+            borderColor: "secondary",
+            borderRadius: "20px",
+            px: "14px",
+            py: 2,
             ":hover": {
-              color: lighten("primary", 0.2),
+              color: lighten("secondary", 0.2),
+              borderColor: lighten("secondary", 0.2),
             },
           }}
         >
-          More posts...
+          More posts
         </Link>
       </section>
     </Layout>
@@ -126,8 +132,8 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 100, height: 100) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 448) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -161,8 +167,8 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 100, height: 100) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 448) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
