@@ -43,7 +43,7 @@ const config = {
       url: "/about",
     },
     {
-      name: "Articles",
+      name: "Blog",
       url: "/blog",
     },
   ],
