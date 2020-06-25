@@ -38,7 +38,7 @@ export const tagQuery = graphql`
     allMdx(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { publish: { eq: "yes" }, tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {
@@ -55,8 +55,8 @@ export const tagQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 100, height: 100) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 448) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

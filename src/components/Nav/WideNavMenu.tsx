@@ -33,7 +33,7 @@ export default function WideNavMenu({
         m: "auto",
       }}
     >
-      <Link to="/">
+      <Link to="/" sx={{ ml: 3, pl: 3 }}>
         <img src={logo} width="35" height="35" />
       </Link>
       {!isSearchOpen && <div sx={{ flex: "1" }} />}

@@ -25,7 +25,9 @@ export default function Blog({ data: { allMdx } }: BlogProps) {
           alignItems: "center",
         }}
       >
-        <Styled.h2 sx={{ textAlign: "center" }}>Articles</Styled.h2>
+        <Styled.h1 sx={{ textAlign: "center" }}>
+          Welcome to the Blog Hub
+        </Styled.h1>
         <div
           sx={{ width: "100%", display: "flex", alignItems: "center", mb: 3 }}
         ></div>
@@ -59,8 +61,8 @@ export const blogQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 100, height: 110) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 448) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

@@ -40,7 +40,9 @@ export const categoryQuery = graphql`
     allMdx(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: {
+        frontmatter: { publish: { eq: "yes" }, category: { eq: $category } }
+      }
     ) {
       totalCount
       edges {
@@ -57,8 +59,8 @@ export const categoryQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 100, height: 100) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 448) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
