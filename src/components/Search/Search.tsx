@@ -54,10 +54,10 @@ export default function Search({
           <div
             sx={{
               position: "absolute",
-              top: "45px",
+              top: "56px",
               left: "0",
               width: "100vw",
-              height: "calc(100vh - 45px)",
+              height: "calc(100vh - 56px)",
               display: "flex",
               flexDirection: "column",
               "&:hover": { cursor: "auto" },
