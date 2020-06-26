@@ -12,7 +12,7 @@ interface NavMenuProps {
 
 export default function NavMenu({ menuLinks }: NavMenuProps) {
   const { siteTitle } = siteConfig;
-  const navHeight = "45px";
+  const navHeight = "56px";
   return (
     <div>
       <Styled

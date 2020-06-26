@@ -34,13 +34,14 @@ export default function WideNavMenu({
       }}
     >
       <Link to="/" sx={{ ml: 3, pl: 3 }}>
-        <img src={logo} width="35" height="35" />
+        <img src={logo} width="53" height="53" />
       </Link>
       {!isSearchOpen && <div sx={{ flex: "1" }} />}
       <div
         style={{
           display: `flex`,
           flex: "1",
+          justifyContent: "flex-end",
           alignItems: `center`,
           maxHeight: "100%",
         }}
@@ -52,12 +53,10 @@ export default function WideNavMenu({
         {!isSearchOpen && <ToggleMode />}
         <div
           sx={{
-            width: "100%",
+            width: isSearchOpen ? "100%" : "35px",
             my: "auto",
-            mr: 3,
-            ml: "1rem",
+            ml: 2,
             pt: ".1rem",
-            pr: 3,
             "&:hover": {
               cursor: "pointer",
             },

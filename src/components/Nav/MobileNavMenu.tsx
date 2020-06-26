@@ -43,20 +43,20 @@ export default function MobileNavMenu({
         menuLinks={menuLinks}
         isOpen={isOpen}
         toggleOpen={toggleOpen}
-        navHeight="45px"
+        navHeight="56px"
       />
       <div
         sx={
           !isSearchOpen
             ? { flex: 1, mr: 1, height: "100%" }
-            : { width: "45px", mr: 3, height: "100%" }
+            : { width: "56px", mr: 3, height: "100%" }
         }
       >
         <HamburgerIcon toggleOpen={toggleOpen} />
       </div>
       {!isSearchOpen && (
         <Link to="/">
-          <img src={logo} width="35" height="35" />
+          <img src={logo} width="53" height="53" />
         </Link>
       )}
       <div
