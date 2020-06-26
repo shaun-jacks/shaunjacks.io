@@ -14,7 +14,6 @@ function PostCover({ post }: PostProps) {
         to={post.path}
         sx={{
           textDecoration: `none`,
-          transition: "all .3s ease",
           "&:hover": {
             cursor: "pointer",
           },

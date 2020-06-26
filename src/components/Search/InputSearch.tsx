@@ -33,7 +33,15 @@ export default connectSearchBox(
             />
           </form>
           {focus && (
-            <div sx={{ ml: 2, "&:hover": { cursor: "pointer" } }}>
+            <div
+              sx={{
+                ml: 2,
+                "&:hover": {
+                  cursor: "pointer",
+                  color: "primary",
+                },
+              }}
+            >
               <IconContext.Provider value={{ size: "1.25rem" }}>
                 <AiFillCloseCircle onClick={() => setFocus(false)} />
               </IconContext.Provider>
@@ -41,17 +49,19 @@ export default connectSearchBox(
           )}
         </div>
       ) : (
-        <div
-          sx={{
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-        >
-          <IconContext.Provider value={{ size: "1.25rem" }}>
+        <IconContext.Provider value={{ size: "1.25rem" }}>
+          <div
+            sx={{
+              p: 2,
+              borderRadius: "10px",
+              "&:hover": {
+                backgroundColor: "muted",
+              },
+            }}
+          >
             <FaSearch onClick={() => setFocus(true)} />
-          </IconContext.Provider>
-        </div>
+          </div>
+        </IconContext.Provider>
       )}
     </Styled>
   )

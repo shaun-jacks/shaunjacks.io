@@ -21,7 +21,6 @@ export default function SubscribeButton() {
         fontSize: "16px",
         padding: "4px 11px",
         boxShadow: "0 2px 0 rgba(0,0,0,.045)",
-        transition: "all .3s ease",
         "&:focus, &:hover": {
           outline: "none",
           borderColor: lighten("primary", 0.2),

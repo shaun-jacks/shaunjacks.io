@@ -43,9 +43,3 @@ export interface PostFrontmatter {
   category: string;
   date?: string;
 }
-
-export interface PostTagProps {
-  tag: string;
-  index: number;
-  length: number;
-}

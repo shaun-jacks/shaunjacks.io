@@ -15,7 +15,6 @@ export default function PostTitle({ post }: PostProps) {
         sx={{
           color: "primary",
           textDecoration: `none`,
-          transition: "all .3s ease",
           "&:hover": {
             cursor: "pointer",
             color: lighten("primary", 0.2),

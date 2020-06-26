@@ -1,12 +1,12 @@
 import React from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
-import PostTag from "./PostTag";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 import { PostProps } from "./Post.model";
+import TagButton from "../Tag/TagButton";
 
 export default function PostTemplateHeader({ post }: PostProps) {
   return (
@@ -24,15 +24,7 @@ export default function PostTemplateHeader({ post }: PostProps) {
           }}
         >
           {post.tags.map((tag, i) => {
-            return (
-              <PostTag
-                sx={{ marginLeft: 2 }}
-                tag={tag}
-                index={i}
-                key={i}
-                length={post.tags.length}
-              />
-            );
+            return <TagButton sx={{ marginLeft: 2 }} tag={tag} key={i} />;
           })}
           {"•"}
           <small

@@ -87,7 +87,6 @@ export default function Index({
             textAlign: `center`,
             color: `secondary`,
             textDecoration: `none`,
-            transition: "all .3s ease",
             fontSize: 20,
             p: ".5em 1.5em",
             border: "1px solid",
@@ -101,7 +100,7 @@ export default function Index({
             },
           }}
         >
-          More posts
+          See All
         </Link>
       </section>
     </Layout>

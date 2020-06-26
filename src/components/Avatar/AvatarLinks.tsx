@@ -30,7 +30,6 @@ export default function AvatarLinks() {
             textDecoration: "none",
             color: "inherit",
             borderRadius: "2px",
-            transition: "all .3s ease",
             ":hover": { bg: lighten("primary", 0.1), cursor: "pointer" },
           }}
         >

@@ -1,12 +1,9 @@
 import React from "react";
 import _ from "lodash";
-import { Link } from "gatsby";
-import PostTag from "./PostTag";
-import Cookies from "js-cookie";
+import TagButton from "../Tag/TagButton";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { lighten } from "@theme-ui/color";
 import { PostProps } from "./Post.model";
 
 function PostHeader({ post }: PostProps) {
@@ -36,15 +33,7 @@ function PostHeader({ post }: PostProps) {
           }}
         >
           {post.tags.map((tag, i) => {
-            return (
-              <PostTag
-                sx={{ marginLeft: 2 }}
-                tag={tag}
-                index={i}
-                key={i}
-                length={post.tags.length}
-              />
-            );
+            return <TagButton sx={{ marginLeft: 2 }} tag={tag} key={i} />;
           })}
         </div>
       </div>

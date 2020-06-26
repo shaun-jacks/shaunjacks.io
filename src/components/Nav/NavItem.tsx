@@ -14,20 +14,26 @@ interface NavItemProps {
 
 export default function NavItem({ link }: NavItemProps) {
   return (
-    <Link key={link.url} to={link.url} sx={{ textDecoration: "none" }}>
-      <Styled.p
-        sx={{
-          m: 3,
-          textDecoration: `none`,
-          color: "text",
-          transition: "all .3s ease",
-          "&:hover": {
-            color: lighten("primary", 0.3),
-          },
-        }}
-      >
-        {link.name}
-      </Styled.p>
+    <Link
+      key={link.url}
+      activeClassName="active"
+      to={link.url}
+      sx={{
+        textDecoration: "none",
+        color: "text",
+        padding: 2,
+        borderRadius: "10px",
+        fontSize: "19px",
+        "&:hover": {
+          backgroundColor: "muted",
+        },
+        ml: 2,
+        "&.active": {
+          color: "primary",
+        },
+      }}
+    >
+      {link.name}
     </Link>
   );
 }
