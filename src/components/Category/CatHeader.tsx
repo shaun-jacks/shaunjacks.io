@@ -1,6 +1,7 @@
 import React from "react";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import CategoryButton from "./CategoryButton";
 
 interface CatHeaderProps {
   category: string;
@@ -21,28 +22,13 @@ export default function CatHeader({ category }: CatHeaderProps) {
         sx={{
           mx: `auto`,
           display: `flex`,
-          textAlign: `center`,
-          alignItems: `baseline`,
+          flexDirection: "column",
         }}
       >
-        <Styled.h2 sx={{ color: `primary`, fontSize: `10`, mr: 2 }}>
-          Article(s) category as
-        </Styled.h2>
-        <Styled.h3
-          sx={{
-            color: `primary`,
-            textDecoration: `none`,
-            border: `solid 1px`,
-            boxSizing: `content-box`,
-            display: `inline-block`,
-            px: `4px`,
-            borderRadius: `5px`,
-            p: 1,
-            mr: 2,
-          }}
-        >
+        <Styled.h1 sx={{ color: `primary`, fontSize: `10`, mr: 2 }}>
           {category}
-        </Styled.h3>
+        </Styled.h1>
+        <CategoryButton category={category} />
       </div>
     </Styled>
   );
