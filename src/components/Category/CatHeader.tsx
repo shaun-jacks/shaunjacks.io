@@ -15,6 +15,7 @@ export default function CatHeader({ category }: CatHeaderProps) {
         textAlign: `center`,
         alignItems: `baseline`,
         color: `primary`,
+        my: 4,
         mx: `auto`,
       }}
     >
@@ -25,9 +26,6 @@ export default function CatHeader({ category }: CatHeaderProps) {
           flexDirection: "column",
         }}
       >
-        <Styled.h1 sx={{ color: `primary`, fontSize: `10`, mr: 2 }}>
-          {category}
-        </Styled.h1>
         <CategoryButton category={category} />
       </div>
     </Styled>

@@ -15,6 +15,7 @@ export default function TagHeader({ tag }: TagHeaderProps) {
         textAlign: `center`,
         alignItems: `baseline`,
         color: `primary`,
+        my: 4,
         mx: `auto`,
       }}
     >
@@ -26,7 +27,6 @@ export default function TagHeader({ tag }: TagHeaderProps) {
           flexDirection: "column",
         }}
       >
-        <Styled.h2 sx={{ fontSize: `10`, mr: 3 }}>{tag}</Styled.h2>
         <TagButton tag={tag} />
       </div>
     </Styled>
