@@ -16,6 +16,8 @@ import AvatarLinks from "../components/Avatar/AvatarLinks";
 import Cookies from "js-cookie";
 import PostTemplateHeader from "../components/Post/PostTemplateHeader";
 import Toc from "../components/Toc";
+import TocMobile from "../components/Toc/TocMobile";
+import TocDesktop from "../components/Toc/TocDesktop";
 
 interface PostTemplateFrontmatter extends PostFrontmatter {
   id?: string;
@@ -70,11 +72,6 @@ export default function PostTemplate({
             display: "grid",
             gridTemplateColumns: "1fr 200px",
           },
-          "@media screen and (max-width: 921px)": {
-            ".wide-toc": {
-              display: "none",
-            },
-          },
         }}
       >
         <div
@@ -111,20 +108,14 @@ export default function PostTemplate({
             </div>
           </div>
         </div>
-        <div className="wide-toc">
-          <div
-            sx={{
-              position: "sticky",
-              top: 75,
-              overflow: "scroll",
-              mr: 3,
-              ml: 2,
-            }}
-          >
-            {" "}
+        <TocMobile>
+          <div sx={{ pl: 2 }}>
             <Toc />
           </div>
-        </div>
+        </TocMobile>
+        <TocDesktop>
+          <Toc />
+        </TocDesktop>
       </div>
     </Layout>
   );
