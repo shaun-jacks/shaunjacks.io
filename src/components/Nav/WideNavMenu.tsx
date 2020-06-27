@@ -56,6 +56,7 @@ export default function WideNavMenu({
             width: isSearchOpen ? "100%" : "35px",
             my: "auto",
             ml: 2,
+            pr: 2,
             pt: ".1rem",
             "&:hover": {
               cursor: "pointer",
