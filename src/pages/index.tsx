@@ -40,69 +40,71 @@ export default function Index({
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <section>
-        <div
+      <div sx={{ maxWidth: "container", m: "auto" }}>
+        <section>
+          <div
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              p: "2em",
+            }}
+          >
+            <Styled.h1 sx={{ m: ".5em" }}>Hi! I'm Shaun</Styled.h1>
+            <Styled.p sx={{ textAlign: "center" }}>
+              I'm a Software Engineer passionate about modern Javascript,
+              Backend technologies, Data, and Cloud tooling.
+            </Styled.p>
+            {/* <SubscribeButton /> */}
+          </div>
+        </section>
+        <section
           sx={{
+            my: `40px`,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            p: "2em",
           }}
         >
-          <Styled.h1 sx={{ m: ".5em" }}>Hi! I'm Shaun</Styled.h1>
-          <Styled.p sx={{ textAlign: "center" }}>
-            I'm a Software Engineer passionate about modern Javascript, Backend
-            technologies, Data, and Cloud tooling.
-          </Styled.p>
-          {/* <SubscribeButton /> */}
-        </div>
-      </section>
-      <section
-        sx={{
-          my: `40px`,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Styled.h1 sx={{ mt: 0, color: "text" }}>Most popular</Styled.h1>
-        <PostListing postEdges={mostPopular.edges} />
-      </section>
-      <section
-        sx={{
-          my: `40px`,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Styled.h1 sx={{ mt: 0, color: "text" }}>Most recent</Styled.h1>
-        <PostListing postEdges={mostRecent.edges} />
-      </section>
-      <section sx={{ display: "flex", justifyContent: "center" }}>
-        <Link
-          to={"/blog"}
+          <Styled.h1 sx={{ mt: 0, color: "text" }}>Most popular</Styled.h1>
+          <PostListing postEdges={mostPopular.edges} />
+        </section>
+        <section
           sx={{
-            margin: `auto`,
-            textAlign: `center`,
-            color: `secondary`,
-            textDecoration: `none`,
-            fontSize: 20,
-            p: ".5em 1.5em",
-            border: "1px solid",
-            borderColor: "secondary",
-            borderRadius: "20px",
-            px: "14px",
-            py: 2,
-            ":hover": {
-              color: lighten("secondary", 0.2),
-              borderColor: lighten("secondary", 0.2),
-            },
+            my: `40px`,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          See All
-        </Link>
-      </section>
+          <Styled.h1 sx={{ mt: 0, color: "text" }}>Most recent</Styled.h1>
+          <PostListing postEdges={mostRecent.edges} />
+        </section>
+        <section sx={{ display: "flex", justifyContent: "center" }}>
+          <Link
+            to={"/blog"}
+            sx={{
+              margin: `auto`,
+              textAlign: `center`,
+              color: `secondary`,
+              textDecoration: `none`,
+              fontSize: 20,
+              p: ".5em 1.5em",
+              border: "1px solid",
+              borderColor: "secondary",
+              borderRadius: "20px",
+              px: "14px",
+              py: 2,
+              ":hover": {
+                color: lighten("secondary", 0.2),
+                borderColor: lighten("secondary", 0.2),
+              },
+            }}
+          >
+            See All
+          </Link>
+        </section>
+      </div>
     </Layout>
   );
 }
