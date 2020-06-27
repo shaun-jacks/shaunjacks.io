@@ -15,6 +15,7 @@ import SubscribeButton from "../components/Buttons/Subscribe";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
 import Cookies from "js-cookie";
 import PostTemplateHeader from "../components/Post/PostTemplateHeader";
+import Toc from "../components/Toc";
 
 interface PostTemplateFrontmatter extends PostFrontmatter {
   id?: string;
@@ -63,33 +64,65 @@ export default function PostTemplate({
       <SEO postPath={slug} postNode={postNode} postSEO />
       <div
         sx={{
-          maxWidth: "700px",
+          maxWidth: "1200px",
           m: "auto",
-          ".gatsby-resp-image-figcaption": {
-            textAlign: "center",
-            color: "text",
+          "@media screen and (min-width: 920px)": {
+            display: "grid",
+            gridTemplateColumns: "1fr 200px",
+          },
+          "@media screen and (max-width: 921px)": {
+            ".wide-toc": {
+              display: "none",
+            },
           },
         }}
       >
-        <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
-        <PostTemplateHeader post={post} />
-        {post.cover && (
-          <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
-        )}
-        <MDXRenderer>{postNode.body}</MDXRenderer>
         <div
           sx={{
-            mt: "40px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            p: "2em",
+            maxWidth: "700px",
+            m: "auto",
+            ".gatsby-resp-image-figcaption": {
+              textAlign: "center",
+              color: "text",
+            },
           }}
         >
-          <SmallAvatar />
-          <SubscribeButton />
-          <div sx={{ mt: 4 }}>
-            <AvatarLinks />
+          <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
+          <PostTemplateHeader post={post} />
+          {post.cover && (
+            <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
+          )}
+          <main>
+            <MDXRenderer>{postNode.body}</MDXRenderer>
+          </main>
+          <div
+            sx={{
+              mt: "40px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              p: "2em",
+            }}
+          >
+            <SmallAvatar />
+            <SubscribeButton />
+            <div sx={{ mt: 4 }}>
+              <AvatarLinks />
+            </div>
+          </div>
+        </div>
+        <div className="wide-toc">
+          <div
+            sx={{
+              position: "sticky",
+              top: 75,
+              overflow: "scroll",
+              mr: 3,
+              ml: 2,
+            }}
+          >
+            {" "}
+            <Toc />
           </div>
         </div>
       </div>

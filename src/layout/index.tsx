@@ -31,7 +31,6 @@ export default function MainLayout({
           fontFamily: `body`,
           mt: "60px",
           mx: "auto",
-          maxWidth: `container`,
           width: ["90%", "90%", "100%"],
         }}
       >
