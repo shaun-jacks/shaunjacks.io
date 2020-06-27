@@ -18,6 +18,7 @@ export interface TocProps {
   headingSelector?: string | string[];
   getTitle?: (val: Node) => string;
   getDepth?: (val: Node) => number;
+  getActive?: boolean;
   throttleTime?: number;
   tocTitle?: string;
 }
@@ -26,6 +27,7 @@ export default function Toc({
   headingSelector,
   getTitle,
   getDepth,
+  getActive,
   ...rest
 }: TocProps) {
   const { throttleTime = 200, tocTitle = `Contents` } = rest;
@@ -70,6 +72,16 @@ export default function Toc({
     return () => window.removeEventListener(`scroll`, scrollHandler);
   }, [headings]);
 
+  // Every time we open the mobile toc, get active elements
+  useEffect(() => {
+    const { titles, nodes } = headings;
+    const offsets = nodes.map((el) => accumulateOffsetTop(el));
+    const activeIndex = offsets.findIndex(
+      (offset) => offset > window.scrollY + 0.8 * window.innerHeight
+    );
+    setActive(activeIndex === -1 ? titles.length - 1 : activeIndex - 1);
+  }, [headings, getActive]);
+
   return (
     <Styled.div
       sx={{
@@ -80,7 +92,6 @@ export default function Toc({
       <Styled.h3>{`Contents`}</Styled.h3>
       <nav>
         {headings.titles.map(({ title, depth }, index) => {
-          console.log(title, depth);
           return (
             <Styled.p
               key={title}

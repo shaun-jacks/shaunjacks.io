@@ -3,6 +3,7 @@ import _ from "lodash";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import Toc from ".";
 
 export default function TocDesktop({ children }: { children?: JSX.Element }) {
   return (
@@ -22,7 +23,7 @@ export default function TocDesktop({ children }: { children?: JSX.Element }) {
           ml: 2,
         }}
       >
-        {children}
+        <Toc />
       </div>
     </div>
   );

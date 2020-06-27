@@ -8,12 +8,19 @@ import { IconContext } from "react-icons";
 import { BsCodeSlash } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import TocSideDrawer from "./TocSideDrawer";
+import Toc from ".";
 
 export default function TocMobile({ children }: { children?: JSX.Element }) {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
   return (
     <React.Fragment>
-      {sideDrawerOpen && <TocSideDrawer>{children}</TocSideDrawer>}
+      {sideDrawerOpen && (
+        <TocSideDrawer>
+          <div sx={{ pl: 2 }}>
+            <Toc getActive={sideDrawerOpen} />
+          </div>
+        </TocSideDrawer>
+      )}
       <div
         sx={{
           position: "fixed",

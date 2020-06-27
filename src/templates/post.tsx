@@ -108,14 +108,8 @@ export default function PostTemplate({
             </div>
           </div>
         </div>
-        <TocMobile>
-          <div sx={{ pl: 2 }}>
-            <Toc />
-          </div>
-        </TocMobile>
-        <TocDesktop>
-          <Toc />
-        </TocDesktop>
+        <TocMobile />
+        <TocDesktop />
       </div>
     </Layout>
   );
