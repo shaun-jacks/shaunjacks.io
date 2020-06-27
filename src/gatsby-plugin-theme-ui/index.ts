@@ -22,7 +22,8 @@ export default {
   //theme
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
-    container: 800,
+    container: 1200,
+    midContainer: 700,
   },
   fonts: {
     body: "system-ui, sans-serif",

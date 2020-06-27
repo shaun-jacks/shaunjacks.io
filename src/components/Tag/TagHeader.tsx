@@ -1,6 +1,7 @@
 import React from "react";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
+import TagButton from "./TagButton";
 
 interface TagHeaderProps {
   tag: string;
@@ -14,6 +15,7 @@ export default function TagHeader({ tag }: TagHeaderProps) {
         textAlign: `center`,
         alignItems: `baseline`,
         color: `primary`,
+        my: 4,
         mx: `auto`,
       }}
     >
@@ -22,22 +24,10 @@ export default function TagHeader({ tag }: TagHeaderProps) {
           mx: `auto`,
           display: `flex`,
           textAlign: `center`,
-          alignItems: `baseline`,
+          flexDirection: "column",
         }}
       >
-        <Styled.h2 sx={{ fontSize: `10`, mr: 3 }}>Blog(s) tagged as</Styled.h2>
-        <Styled.h3
-          sx={{
-            color: `text`,
-            mr: 1,
-            boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.5)`,
-            p: `5px`,
-            borderRadius: `4px`,
-            boxSizing: `content-box`,
-          }}
-        >
-          {tag}
-        </Styled.h3>
+        <TagButton tag={tag} />
       </div>
     </Styled>
   );

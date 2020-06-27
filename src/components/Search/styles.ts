@@ -41,7 +41,6 @@ export const PostHitHeader = {
   my: 1,
   textUnderline: "none",
   width: "inherit",
-  transition: "all .3s ease",
   "&:hover": {
     cursor: "pointer",
     color: lighten("primary", 0.2),
@@ -63,7 +62,6 @@ export const InputStyles = (isFocused: boolean): {} => ({
       borderBottomColor: "primary",
       fontSize: "1em",
       padding: 2,
-      transition: ".3s",
       borderRadius: ".2em",
       color: "primary",
       width: isFocused ? "100%" : "inherit",
@@ -82,7 +80,6 @@ export const FormStyled = {
       border: "none",
       fontSize: "1em",
       background: "transparent",
-      transition: ".3s all  ease",
       borderRadius: ".2em",
       backgroundColor: "inherit",
       "&:focus, &:hover": {

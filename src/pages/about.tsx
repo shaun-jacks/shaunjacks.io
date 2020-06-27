@@ -16,13 +16,32 @@ export default function About() {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <section sx={{ mt: 4, fontSize: "14px" }}>
-        <div sx={{ textAlign: `center` }}>
+      <section
+        sx={{
+          mt: 4,
+          fontSize: "14px",
+          maxWidth: "container",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          m: "auto",
+        }}
+      >
+        <div sx={{ textAlign: `center`, mt: 4 }}>
           <img src={avatar.photo} sx={{ width: 200, borderRadius: 999 }} />
           <Styled.h2>Shaun Jackson</Styled.h2>
           <AvatarLinks />
         </div>
-        <div>
+        <div
+          sx={{
+            maxWidth: "700px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            m: "auto",
+          }}
+        >
           <Styled.p>
             I currently work as a Jr. Software Engineer at Sony Playstation with
             a focus on building/maintaining large-scale infrastructure web apps.

@@ -14,15 +14,14 @@ function PostCover({ post }: PostProps) {
         to={post.path}
         sx={{
           textDecoration: `none`,
-          transition: "all .3s ease",
           "&:hover": {
             cursor: "pointer",
           },
         }}
       >
         <Img
-          sx={{ minHeight: "240px", minWidth: "100%" }}
-          fixed={post.cover.childImageSharp.fluid}
+          sx={{ maxHeight: "240px", minHeight: "240px", minWidth: "100%" }}
+          fluid={post.cover.childImageSharp.fluid}
         />
       </Link>
     </Styled>

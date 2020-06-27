@@ -17,7 +17,6 @@ export default function FooterLink({ url, label }: FooterLinkProps) {
         color: "secondary",
         p: 2,
         textDecoration: "none",
-        transition: "all .3s ease",
         "&:hover": { cursor: "pointer", color: lighten("secondary", 0.2) },
       }}
       href={url}

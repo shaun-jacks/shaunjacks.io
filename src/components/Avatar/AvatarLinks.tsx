@@ -21,16 +21,16 @@ export default function AvatarLinks() {
 
   return (
     <div sx={{ display: "flex", justifyContent: "center" }}>
-      {icons.map((icon) => (
+      {icons.map((icon, i) => (
         <Styled.a
           href={icon.url}
+          key={i}
           sx={{
             mr: 2,
             p: 1,
             textDecoration: "none",
             color: "inherit",
             borderRadius: "2px",
-            transition: "all .3s ease",
             ":hover": { bg: lighten("primary", 0.1), cursor: "pointer" },
           }}
         >
