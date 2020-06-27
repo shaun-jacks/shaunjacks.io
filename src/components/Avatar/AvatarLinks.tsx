@@ -21,9 +21,10 @@ export default function AvatarLinks() {
 
   return (
     <div sx={{ display: "flex", justifyContent: "center" }}>
-      {icons.map((icon) => (
+      {icons.map((icon, i) => (
         <Styled.a
           href={icon.url}
+          key={i}
           sx={{
             mr: 2,
             p: 1,

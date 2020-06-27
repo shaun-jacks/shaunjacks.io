@@ -35,7 +35,7 @@ function PostCardRect({ post }: PostProps) {
         sx={{
           minWidth: "100%",
           maxWidth: "100%",
-          height: "240px",
+          maxHeight: "240px",
           marginBottom: "16px",
         }}
       >
