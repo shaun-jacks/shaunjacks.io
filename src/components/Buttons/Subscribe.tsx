@@ -19,7 +19,7 @@ export default function SubscribeButton() {
         borderColor: "primary",
         borderWidth: "1px",
         fontSize: "16px",
-        padding: "4px 11px",
+        p: "4px 11px",
         boxShadow: "0 2px 0 rgba(0,0,0,.045)",
         "&:focus, &:hover": {
           outline: "none",

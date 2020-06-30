@@ -84,7 +84,7 @@ export default function Index({
           <Link
             to={"/blog"}
             sx={{
-              margin: `auto`,
+              m: `auto`,
               textAlign: `center`,
               color: `secondary`,
               textDecoration: `none`,

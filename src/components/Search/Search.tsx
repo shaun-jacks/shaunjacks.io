@@ -51,7 +51,7 @@ export default function Search() {
               sx={{
                 borderRadius: "10px",
                 bg: "panelBackground",
-                margin: "auto",
+                m: "auto",
                 mx: 3,
                 mb: 5,
                 p: 3,
@@ -74,7 +74,7 @@ export default function Search() {
               <div
                 sx={{
                   maxWidth: "900px",
-                  margin: "auto",
+                  m: "auto",
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",

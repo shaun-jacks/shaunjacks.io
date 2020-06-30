@@ -29,7 +29,7 @@ export default connectSearchBox(
           borderLeft: "none",
           borderBottom: (t: any) => `2px solid ${t.colors.primary}`,
           fontSize: "1em",
-          padding: 2,
+          p: 2,
           borderRadius: ".2em",
           color: "primary",
           width: "100%",

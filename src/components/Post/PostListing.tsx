@@ -28,7 +28,7 @@ export default function PostListing({ postEdges }: PostListingProps) {
         flexWrap: "wrap",
         justifyContent: "center",
         width: "100%",
-        margin: "auto",
+        m: "auto",
       }}
     >
       {getPostList().map((post, i) => (
