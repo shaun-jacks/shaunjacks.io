@@ -25,6 +25,7 @@ export default function About() {
           justifyContent: "center",
           flexDirection: "column",
           m: "auto",
+          px: 2,
         }}
       >
         <div sx={{ textAlign: `center`, mt: 4 }}>

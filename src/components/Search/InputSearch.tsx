@@ -17,7 +17,7 @@ export default connectSearchBox(
       sx={{
         zIndex: 999,
         m: "auto",
-        width: "75%",
+        width: "100%",
         p: 3,
         display: "flex",
         alignItems: "center",
