@@ -22,7 +22,7 @@ export default function MobileSearchIcon({
           cursor: "pointer",
           p: 2,
           "&:hover": {
-            backgroundColor: "muted",
+            bg: "muted",
           },
         }}
         onClick={() => setFocus(true)}

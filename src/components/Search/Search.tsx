@@ -39,7 +39,7 @@ export default function Search() {
               width: "100%",
               height: "100%",
               overflow: "auto",
-              backgroundColor: "rgba(0,0,0,0.4)",
+              bg: "rgba(0,0,0,0.4)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",

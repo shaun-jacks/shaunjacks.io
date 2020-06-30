@@ -36,7 +36,7 @@ export default function SideDrawerOverlay({
           width: "100%",
           height: "100%",
           color: "rgba(0, 0, 0, .25)",
-          backgroundColor: "rgba(0, 0, 0, .5)",
+          bg: "rgba(0, 0, 0, .5)",
           zIndex: 10,
           [mediaQueries.lg]: {
             display: "none",

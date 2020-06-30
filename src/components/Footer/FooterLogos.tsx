@@ -17,9 +17,7 @@ export default function FooterLogos() {
         p: 2,
         fontSize: "12px",
         a: {
-          "&:hover": {
-            cursor: "pointer",
-          },
+          cursor: "pointer",
         },
       }}
     >
@@ -43,8 +41,8 @@ export default function FooterLogos() {
           width="22"
           height="22"
           role="presentation"
-          style={{
-            backgroundColor: "#faf9f8",
+          sx={{
+            bg: "#faf9f8",
             pointerEvents: `none`,
           }}
         />

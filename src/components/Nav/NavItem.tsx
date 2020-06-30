@@ -25,7 +25,7 @@ export default function NavItem({ link }: NavItemProps) {
         borderRadius: "10px",
         fontSize: "19px",
         "&:hover": {
-          backgroundColor: "muted",
+          bg: "muted",
         },
         ml: 2,
         "&.active": {

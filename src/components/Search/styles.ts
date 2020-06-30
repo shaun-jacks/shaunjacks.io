@@ -39,7 +39,7 @@ export const HitsBackgroundOverlay = {
   m: 0,
   flex: "1",
   color: "rgba(0, 0, 0, .25)",
-  backgroundColor: "rgba(0, 0, 0, .5)",
+  bg: "rgba(0, 0, 0, .5)",
   zIndex: 999,
   "&:hover": { cursor: "auto" },
 };
@@ -66,7 +66,7 @@ export const FormStyled = {
       fontSize: "1em",
       background: "transparent",
       borderRadius: ".2em",
-      backgroundColor: "inherit",
+      bg: "inherit",
       "&:focus, &:hover": {
         outline: "none",
         width: "40vw",

@@ -14,7 +14,7 @@ export default function SubscribeButton() {
         color: "background",
         cursor: "pointer",
         outline: "none",
-        backgroundColor: "primary",
+        bg: "primary",
         border: "3px solid text",
         borderColor: "primary",
         borderWidth: "1px",
@@ -24,7 +24,7 @@ export default function SubscribeButton() {
         "&:focus, &:hover": {
           outline: "none",
           borderColor: lighten("primary", 0.2),
-          backgroundColor: lighten("primary", 0.2),
+          bg: lighten("primary", 0.2),
         },
       }}
     >

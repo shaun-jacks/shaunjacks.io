@@ -25,7 +25,7 @@ export default function SideDrawerPanel({
         ...(direction === "right" && {
           right: "0px",
         }),
-        backgroundColor: "panelBackground",
+        bg: "panelBackground",
         width,
         height: "100vh",
         overflow: "auto",

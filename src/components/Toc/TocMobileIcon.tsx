@@ -19,7 +19,7 @@ export default function TocMobileIcon({
         position: "fixed",
         bottom: "44px",
         right: "20px",
-        backgroundColor: "panelBackground",
+        bg: "panelBackground",
         width: "60px",
         height: "60px",
         borderRadius: "50%",

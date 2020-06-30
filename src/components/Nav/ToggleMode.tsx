@@ -50,7 +50,7 @@ export default function ToggleMode() {
         mx: 2,
         borderRadius: "10px",
         "&:hover": {
-          backgroundColor: "muted",
+          bg: "muted",
         },
       }}
       title="Toggle Dark Mode"

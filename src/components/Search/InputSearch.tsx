@@ -56,7 +56,7 @@ export default connectSearchBox(
         sx={{
           borderRadius: "10px",
           "&:hover": {
-            backgroundColor: "muted",
+            bg: "muted",
           },
           p: 2,
           color: "primary",
