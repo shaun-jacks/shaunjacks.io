@@ -34,7 +34,7 @@ export default function About() {
         </div>
         <div
           sx={{
-            maxWidth: "700px",
+            maxWidth: "midContainer",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",

@@ -1,70 +1,43 @@
 import React, { useState } from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
+import logo from "../../images/shaunjacks-logo-light-192px.svg";
 
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
-import { IconContext } from "react-icons";
-import { BsCodeSlash } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
-import TocSideDrawer from "./TocSideDrawer";
-import Toc from ".";
+import TocMobileIcon from "./TocMobileIcon";
+import TableOfContents from "./TableOfContents";
+import { PostNode } from "../Post/Post.model";
+import SideDrawer from "../Drawer";
 
-export default function TocMobile({ children }: { children?: JSX.Element }) {
+export interface TocMobileProps {
+  children?: JSX.Element;
+  postNode?: PostNode;
+  slug?: string;
+}
+
+export default function TocMobile({ postNode, slug }: TocMobileProps) {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+  const toggleOpen = () => setSideDrawerOpen(!sideDrawerOpen);
   return (
     <React.Fragment>
-      {sideDrawerOpen && (
-        <TocSideDrawer>
-          <div sx={{ pl: 2 }}>
-            <Toc getActive={sideDrawerOpen} />
-          </div>
-        </TocSideDrawer>
-      )}
-      <div
-        sx={{
-          position: "fixed",
-          bottom: "44px",
-          right: "20px",
-          backgroundColor: "panelBackground",
-          width: "60px",
-          height: "60px",
-          borderRadius: "50%",
-          color: "primary",
-          boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
-          zIndex: 3,
-          "@media screen and (min-width: 920px)": {
-            display: "none",
-          },
-        }}
+      <SideDrawer
+        direction="left"
+        drawerOpen={sideDrawerOpen}
+        toggleOpen={toggleOpen}
       >
-        <div
-          sx={{
-            display: "flex",
-            m: "auto",
-            width: "100%",
-            height: "100%",
-            justifyContent: "center",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-          onClick={(event: any) => {
-            event.preventDefault();
-            setSideDrawerOpen(!sideDrawerOpen);
-          }}
-        >
-          {!sideDrawerOpen ? (
-            <IconContext.Provider value={{ size: "2em" }}>
-              <BsCodeSlash />
-            </IconContext.Provider>
-          ) : (
-            <IconContext.Provider value={{ size: "2em" }}>
-              <AiOutlineClose />
-            </IconContext.Provider>
+        <div sx={{ px: 3, mt: 4, maxHeight: "320px", overflow: "auto" }}>
+          {postNode && (
+            <TableOfContents
+              items={postNode?.tableOfContents?.items}
+              depth={2}
+              location={slug}
+              toggleOpen={toggleOpen}
+            />
           )}
         </div>
-        {""}
-      </div>
+      </SideDrawer>
+      <TocMobileIcon {...{ setSideDrawerOpen, sideDrawerOpen }} />
     </React.Fragment>
   );
 }

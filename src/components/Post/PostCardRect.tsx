@@ -8,6 +8,7 @@ import { PostProps } from "./Post.model";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
+import { mediaQueries } from "../../gatsby-plugin-theme-ui";
 
 function PostCardRect({ post }: PostProps) {
   return (
@@ -17,15 +18,12 @@ function PostCardRect({ post }: PostProps) {
         minWidth: "100px",
         width: "100%",
         maxWidth: "448px",
-        padding: "24px",
+        p: 4,
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",
-        fontSize: "19px",
-        "@media screen and (max-width: 700px)": {
-          maxWidth: "448px",
-        },
-        "@media screen and (min-width: 701px)": {
+        fontSize: 3,
+        [mediaQueries.md]: {
           maxWidth: "350px",
         },
       }}
@@ -36,7 +34,7 @@ function PostCardRect({ post }: PostProps) {
           minWidth: "100%",
           maxWidth: "100%",
           maxHeight: "240px",
-          marginBottom: "16px",
+          marginBottom: 3,
         }}
       >
         {post.cover && <PostCover post={post} />}

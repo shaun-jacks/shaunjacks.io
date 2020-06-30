@@ -1,15 +1,19 @@
 import { lighten } from "@theme-ui/color";
 
 export const HitsWrapper = {
-  zIndex: 100,
+  borderRadius: "10px",
+  zIndex: 999,
   bg: "panelBackground",
-  flex: "1",
-  boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
-  width: "100vw",
+  margin: "auto" /* 15% from the top and centered */,
+  mx: 3,
+  padding: "20px",
+  width: "75%" /* Could be more or less, depending on screen size */,
+  height: "75%",
+  // flex: "1",
+  boxShadow: `0px 2px 0px 0px rgba(0, 0, 0, 0.2)`,
   span: {
     textDecoration: "none",
   },
-  overflow: "scroll",
   mark: {
     bg: "primary",
     color: "background",
@@ -23,6 +27,10 @@ export const HitsWrapper = {
 export const HitsPanelBackground = {
   maxWidth: "900px",
   margin: "auto",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  px: 2,
 };
 
 export const HitsBackgroundOverlay = {
@@ -32,7 +40,7 @@ export const HitsBackgroundOverlay = {
   flex: "1",
   color: "rgba(0, 0, 0, .25)",
   backgroundColor: "rgba(0, 0, 0, .5)",
-  zIndex: 1,
+  zIndex: 999,
   "&:hover": { cursor: "auto" },
 };
 
@@ -46,29 +54,6 @@ export const PostHitHeader = {
     color: lighten("primary", 0.2),
   },
 };
-
-export const InputStyles = (isFocused: boolean): {} => ({
-  form: {
-    display: "flex",
-    flex: "1",
-    flexDirection: "flex-end",
-    alignItems: "center",
-    input: {
-      outline: "none",
-      borderTop: "none",
-      borderLeft: "none",
-      borderRight: "none",
-      borderBottomWidth: "2px",
-      borderBottomColor: "primary",
-      fontSize: "1em",
-      padding: 2,
-      borderRadius: ".2em",
-      color: "primary",
-      width: isFocused ? "100%" : "inherit",
-      bg: isFocused ? "muted" : "transparent",
-    },
-  },
-});
 
 export const FormStyled = {
   form: {

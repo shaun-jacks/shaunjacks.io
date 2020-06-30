@@ -8,6 +8,7 @@ import { PostProps } from "./Post.model";
 
 /** @jsx jsx */
 import { Styled, jsx, Card } from "theme-ui";
+import { mediaQueries } from "../../gatsby-plugin-theme-ui";
 
 function PostCard({ post }: PostProps) {
   return (
@@ -36,8 +37,9 @@ function PostCard({ post }: PostProps) {
           </div>
           <div
             sx={{
-              "@media screen and (max-width: 600px)": {
-                display: "none",
+              display: "none",
+              [mediaQueries.md]: {
+                display: "inline",
               },
             }}
           >

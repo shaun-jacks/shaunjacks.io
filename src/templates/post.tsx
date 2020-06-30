@@ -15,9 +15,10 @@ import SubscribeButton from "../components/Buttons/Subscribe";
 import AvatarLinks from "../components/Avatar/AvatarLinks";
 import Cookies from "js-cookie";
 import PostTemplateHeader from "../components/Post/PostTemplateHeader";
-import Toc from "../components/Toc";
-import TocMobile from "../components/Toc/TocMobile";
 import TocDesktop from "../components/Toc/TocDesktop";
+import TableOfContents from "../components/Toc/TableOfContents";
+import TocMobile from "../components/Toc/TocMobile";
+import { mediaQueries } from "../gatsby-plugin-theme-ui";
 
 interface PostTemplateFrontmatter extends PostFrontmatter {
   id?: string;
@@ -66,32 +67,37 @@ export default function PostTemplate({
       <SEO postPath={slug} postNode={postNode} postSEO />
       <div
         sx={{
+          px: 3,
           maxWidth: "1200px",
           m: "auto",
-          "@media screen and (min-width: 920px)": {
+          [mediaQueries.lg]: {
             display: "grid",
-            gridTemplateColumns: "1fr 200px",
+            gridTemplateColumns: "1fr 261px",
           },
         }}
       >
         <div
           sx={{
-            maxWidth: "700px",
+            maxWidth: "midContainer",
             m: "auto",
             ".gatsby-resp-image-figcaption": {
               textAlign: "center",
               color: "text",
+            },
+            ".header-link": {
+              fill: "primary",
             },
           }}
         >
           <Styled.h1 sx={{ mb: 0, fontSize: 60 }}>{post.title}</Styled.h1>
           <PostTemplateHeader post={post} />
           {post.cover && (
-            <Img sx={{ mt: 3 }} fluid={post.cover.childImageSharp.fluid} />
+            <Img
+              sx={{ mt: 3, overflow: "scroll", minWidth: 0 }}
+              fluid={post.cover.childImageSharp.fluid}
+            />
           )}
-          <main>
-            <MDXRenderer>{postNode.body}</MDXRenderer>
-          </main>
+          <MDXRenderer>{postNode.body}</MDXRenderer>
           <div
             sx={{
               mt: "40px",
@@ -108,8 +114,14 @@ export default function PostTemplate({
             </div>
           </div>
         </div>
-        <TocMobile />
-        <TocDesktop />
+        <TocMobile postNode={postNode} slug={slug}></TocMobile>
+        <TocDesktop>
+          <TableOfContents
+            items={postNode.tableOfContents?.items}
+            depth={2}
+            location={slug}
+          />
+        </TocDesktop>
       </div>
     </Layout>
   );
@@ -136,6 +148,7 @@ export const postQuery = graphql`
         category
         tags
       }
+      tableOfContents(maxDepth: 3)
       fields {
         slug
         date(formatString: "MMMM Do, YYYY")

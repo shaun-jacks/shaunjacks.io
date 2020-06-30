@@ -4,6 +4,7 @@
 // import dracula from "@theme-ui/prism/presets/dracula.json";
 import vsDark from "@theme-ui/prism/presets/vs-dark.json";
 // import prism from "@theme-ui/prism/presets/theme-ui";
+import { darken } from "@theme-ui/color";
 
 const grey90 = `#232129`;
 const black80 = `#1B1F23`;
@@ -18,9 +19,38 @@ const lightblue = `#a5a4a6`;
 const lightGray = "#eee";
 const gray = `#CCCCCC`;
 
+export const breakpoints = {
+  xs: `400px`,
+  sm: `550px`,
+  md: `750px`,
+  lg: `1000px`,
+  xl: `1200px`,
+  xxl: `1600px`,
+};
+
+export const mediaQueries = Object.entries(breakpoints).reduce(
+  (acc, [key, val]) => ({
+    ...acc,
+    [key]: `@media (min-width: ${val})`,
+  }),
+  {
+    xs: "",
+    sm: "",
+    md: "",
+    lg: "",
+    xl: "",
+    xxl: "",
+  }
+);
+export const breakpointsArr = Object.values(breakpoints);
+export const mediaQueriesArr = breakpointsArr.map(
+  (breakpoint) => `@media and screen(min-width: ${breakpoint})`
+);
 export default {
   //theme
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  breakpoints: breakpointsArr,
+  mediaQueries: mediaQueriesArr,
   sizes: {
     container: 1200,
     midContainer: 700,
@@ -119,6 +149,7 @@ export default {
   //Colors
   colors: {
     text: lightWhite,
+    textMuted: "#bfbfbf",
     background: "#141414",
     panelBackground: "#1e1e1e",
     panelText: lightWhite,
@@ -133,6 +164,7 @@ export default {
     modes: {
       light: {
         text: blueGray,
+        textMuted: "#4d5466",
         background: lightGray,
         panelBackground: "#fff",
         panelText: "text",
