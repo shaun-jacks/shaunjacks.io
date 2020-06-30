@@ -23,12 +23,19 @@ export interface PostEdge {
   node: PostNode;
 }
 
+export interface TocNode {
+  items: TocNode;
+  url: string;
+  name: string;
+}
+
 export interface PostNode {
   fields: PostFields;
   excerpt: string;
   timeToRead: string;
   frontmatter: PostFrontmatter;
   cover: any;
+  tableOfContents?: TocNode;
 }
 
 export interface PostFields {

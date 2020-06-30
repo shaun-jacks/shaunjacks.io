@@ -10,6 +10,8 @@ import "./index.css";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import PolicyBanner from "../components/PolicyBanner";
+import Search from "../components/Search/Search";
+import { mediaQueries } from "../gatsby-plugin-theme-ui";
 
 export default function MainLayout({
   children,
@@ -31,7 +33,7 @@ export default function MainLayout({
           fontFamily: `body`,
           mt: "60px",
           mx: "auto",
-          width: ["90%", "90%", "100%"],
+          width: "100%",
         }}
       >
         <Helmet>
@@ -39,6 +41,7 @@ export default function MainLayout({
           <html lang="en" />
         </Helmet>
         <NavMenu menuLinks={config.menuLinks} />
+
         <div style={{ margin: `0 auto 50px auto` }}>
           <PolicyBanner />
           {children}

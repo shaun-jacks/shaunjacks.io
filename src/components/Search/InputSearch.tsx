@@ -1,12 +1,9 @@
+/** @jsx jsx */
 import React from "react";
+import { Styled, jsx } from "theme-ui";
+import { AiOutlineClose } from "react-icons/ai";
 import { connectSearchBox } from "react-instantsearch-dom";
 import { IconContext } from "react-icons";
-import { FaSearch } from "react-icons/fa";
-import { InputStyles } from "./styles";
-
-/** @jsx jsx */
-import { Styled, jsx } from "theme-ui";
-import { AiFillCloseCircle } from "react-icons/ai";
 
 interface InputSearchProps {
   refine: any;
@@ -16,53 +13,65 @@ interface InputSearchProps {
 
 export default connectSearchBox(
   ({ refine, focus, setFocus }: InputSearchProps) => (
-    <Styled sx={InputStyles(focus)}>
-      {focus ? (
-        <div sx={{ display: "flex", width: "100%", alignItems: "center" }}>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <input
-              type="text"
-              placeholder="Search"
-              aria-label="Search"
-              onChange={(e) => refine(e.target.value)}
-              autoFocus
-            />
-          </form>
-          {focus && (
-            <div
-              sx={{
-                ml: 2,
-                "&:hover": {
-                  cursor: "pointer",
-                  color: "primary",
-                },
-              }}
-            >
-              <IconContext.Provider value={{ size: "1.25rem" }}>
-                <AiFillCloseCircle onClick={() => setFocus(false)} />
-              </IconContext.Provider>
-            </div>
-          )}
-        </div>
-      ) : (
+    <Styled.div
+      sx={{
+        zIndex: 999,
+        m: "auto",
+        width: "75%",
+        p: 3,
+        display: "flex",
+        alignItems: "center",
+        borderRadius: "10px",
+        input: {
+          outline: "none",
+          borderRight: "none",
+          borderTop: "none",
+          borderLeft: "none",
+          borderBottom: (t: any) => `2px solid ${t.colors.primary}`,
+          fontSize: "1em",
+          padding: 2,
+          borderRadius: ".2em",
+          color: "primary",
+          width: "100%",
+          bg: "muted",
+        },
+      }}
+    >
+      <div sx={{ mr: 4, flex: 1 }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={(e) => refine(e.target.value)}
+            autoFocus
+          />
+        </form>
+      </div>
+      <div
+        sx={{
+          borderRadius: "10px",
+          "&:hover": {
+            backgroundColor: "muted",
+          },
+          p: 2,
+          color: "primary",
+          display: "flex",
+          m: "auto",
+          justifyContent: "center",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+        onClick={() => setFocus(false)}
+      >
         <IconContext.Provider value={{ size: "1.25rem" }}>
-          <div
-            sx={{
-              p: 2,
-              borderRadius: "10px",
-              "&:hover": {
-                backgroundColor: "muted",
-              },
-            }}
-          >
-            <FaSearch onClick={() => setFocus(true)} />
-          </div>
+          <AiOutlineClose />
         </IconContext.Provider>
-      )}
-    </Styled>
+      </div>
+    </Styled.div>
   )
 );

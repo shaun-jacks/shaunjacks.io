@@ -4,16 +4,11 @@ import _ from "lodash";
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import Toc from ".";
+import { mediaQueries } from "../../gatsby-plugin-theme-ui";
 
 export default function TocDesktop({ children }: { children?: JSX.Element }) {
   return (
-    <div
-      sx={{
-        "@media screen and (max-width: 921px)": {
-          display: "none",
-        },
-      }}
-    >
+    <div sx={{ display: "none", [mediaQueries.lg]: { display: "inline" } }}>
       <div
         sx={{
           position: "sticky",
@@ -23,7 +18,7 @@ export default function TocDesktop({ children }: { children?: JSX.Element }) {
           ml: 2,
         }}
       >
-        <Toc />
+        {children}
       </div>
     </div>
   );

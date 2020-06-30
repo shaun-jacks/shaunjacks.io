@@ -20,7 +20,12 @@ function PostCover({ post }: PostProps) {
         }}
       >
         <Img
-          sx={{ maxHeight: "240px", minHeight: "240px", minWidth: "100%" }}
+          sx={{
+            maxHeight: "240px",
+            minHeight: "240px",
+            minWidth: "100%",
+            zIndex: -1,
+          }}
           fluid={post.cover.childImageSharp.fluid}
         />
       </Link>
