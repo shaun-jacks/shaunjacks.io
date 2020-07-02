@@ -34,6 +34,7 @@ export default function MobileNav() {
       <div
         sx={{
           ml: 3,
+          zIndex: 11,
           [mediaQueries.sm]: {
             display: "none",
           },
@@ -76,11 +77,16 @@ export default function MobileNav() {
           },
         }}
       >
-        <SideDrawer toggleOpen={toggleDrawerOpen} drawerOpen={sideDrawerOpen}>
+        <SideDrawer
+          width="200px"
+          toggleOpen={toggleDrawerOpen}
+          drawerOpen={sideDrawerOpen}
+        >
           <nav
             sx={{
               display: "flex",
               flexDirection: "column",
+              alignItems: "flex-end",
             }}
           >
             {mobileNavLinks.map((link, i) => {

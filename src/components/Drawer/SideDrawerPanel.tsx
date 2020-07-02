@@ -18,7 +18,7 @@ export default function SideDrawerPanel({
     <div
       sx={{
         position: "fixed",
-        top: "53px",
+        top: "0px",
         ...(direction === "left" && {
           left: "0px",
         }),
@@ -36,7 +36,7 @@ export default function SideDrawerPanel({
         },
       }}
     >
-      {children}
+      <div sx={{ mt: "53px" }}>{children}</div>
     </div>
   );
 }

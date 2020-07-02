@@ -23,7 +23,7 @@ export default function Search() {
     []
   );
   return (
-    <div sx={{ zIndex: 999 }}>
+    <div sx={{ zIndex: 11 }}>
       <InstantSearch
         searchClient={searchClient}
         indexName={"Posts"}

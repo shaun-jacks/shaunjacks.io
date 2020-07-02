@@ -47,6 +47,7 @@ export default function ToggleMode() {
         border: `none`,
         outline: `none`,
         p: 2,
+        zIndex: 11,
         mx: 2,
         borderRadius: "10px",
         "&:hover": {

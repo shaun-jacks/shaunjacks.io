@@ -15,7 +15,7 @@ export default function FooterLogos() {
         alignItems: "center",
         img: { mx: 2 },
         p: 2,
-        fontSize: "12px",
+        fontSize: 0,
         a: {
           cursor: "pointer",
         },

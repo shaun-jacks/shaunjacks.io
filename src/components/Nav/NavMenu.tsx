@@ -54,13 +54,12 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
               },
             }}
           >
-            <img src={logo} width="47" height="47" />
+            <img src={logo} width="45" height="45" />
             <Styled.h3
               sx={{
-                display: "none",
-                [mediaQueries.md]: { display: "inline" },
                 cursor: "pointer",
                 p: 2,
+                fontSize: 2,
                 borderRadius: "10px",
                 ":hover": {
                   bg: "muted",
