@@ -16,7 +16,7 @@ export default function Footer() {
       sx={{
         width: "100%",
         variant: "styles.footer",
-        backgroundColor: "panelBackground",
+        bg: "panelBackground",
         color: "panelText",
       }}
     >
@@ -52,7 +52,7 @@ export default function Footer() {
             About
           </Link>{" "}
           <Link className="footer-link" to="/blog">
-            Articles
+            Blog
           </Link>{" "}
           <FooterLink url="https://patreon.com/shaunjacks" label="Patreon" />
           <FooterLink url="https://ko-fi.com/shaunjacks" label="Ko-Fi" />

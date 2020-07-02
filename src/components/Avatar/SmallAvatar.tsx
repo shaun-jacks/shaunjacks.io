@@ -34,7 +34,7 @@ export default function SmallAvatar() {
         }}
       >
         <img
-          src={avatar.photo}
+          src={avatar.photoSmall}
           sx={{ width: 70, height: 70, borderRadius: "50%", mr: 3 }}
         />
         <Styled.p>{avatar.description}</Styled.p>

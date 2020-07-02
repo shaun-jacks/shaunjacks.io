@@ -21,7 +21,7 @@ export default function PostTemplateHeader({ post }: PostProps) {
         >
           <small sx={{ mr: 2, fontSize: "14px" }}>{post.date}</small>
           {post.tags.map((tag, i) => {
-            return <TagButton sx={{ marginLeft: 2 }} tag={tag} key={i} />;
+            return <TagButton sx={{ ml: 2 }} tag={tag} key={i} />;
           })}
 
           <small

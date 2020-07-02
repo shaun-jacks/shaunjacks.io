@@ -25,10 +25,14 @@ export default function About() {
           justifyContent: "center",
           flexDirection: "column",
           m: "auto",
+          px: 2,
         }}
       >
         <div sx={{ textAlign: `center`, mt: 4 }}>
-          <img src={avatar.photo} sx={{ width: 200, borderRadius: 999 }} />
+          <img
+            src="/shaun-sunset.png"
+            sx={{ borderRadius: "10px", maxWidth: "100%", maxHeight: "350px" }}
+          />
           <Styled.h2>Shaun Jackson</Styled.h2>
           <AvatarLinks />
         </div>

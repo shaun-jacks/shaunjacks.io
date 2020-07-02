@@ -23,7 +23,7 @@ export default function Search() {
     []
   );
   return (
-    <div sx={{ zIndex: 999 }}>
+    <div sx={{ zIndex: 11 }}>
       <InstantSearch
         searchClient={searchClient}
         indexName={"Posts"}
@@ -39,7 +39,7 @@ export default function Search() {
               width: "100%",
               height: "100%",
               overflow: "auto",
-              backgroundColor: "rgba(0,0,0,0.4)",
+              bg: "rgba(0,0,0,0.4)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -51,10 +51,10 @@ export default function Search() {
               sx={{
                 borderRadius: "10px",
                 bg: "panelBackground",
-                margin: "auto",
+                m: "auto",
                 mx: 3,
                 mb: 5,
-                padding: "20px",
+                p: 3,
                 width: "75%",
                 height: "75%",
                 boxShadow: `0px 2px 0px 0px rgba(0, 0, 0, 0.2)`,
@@ -74,7 +74,7 @@ export default function Search() {
               <div
                 sx={{
                   maxWidth: "900px",
-                  margin: "auto",
+                  m: "auto",
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",

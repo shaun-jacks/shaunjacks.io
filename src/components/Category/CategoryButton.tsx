@@ -31,23 +31,11 @@ export default function CategoryButton({
     <Link
       to={`/categories/${_.kebabCase(category)}/`}
       sx={{
+        variant: "buttons.default",
         m: 2,
-        textDecoration: "none",
-        color: "text",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        border: "1px solid",
-        borderColor: "text",
-        borderRadius: "20px",
-        mr: "12px",
-        px: "12px",
-        py: ".4rem",
-        "&:hover": {
-          cursor: "pointer",
-          color: "primary",
-          borderColor: "primary",
-        },
       }}
     >
       <Styled.h3>{CategorySvgMap[category].name}</Styled.h3>

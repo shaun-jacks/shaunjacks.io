@@ -24,8 +24,8 @@ const config = {
   avatar: {
     description:
       "Uncovering the keys for navigating the landscape of Software Engineering. One Blog at a time.",
-    photo:
-      "https://shaunjacks.com/static/426d80516a46be4949bdfd16faafdcb3/b9d37/shaun-coffee-zoom.png",
+    photo: "/shaun-avatar-05x.png",
+    photoSmall: "/shaun-avatar-025x.png",
   },
   userLinks: [
     {

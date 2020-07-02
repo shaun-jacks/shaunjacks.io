@@ -4,12 +4,11 @@ export const HitsWrapper = {
   borderRadius: "10px",
   zIndex: 999,
   bg: "panelBackground",
-  margin: "auto" /* 15% from the top and centered */,
+  m: "auto",
   mx: 3,
-  padding: "20px",
-  width: "75%" /* Could be more or less, depending on screen size */,
+  p: "20px",
+  width: "75%",
   height: "75%",
-  // flex: "1",
   boxShadow: `0px 2px 0px 0px rgba(0, 0, 0, 0.2)`,
   span: {
     textDecoration: "none",
@@ -26,7 +25,7 @@ export const HitsWrapper = {
 
 export const HitsPanelBackground = {
   maxWidth: "900px",
-  margin: "auto",
+  m: "auto",
   height: "100%",
   display: "flex",
   flexDirection: "column",
@@ -39,7 +38,7 @@ export const HitsBackgroundOverlay = {
   m: 0,
   flex: "1",
   color: "rgba(0, 0, 0, .25)",
-  backgroundColor: "rgba(0, 0, 0, .5)",
+  bg: "rgba(0, 0, 0, .5)",
   zIndex: 999,
   "&:hover": { cursor: "auto" },
 };
@@ -66,7 +65,7 @@ export const FormStyled = {
       fontSize: "1em",
       background: "transparent",
       borderRadius: ".2em",
-      backgroundColor: "inherit",
+      bg: "inherit",
       "&:focus, &:hover": {
         outline: "none",
         width: "40vw",

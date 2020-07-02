@@ -34,7 +34,7 @@ function PostCardRect({ post }: PostProps) {
           minWidth: "100%",
           maxWidth: "100%",
           maxHeight: "240px",
-          marginBottom: 3,
+          mb: 3,
         }}
       >
         {post.cover && <PostCover post={post} />}

@@ -17,6 +17,7 @@ export default function CookiePolicy() {
           mt: 4,
           fontSize: "14px",
           a: { textDecoration: "none", color: "primary" },
+          px: 2,
         }}
       >
         <Styled>

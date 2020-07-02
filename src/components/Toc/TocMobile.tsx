@@ -26,7 +26,7 @@ export default function TocMobile({ postNode, slug }: TocMobileProps) {
         drawerOpen={sideDrawerOpen}
         toggleOpen={toggleOpen}
       >
-        <div sx={{ px: 3, mt: 4, maxHeight: "320px", overflow: "auto" }}>
+        <div sx={{ px: 3, mt: 4, overflow: "auto" }}>
           {postNode && (
             <TableOfContents
               items={postNode?.tableOfContents?.items}

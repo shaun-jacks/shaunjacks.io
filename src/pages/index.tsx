@@ -6,11 +6,11 @@ import PostListing from "../components/Post/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import SubscribeButton from "../components/Buttons/Subscribe";
-
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 import { PostEdge } from "../components/Post/Post.model";
+import avatar from "../images/shaun-avatar-025x.svg";
 
 export interface BlogProps {
   data: {
@@ -51,11 +51,22 @@ export default function Index({
             }}
           >
             <Styled.h1 sx={{ m: ".5em" }}>Hi! I'm Shaun</Styled.h1>
+            <img
+              sx={{
+                maxWidth: "300px",
+                maxHeight: "300px",
+              }}
+              src={"/shaun-avatar-05x.png"}
+            />
             <Styled.p sx={{ textAlign: "center" }}>
-              I'm a Software Engineer passionate about modern Javascript,
-              Backend technologies, Data, and Cloud tooling.
+              I aim to provide a creative learning hub for you to learn about
+              the multiverse of computer science, ranging from data science and
+              software engineering.
             </Styled.p>
-            {/* <SubscribeButton /> */}
+            <Styled.p sx={{ textAlign: "center" }}>
+              I have experience in modern web development and health-based data
+              science.
+            </Styled.p>
           </div>
         </section>
         <section
@@ -84,20 +95,12 @@ export default function Index({
           <Link
             to={"/blog"}
             sx={{
-              margin: `auto`,
-              textAlign: `center`,
-              color: `secondary`,
-              textDecoration: `none`,
-              fontSize: 20,
-              p: ".5em 1.5em",
-              border: "1px solid",
+              variant: "buttons.default",
               borderColor: "secondary",
-              borderRadius: "20px",
-              px: "14px",
-              py: 2,
+              color: "secondary",
               ":hover": {
-                color: lighten("secondary", 0.2),
-                borderColor: lighten("secondary", 0.2),
+                color: lighten("secondary", ".2"),
+                borderColor: lighten("secondary", ".2"),
               },
             }}
           >

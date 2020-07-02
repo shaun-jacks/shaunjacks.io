@@ -17,6 +17,7 @@ export default function TermsAndConditions() {
           mt: 4,
           fontSize: "14px",
           a: { textDecoration: "none", color: "primary" },
+          px: 2,
         }}
       >
         <Styled.h1>Terms and Conditions</Styled.h1>

@@ -176,4 +176,25 @@ export default {
       },
     },
   },
+  // Variants
+  buttons: {
+    default: {
+      color: `text`,
+      textDecoration: `none`,
+      boxSizing: `content-box`,
+      display: `inline-block`,
+      mt: 1,
+      mr: 4,
+      px: 3,
+      py: ".4rem",
+      fontSize: 0,
+      border: (t: any) => `1px solid ${t.colors.text}`,
+      borderRadius: "20px",
+      "&:hover": {
+        cursor: "pointer",
+        color: "primary",
+        borderColor: "primary",
+      },
+    },
+  },
 };

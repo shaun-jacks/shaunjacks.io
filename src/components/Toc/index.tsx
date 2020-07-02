@@ -103,7 +103,7 @@ export default function Toc({
                   fontWeight: "bold",
                 },
                 display: "block",
-                marginLeft: `${depth - 1 + `em`}`,
+                ml: `${depth - 1 + `em`}`,
               }}
               className={active === index ? "active" : ""}
               onClick={(event: any) => {

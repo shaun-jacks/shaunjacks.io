@@ -35,7 +35,7 @@ function PostHeader({ post }: PostProps) {
           }}
         >
           {post.tags.map((tag, i) => {
-            return <TagButton sx={{ marginLeft: 2 }} tag={tag} key={i} />;
+            return <TagButton sx={{ ml: 2 }} tag={tag} key={i} />;
           })}
         </div>
       </div>

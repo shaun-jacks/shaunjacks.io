@@ -143,14 +143,6 @@ function TableOfContents({ items, depth, location, toggleOpen }) {
       sx={{
         mb: [0, null, null, null, null, 0],
         pb: [0, null, null, null, null, 0],
-        // borderBottom: (t) => [
-        //   `1px solid ${t.colors.ui.border}`,
-        //   null,
-        //   null,
-        //   null,
-        //   null,
-        //   0,
-        // ],
       }}
     >
       <h2

@@ -14,9 +14,7 @@ function PostCover({ post }: PostProps) {
         to={post.path}
         sx={{
           textDecoration: `none`,
-          "&:hover": {
-            cursor: "pointer",
-          },
+          cursor: "pointer",
         }}
       >
         <Img

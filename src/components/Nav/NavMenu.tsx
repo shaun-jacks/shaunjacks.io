@@ -26,7 +26,7 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
           left: 0,
           zIndex: 10,
           height: "56px",
-          backgroundColor: `panelBackground`,
+          bg: `panelBackground`,
           boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
         }}
       >
@@ -41,17 +41,34 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
             px: 2,
           }}
         >
-          <Link to="/">
-            <img src={logo} width="50" height="50" />
-          </Link>
-          <Styled.h3
+          <Link
+            to="/"
+            activeClassName="active"
             sx={{
-              display: "none",
-              [mediaQueries.md]: { display: "inline" },
+              textDecoration: "none",
+              color: "text",
+              display: "flex",
+              alignItems: "center",
+              "&.active": {
+                color: "primary",
+              },
             }}
           >
-            shaunjacks.io
-          </Styled.h3>
+            <img src={logo} width="45" height="45" />
+            <Styled.h3
+              sx={{
+                cursor: "pointer",
+                p: 2,
+                fontSize: 2,
+                borderRadius: "10px",
+                ":hover": {
+                  bg: "muted",
+                },
+              }}
+            >
+              shaunjacks.io
+            </Styled.h3>
+          </Link>
           <div sx={{ flex: "1" }} />
           <div
             sx={{

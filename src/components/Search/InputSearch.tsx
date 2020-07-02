@@ -17,7 +17,7 @@ export default connectSearchBox(
       sx={{
         zIndex: 999,
         m: "auto",
-        width: "75%",
+        width: "100%",
         p: 3,
         display: "flex",
         alignItems: "center",
@@ -29,7 +29,7 @@ export default connectSearchBox(
           borderLeft: "none",
           borderBottom: (t: any) => `2px solid ${t.colors.primary}`,
           fontSize: "1em",
-          padding: 2,
+          p: 2,
           borderRadius: ".2em",
           color: "primary",
           width: "100%",
@@ -56,7 +56,7 @@ export default connectSearchBox(
         sx={{
           borderRadius: "10px",
           "&:hover": {
-            backgroundColor: "muted",
+            bg: "muted",
           },
           p: 2,
           color: "primary",
