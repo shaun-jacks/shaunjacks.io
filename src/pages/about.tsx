@@ -30,7 +30,7 @@ export default function About() {
       >
         <div sx={{ textAlign: `center`, mt: 4 }}>
           <img
-            src="/shaun-sunset.png"
+            src="/shaun-coffee-001x.png"
             sx={{ borderRadius: "10px", maxWidth: "100%", maxHeight: "350px" }}
           />
           <Styled.h2>Shaun Jackson</Styled.h2>
