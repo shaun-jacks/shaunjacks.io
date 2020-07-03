@@ -14,6 +14,7 @@ export default function TagButton({ tag }: TagButtonProps) {
     <Link
       sx={{
         variant: "buttons.default",
+        mr: 2,
       }}
       to={`/tags/${_.kebabCase(tag)}/`}
     >

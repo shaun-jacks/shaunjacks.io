@@ -11,6 +11,7 @@ import { Styled, jsx } from "theme-ui";
 import { lighten } from "@theme-ui/color";
 import { PostEdge } from "../components/Post/Post.model";
 import avatar from "../images/shaun-avatar-025x.svg";
+import { mediaQueries } from "../gatsby-plugin-theme-ui";
 
 export interface BlogProps {
   data: {
@@ -48,25 +49,59 @@ export default function Index({
               flexDirection: "column",
               alignItems: "center",
               p: "2em",
+              [mediaQueries.sm]: {
+                display: "none",
+              },
             }}
           >
             <Styled.h1 sx={{ m: ".5em" }}>Hi! I'm Shaun</Styled.h1>
             <img
               sx={{
-                maxWidth: "300px",
-                maxHeight: "300px",
+                maxWidth: "200px",
+                maxHeight: "200px",
               }}
               src={"/shaun-avatar-05x.png"}
             />
             <Styled.p sx={{ textAlign: "center" }}>
-              I aim to provide a creative learning hub for you to learn about
-              the multiverse of computer science, ranging from data science and
+              I aim to provide a creative learning hub for learning about the
+              multiverse of computer science, ranging from data science and
               software engineering.
             </Styled.p>
             <Styled.p sx={{ textAlign: "center" }}>
               I have experience in modern web development and health-based data
               science.
             </Styled.p>
+          </div>
+          <div
+            sx={{
+              display: "none",
+              p: "2em",
+              [mediaQueries.sm]: {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+            }}
+          >
+            <div sx={{ maxWidth: "300px" }}>
+              <Styled.h1 sx={{ m: ".5em" }}>Hi! I'm Shaun</Styled.h1>
+              <Styled.p>
+                I aim to provide a creative learning hub for learning about the
+                multiverse of computer science, ranging from data science and
+                software engineering.
+              </Styled.p>
+              <Styled.p>
+                I have experience in modern web development and health-based
+                data science.
+              </Styled.p>
+            </div>
+            <img
+              sx={{
+                maxWidth: "200px",
+                maxHeight: "200px",
+              }}
+              src={"/shaun-avatar-05x.png"}
+            />
           </div>
         </section>
         <section
@@ -98,6 +133,7 @@ export default function Index({
               variant: "buttons.default",
               borderColor: "secondary",
               color: "secondary",
+              m: 0,
               ":hover": {
                 color: lighten("secondary", ".2"),
                 borderColor: lighten("secondary", ".2"),
