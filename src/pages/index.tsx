@@ -104,7 +104,7 @@ export default function Index({
             />
           </div>
         </section>
-        <section
+        {/* <section
           sx={{
             my: `40px`,
             display: "flex",
@@ -114,16 +114,15 @@ export default function Index({
         >
           <Styled.h1 sx={{ mt: 0, color: "text" }}>Most popular</Styled.h1>
           <PostListing postEdges={mostPopular.edges} />
-        </section>
+        </section> */}
         <section
           sx={{
             my: `40px`,
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
           }}
         >
-          <Styled.h1 sx={{ mt: 0, color: "text" }}>Most recent</Styled.h1>
+          <Styled.h1 sx={{ mt: 0, ml: 3, color: "text" }}>Most recent</Styled.h1>
           <PostListing postEdges={mostRecent.edges} />
         </section>
         <section sx={{ display: "flex", justifyContent: "center" }}>

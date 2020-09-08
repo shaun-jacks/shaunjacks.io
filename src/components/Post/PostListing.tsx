@@ -32,7 +32,7 @@ export default function PostListing({ postEdges }: PostListingProps) {
       }}
     >
       {getPostList().map((post, i) => (
-        <PostCardRect key={i} post={post} />
+        <PostCard key={i} post={post} />
       ))}
     </div>
   );

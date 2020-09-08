@@ -26,6 +26,7 @@ function PostCard({ post }: PostProps) {
             textDecoration: `none`,
             mr: 1,
             width: "100%",
+            maxWidth: "900px",
             display: "flex",
             alignItems: "flex-start",
             justifyContent: "space-between",
@@ -39,15 +40,20 @@ function PostCard({ post }: PostProps) {
             sx={{
               display: "none",
               [mediaQueries.md]: {
-                display: "inline",
+                display: "inline"
               },
+              minHeight: "200px",
+              maxHeight: "200px",
+              minWidth: "200px",
+              maxWidth: "200px",
+              mr: 3,
             }}
           >
-            {post.cover && <PostCover post={post} />}
+            {post.cover && <PostCover post={post} dimensions="200px" />}
           </div>
         </Styled.div>
       </Styled>
-    </div>
+    </div >
   );
 }
 

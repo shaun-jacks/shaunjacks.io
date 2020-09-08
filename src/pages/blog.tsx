@@ -80,7 +80,13 @@ export default function Blog({ data: { allMdx } }: BlogProps) {
             <TagButton key={i} tag={tag} />
           ))}
         </div>
-        <PostListing postEdges={allMdx.edges} />
+        <div
+          sx={{
+            maxWidth: "900px"
+          }}
+        >
+          <PostListing postEdges={allMdx.edges} />
+        </div>
       </Styled>
     </Layout>
   );

@@ -23,7 +23,7 @@ const config = {
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   avatar: {
     description:
-      "Uncovering the keys for navigating the landscape of Software Engineering. One Blog at a time.",
+      "Uncovering the keys for navigating the landscape of Software Engineering and Data Science. One Blog at a time.",
     photo: "/shaun-avatar-05x.png",
     photoSmall: "/shaun-avatar-025x.png",
   },
@@ -48,8 +48,8 @@ const config = {
     },
   ],
   copyright: "Copyright © 2020. Shaun Jackson", // Copyright string for the footer of the website and RSS feed.
-  themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
+  themeColor: "#91d5ff", // Used for setting manifest and progress theme colors.
+  backgroundColor: "#141414", // Used for setting manifest background color.
 };
 
 // Validate
