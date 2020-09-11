@@ -120,6 +120,8 @@ export default function Index({
             my: `40px`,
             display: "flex",
             flexDirection: "column",
+            m: "auto",
+            maxWidth: "900px"
           }}
         >
           <Styled.h1 sx={{ mt: 0, ml: 3, color: "text" }}>Most recent</Styled.h1>

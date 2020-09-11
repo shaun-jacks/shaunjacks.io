@@ -6,6 +6,9 @@ import PostListing from "../components/Post/PostListing";
 import TagHeader from "../components/Tag/TagHeader";
 import config from "../../data/SiteConfig";
 import { PostEdge } from "../components/Post/Post.model";
+/** @jsx jsx */
+import "katex/dist/katex.min.css";
+import { Styled, jsx } from "theme-ui";
 
 interface TagTemplateProps {
   pageContext: any;
@@ -27,7 +30,9 @@ export default function TagTemplate({
     <Layout>
       <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
       <TagHeader tag={tag} />
-      <PostListing postEdges={postEdges} />
+      <div sx={{ m: "auto", maxWidth: "900px" }}>
+        <PostListing postEdges={postEdges} />
+      </div>
     </Layout>
   );
 }

@@ -6,6 +6,9 @@ import PostListing from "../components/Post/PostListing";
 import CatHeader from "../components/Category/CatHeader";
 import config from "../../data/SiteConfig";
 import { PostEdge } from "../components/Post/Post.model";
+/** @jsx jsx */
+import "katex/dist/katex.min.css";
+import { Styled, jsx } from "theme-ui";
 
 interface CategoryTemplateProps {
   pageContext: any;
@@ -29,7 +32,9 @@ export default function CategoryTemplate({
         title={`Articles in category "${category}" | ${config.siteTitle}`}
       />
       <CatHeader category={category} />
-      <PostListing postEdges={postEdges} />
+      <div sx={{ m: "auto", maxWidth: "900px" }}>
+        <PostListing postEdges={postEdges} />
+      </div>
     </Layout>
   );
 }
