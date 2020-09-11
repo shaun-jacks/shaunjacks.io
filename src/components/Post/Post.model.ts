@@ -4,6 +4,7 @@ export interface PostListingProps {
 
 export interface PostProps {
   post: Post;
+  dimensions?: string;
 }
 
 export interface Post {

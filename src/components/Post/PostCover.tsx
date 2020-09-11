@@ -7,7 +7,7 @@ import Img from "gatsby-image";
 import { Styled, jsx } from "theme-ui";
 import { PostProps } from "./Post.model";
 
-function PostCover({ post }: PostProps) {
+function PostCover({ post, dimensions }: PostProps) {
   return (
     <Styled>
       <Link
@@ -19,8 +19,8 @@ function PostCover({ post }: PostProps) {
       >
         <Img
           sx={{
-            maxHeight: "240px",
-            minHeight: "240px",
+            maxHeight: dimensions ? dimensions : "240px",
+            minHeight: dimensions ? dimensions : "240px",
             minWidth: "100%",
             zIndex: -1,
           }}

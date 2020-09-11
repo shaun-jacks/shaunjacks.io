@@ -165,7 +165,7 @@ export default {
       light: {
         text: blueGray,
         textMuted: "#4d5466",
-        background: lightGray,
+        background: "#fff",
         panelBackground: "#fff",
         panelText: "text",
         primary: "#096dd9",
