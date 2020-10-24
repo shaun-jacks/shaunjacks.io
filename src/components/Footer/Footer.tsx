@@ -54,12 +54,12 @@ export default function Footer() {
           <Link className="footer-link" to="/blog">
             Blog
           </Link>{" "}
-          <FooterLink url="https://patreon.com/shaunjacks" label="Patreon" />
-          <FooterLink url="https://ko-fi.com/shaunjacks" label="Ko-Fi" />
+          <div></div>
           <div sx={{ display: "flex", justifyContent: "flex-start", pl: 1 }}>
             {" "}
             <AvatarLinks />
           </div>
+          <div></div>
           <Link className="footer-link" to="/terms-and-conditions">
             Terms and Conditions
           </Link>{" "}

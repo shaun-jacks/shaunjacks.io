@@ -23,7 +23,7 @@ const config = {
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   avatar: {
     description:
-      "Uncovering the keys for navigating the landscape of Software Engineering and Data Science. One Blog at a time.",
+      "Uncovering the landscape of Software Engineering and Data Science.",
     photo: "/shaun-avatar-05x.png",
     photoSmall: "/shaun-avatar-025x.png",
   },
