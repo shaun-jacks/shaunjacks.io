@@ -46,12 +46,13 @@ export default function ToggleMode() {
         cursor: `pointer`,
         border: `none`,
         outline: `none`,
-        p: 2,
+        p: 3,
         zIndex: 11,
         mx: 2,
         borderRadius: "10px",
         "&:hover": {
           bg: "muted",
+          color: "primary",
         },
       }}
       title="Toggle Dark Mode"

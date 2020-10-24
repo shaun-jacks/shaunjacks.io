@@ -25,7 +25,7 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
           top: 0,
           left: 0,
           zIndex: 10,
-          height: "56px",
+          height: "100px",
           bg: `panelBackground`,
           boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
         }}
@@ -58,7 +58,7 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
             <Styled.h3
               sx={{
                 cursor: "pointer",
-                p: 2,
+                p: 3,
                 fontSize: 2,
                 borderRadius: "10px",
                 ":hover": {

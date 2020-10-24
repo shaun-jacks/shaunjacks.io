@@ -20,7 +20,7 @@ export default function MobileSearchIcon({
           zIndex: 999,
           borderRadius: "10px",
           cursor: "pointer",
-          p: 2,
+          p: 3,
           "&:hover": {
             bg: "muted",
           },

@@ -31,7 +31,7 @@ export default function MainLayout({
       <Styled
         sx={{
           fontFamily: `body`,
-          mt: "60px",
+          mt: "120px",
           mx: "auto",
           width: "100%",
         }}

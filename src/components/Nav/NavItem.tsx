@@ -21,7 +21,7 @@ export default function NavItem({ link }: NavItemProps) {
       sx={{
         textDecoration: "none",
         color: "text",
-        p: 2,
+        p: 3,
         borderRadius: "10px",
         fontSize: "19px",
         "&:hover": {

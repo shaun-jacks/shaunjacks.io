@@ -12,7 +12,7 @@ export default function TocDesktop({ children }: { children?: JSX.Element }) {
       <div
         sx={{
           position: "sticky",
-          top: 75,
+          top: 120,
           overflow: "scroll",
           mr: 3,
           ml: 2,

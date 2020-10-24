@@ -60,7 +60,7 @@ export default function Index({
                 maxWidth: "200px",
                 maxHeight: "200px",
               }}
-              src={"/shaun-avatar-05x.png"}
+              src={"/shaun-coffee-001x.png"}
             />
             <Styled.p sx={{ textAlign: "center" }}>
               I aim to provide a creative learning hub for learning about the
@@ -100,7 +100,7 @@ export default function Index({
                 maxWidth: "200px",
                 maxHeight: "200px",
               }}
-              src={"/shaun-avatar-05x.png"}
+              src={"/shaun-coffee-001x.png"}
             />
           </div>
         </section>
@@ -121,10 +121,12 @@ export default function Index({
             display: "flex",
             flexDirection: "column",
             m: "auto",
-            maxWidth: "900px"
+            maxWidth: "900px",
           }}
         >
-          <Styled.h1 sx={{ mt: 0, ml: 3, color: "text" }}>Most recent</Styled.h1>
+          <Styled.h1 sx={{ mt: 0, ml: 3, color: "text" }}>
+            Most recent
+          </Styled.h1>
           <PostListing postEdges={mostRecent.edges} />
         </section>
         <section sx={{ display: "flex", justifyContent: "center" }}>
