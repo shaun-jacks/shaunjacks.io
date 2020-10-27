@@ -43,7 +43,7 @@ export default function MobileNav() {
         {sideDrawerOpen ? (
           <div
             sx={{
-              p: 1,
+              p: 3,
               cursor: "pointer",
               borderRadius: 2,
               "&:hover": { bg: "muted" },
@@ -57,7 +57,7 @@ export default function MobileNav() {
         ) : (
           <div
             sx={{
-              p: 1,
+              p: 3,
               cursor: "pointer",
               borderRadius: "5px",
               "&:hover": { bg: "muted" },

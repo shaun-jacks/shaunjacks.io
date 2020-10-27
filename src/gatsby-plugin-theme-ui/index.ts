@@ -151,7 +151,7 @@ export default {
     text: lightWhite,
     textMuted: "#bfbfbf",
     background: "#141414",
-    panelBackground: "#1e1e1e",
+    panelBackground: "#141414",
     panelText: lightWhite,
     primary: "#91d5ff",
     secondary: pink,
