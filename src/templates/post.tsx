@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
@@ -58,6 +58,28 @@ export default function PostTemplate({
     excerpt: postNode.excerpt,
   };
   const CookiesEnabled = Cookies.get("CookieConsent");
+  const commentBox = React.createRef<JSX.Element>();
+
+  useEffect(() => {
+    const commentScript = document.createElement("script");
+    const theme =
+      typeof window !== "undefined" &&
+      localStorage.getItem("theme-ui-color-mode") === "default"
+        ? "github-dark"
+        : "github-light";
+    commentScript.async = true;
+    commentScript.src = "https://utteranc.es/client.js";
+    commentScript.setAttribute("repo", "shaun-jacks/comments");
+    commentScript.setAttribute("issue-term", "pathname");
+    commentScript.setAttribute("id", "utterances");
+    commentScript.setAttribute("theme", theme);
+    commentScript.setAttribute("crossorigin", "anonymous");
+    if (commentBox && commentBox.current) {
+      (commentBox as any).current.appendChild(commentScript);
+    } else {
+      console.log(`Error adding utterances comments on: ${commentBox}`);
+    }
+  }, []); // eslint-disable-line
 
   return (
     <Layout>
@@ -111,6 +133,10 @@ export default function PostTemplate({
             <SubscribeButton />
             <div sx={{ mt: 4 }}>
               <AvatarLinks />
+            </div>
+            <div sx={{ width: "100%" }} id="comments">
+              <h2>Comments</h2>
+              <div ref={commentBox} className="comments" />
             </div>
           </div>
         </div>
