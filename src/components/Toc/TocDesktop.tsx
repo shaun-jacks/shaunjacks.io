@@ -16,6 +16,7 @@ export default function TocDesktop({ children }: { children?: JSX.Element }) {
           overflow: "scroll",
           mr: 3,
           ml: 2,
+          maxHeight: "600px",
         }}
       >
         {children}
