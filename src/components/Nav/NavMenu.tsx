@@ -25,7 +25,7 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
           top: 0,
           left: 0,
           zIndex: 10,
-          height: "100px",
+          height: "64px",
           bg: `panelBackground`,
           boxShadow: `1px 2px 8px rgba(0, 0, 0, 0.2)`,
         }}
@@ -52,24 +52,60 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
               "&.active": {
                 color: "primary",
               },
+              flex: "1",
+              [mediaQueries.sm]: {
+                textDecoration: "none",
+              color: "text",
+              display: "flex",
+              alignItems: "center",
+              "&.active": {
+                color: "primary",
+              },
+              }
             }}
           >
             <img src={logo} width="45" height="45" />
             <Styled.h3
               sx={{
-                cursor: "pointer",
-                p: 3,
-                fontSize: 2,
-                borderRadius: "10px",
-                ":hover": {
-                  bg: "muted",
-                },
+                display: "none",
+                [mediaQueries.sm]: {
+                  display: "block",
+                  cursor: "pointer",
+                  p: 3,
+                  fontSize: 2,
+                  borderRadius: "10px",
+                  ":hover": {
+                    bg: "muted",
+                  },
+                }
               }}
             >
               shaunjacks.io
             </Styled.h3>
           </Link>
-          <div sx={{ flex: "1" }} />
+          <div sx={{ 
+            flex:"1",
+            display: "flex",
+            justifyContent:  "space-around"
+          }}>
+            <Styled.h3
+              sx={{
+                flex: "1",
+                  cursor: "pointer",
+                  p: 3,
+                  fontSize: 2,
+                  borderRadius: "10px",
+                  ":hover": {
+                    bg: "muted",
+                  },
+                [mediaQueries.sm]: {
+                  display: "none",
+                }
+              }}
+            >
+              shaunjacks.io
+            </Styled.h3>
+            </div>
           <div
             sx={{
               display: `flex`,
@@ -88,13 +124,17 @@ export default function NavMenu({ menuLinks }: NavMenuProps) {
                 },
               }}
             >
+              <ToggleMode />
+              <Search />
               {menuLinks.map((link, i) => {
                 return <NavItem key={i} link={link} />;
               })}
             </div>
-            <ToggleMode />
-            <Search />
-            <MobileNav />
+            <div sx={{
+              display: "flex",
+            }}>
+              <MobileNav />
+            </div>
           </div>
         </nav>
       </Styled>

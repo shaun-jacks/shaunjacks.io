@@ -10,6 +10,8 @@ import { mediaQueries } from "../../gatsby-plugin-theme-ui";
 import { IconContext } from "react-icons";
 import { AiOutlineClose } from "react-icons/ai";
 import { RiMenu3Line } from "react-icons/ri";
+import ToggleMode from "./ToggleMode";
+import Search from "../Search/Search";
 
 const mobileNavLinks = [
   {
@@ -43,7 +45,8 @@ export default function MobileNav() {
         {sideDrawerOpen ? (
           <div
             sx={{
-              p: 3,
+              p: 2,
+              marginY: "1em",
               cursor: "pointer",
               borderRadius: 2,
               "&:hover": { bg: "muted" },
@@ -57,7 +60,8 @@ export default function MobileNav() {
         ) : (
           <div
             sx={{
-              p: 3,
+              p: 2,
+              marginY: "1em",
               cursor: "pointer",
               borderRadius: "5px",
               "&:hover": { bg: "muted" },
@@ -92,6 +96,9 @@ export default function MobileNav() {
             {mobileNavLinks.map((link, i) => {
               return <NavItem sx={{ flex: "flex-grow" }} key={i} link={link} />;
             })}
+            
+            <ToggleMode />
+              <Search />
           </nav>
         </SideDrawer>
       </div>

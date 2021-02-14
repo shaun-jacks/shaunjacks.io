@@ -21,13 +21,14 @@ export default function NavItem({ link }: NavItemProps) {
       sx={{
         textDecoration: "none",
         color: "text",
-        p: 3,
+        my: "auto",
+        p: 2,
         borderRadius: "10px",
         fontSize: "19px",
         "&:hover": {
           bg: "muted",
         },
-        ml: 2,
+        ml: 3,
         "&.active": {
           color: "primary",
         },

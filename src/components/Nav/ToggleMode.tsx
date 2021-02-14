@@ -46,8 +46,9 @@ export default function ToggleMode() {
         cursor: `pointer`,
         border: `none`,
         outline: `none`,
-        p: 3,
+        p: 2,
         zIndex: 11,
+        my: "auto",
         mx: 2,
         borderRadius: "10px",
         "&:hover": {

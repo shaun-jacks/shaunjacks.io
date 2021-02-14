@@ -14,13 +14,14 @@ export default function MobileSearchIcon({
   setFocus: (val: boolean) => void;
 }) {
   return (
-    <IconContext.Provider value={{ size: "1.25rem" }}>
+    <div sx={{ marginY: "1em" }}>
+<IconContext.Provider value={{ size: "1.25rem" }}>
       <div
         sx={{
           zIndex: 999,
           borderRadius: "10px",
           cursor: "pointer",
-          p: 3,
+          p: 2,
           "&:hover": {
             bg: "muted",
           },
@@ -30,5 +31,6 @@ export default function MobileSearchIcon({
         <FaSearch />
       </div>
     </IconContext.Provider>
+    </div>
   );
 }
