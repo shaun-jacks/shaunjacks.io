@@ -45,6 +45,7 @@ export default function Search() {
               justifyContent: "center",
               alignItems: "center",
               "&:hover": { cursor: "auto" },
+              zIndex: 100,
             }}
           >
             <div
